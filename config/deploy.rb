@@ -1,7 +1,7 @@
 # Change these
 server '139.59.213.230', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.helal-ismail/medical.git'
+set :repo_url,        'git@github.com/helal-ismail/medical.git'
 set :application,     'medical'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
