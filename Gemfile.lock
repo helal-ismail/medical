@@ -43,6 +43,8 @@ GEM
       tzinfo (~> 1.1)
     airbrussh (1.1.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    apipie-rails (0.3.6)
+      json
     arel (6.0.3)
     builder (3.2.2)
     capistrano (3.6.0)
@@ -187,6 +189,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  apipie-rails
   capistrano
   capistrano-bundler
   capistrano-rails
