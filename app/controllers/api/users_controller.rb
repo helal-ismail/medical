@@ -13,6 +13,11 @@ class Api::UsersController < ApiController
     user.name = user_params[:name]
     user.username = user_params[:username]
     user.email = user_params[:email]
+    user.type = user_params[:type]
+    user.phone = user_params[:phone]
+    user.address = user_params[:address]
+    user.gender = user_params[:gender]
+    
     user.password_salt = SecureRandom.hex(4)
     user.encrypted_password = Digest::SHA256.hexdigest(password + user.password_salt)
     access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.password_salt)
