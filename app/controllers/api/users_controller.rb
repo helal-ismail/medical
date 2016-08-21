@@ -4,6 +4,10 @@ class Api::UsersController < ApiController
   api :POST, '/user', "User Registration"
   def register
     user_params = params[:user]
+    validation = validate_new_user
+    if (!validation[:is_valid])
+      render :json => {:success => false, :message => validation[:message]}
+    end
     password = user_params[:password] || ''
     user = User.new
     user.name = user_params[:name]
@@ -39,5 +43,24 @@ class Api::UsersController < ApiController
   api :get, '/user/profile', "Get User Profile"
   def get_profile
     
+  end
+  
+  
+  
+  private
+  
+  def validate_new_user
+    result = {:is_valid=>true, :message=>"User credentials are valid"}
+    
+    # Check if the email exists
+    users = User.find_by_email(user_params[:email])
+    if users.count > 0
+      result[:is_valid] = false
+      result[:message] = "Email already exists"
+    end
+    
+    return result
+    
+
   end
 end
