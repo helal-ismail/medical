@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :access_token
       t.string :channel
       t.integer :gender
-      t.string :address
+      t.text :address
       t.string :type
       t.date   :date_of_birth
       t.integer :qualification_id

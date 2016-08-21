@@ -1,6 +1,7 @@
 class CreateAppointments < ActiveRecord::Migration
   def change
     create_table :appointments do |t|
+      t.string :uid
       t.double :discount
       t.double :price
       t.date :appointment_date
