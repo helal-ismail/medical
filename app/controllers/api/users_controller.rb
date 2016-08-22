@@ -1,5 +1,4 @@
 class Api::UsersController < ApiController
-  
 
   api :POST, '/user', "User Registration"
   def register
@@ -17,16 +16,16 @@ class Api::UsersController < ApiController
     user.phone = user_params[:phone]
     user.address = user_params[:address]
     user.gender = user_params[:gender]
-    
+
     user.password_salt = SecureRandom.hex(4)
     user.encrypted_password = Digest::SHA256.hexdigest(password + user.password_salt)
     access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.password_salt)
     user.access_token = access_token[0..30]
     user.channel = "c"+ access_token[0..10]
-    
+
     uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.password_salt)
     user.uid = uid[0..10]
-    
+
     if user.save
       render :json => {:success => true, :user => user}
 
@@ -36,36 +35,54 @@ class Api::UsersController < ApiController
   end
 
   api :POST, '/user/login', "User Login"
+
   def login
-    
+    user_params = params[:user]
+    user = User.find_by_email(user_params[:email])
+    if user.present?
+      password = user_params[:password]
+      encrypted_password = Digest::SHA256.hexdigest(password + user.password_salt)
+      if encrypted_password == user.encrypted_password
+      # Authorized
+        render :json => {:success => true, :data => user}
+      else
+        render :json => {:success => false, :msg => "Incorrect password"}
+      end
+    else
+      render :json => {:success => false, :msg => "Email not found"}
+    end
   end
-  
+
   api :POST, '/user/edit', "Update User Profile"
+
   def edit_profile
-    
+
   end
-  
+
   api :get, '/user/profile', "Get User Profile"
+
   def get_profile
-    
+    user = User.find_by_uid(params["uid"])
+    if user.present?
+      render :json => {:success =>true, :data => user}
+    else
+      render :json => {:success =>false, :msg => "User not found"}
+    end
   end
-  
-  
-  
+
   private
-  
+
   def validate_new_user
     result = {:is_valid=>true, :message=>"User credentials are valid"}
-    
+
     # Check if the email exists
     users = User.find_by_email(user_params[:email])
     if users.count > 0
       result[:is_valid] = false
       result[:message] = "Email already exists"
     end
-    
+
     return result
-    
 
   end
 end
