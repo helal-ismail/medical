@@ -1,0 +1,143 @@
+/* ======================= GENERAL STYLE ======================= */
+.sidebar{
+    min-height: 100%;
+}
+i.fa{
+    margin-right: 10px;
+}
+.panel-heading{
+    font-size: 24px;  
+}
+.panel-heading a{
+    float: right;
+}
+.skin-black .sidebar > .sidebar-menu > li.active > a{
+    border-left: 4px solid #7DCC93;
+}
+.btn:hover, .btn:active:focus, .btn:active, .btn:focus{
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ======================= TABLES ======================= */
+.table thead th:first-of-type{
+    width: 2.5%;
+    text-align: center;
+}
+.table thead th:last-of-type{
+    width: 9.3%;
+    text-align: center;
+}
+.table i.fa{
+    margin: 0 5px;
+}
+
+/* ======================= DATA VIEWING ======================= */
+.dataShowPanel{
+    margin: 10px;
+}
+.dataGroup{
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.dataGroup label{
+    font-size: 14px;
+}
+.dataGroup .panel-heading{
+    margin: 20px 15px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+/* ======================= CLINIC THEME ======================= */
+.clinicTheme .panel-heading{
+    color: #23B7E5;
+}
+.clinicTheme .table thead{
+    color: #FFFFFF;
+    background-color: #23B7E5;
+}
+.clinicTheme .table > tbody > tr:nth-child(2n) > td, .clinicTheme .table > tbody > tr:nth-child(2n) > th{
+    background-color: #E9F7FC;
+}
+.clinicTheme .table .fa-trash{
+    color: #FCA243;
+}
+.clinicTheme .table .fa-pencil-square-o{
+    color: #00967C;
+}
+.clinicTheme a.btn.btnTransparentBck{
+    border: 2px solid #23B7E5;
+    color: #23B7E5;
+    background-color: #FFFFFF;
+}
+.clinicTheme .btn.btnTransparentBck:hover, .clinicTheme .btn.btnTransparentBck:active, .clinicTheme .btn.btnTransparentBck:focus, .clinicTheme .btn.btnTransparentBck:active:focus{
+    border: none;
+    color: #FFFFFF;
+    background-color: #1591B7;
+}
+
+/* ======================= DOCTOR THEME ======================= */
+.doctorTheme .panel-heading{
+    color: #45CF95;
+}
+.doctorTheme .table thead{
+    color: #FFFFFF;
+    background-color: #45CF95;
+}
+.doctorTheme .table > tbody > tr:nth-child(2n) > td, .doctorTheme .table > tbody > tr:nth-child(2n) > th{
+    background-color: #EBFAF4;
+}
+.doctorTheme .table .fa-trash{
+    color: #FCA243;
+}
+.doctorTheme .table .fa-pencil-square-o{
+    color: #00967C;
+}
+.doctorTheme a.btn.btnTransparentBck{
+    border: 2px solid #45CF95;
+    color: #45CF95;
+    background-color: #FFFFFF;
+}
+.doctorTheme .btn.btnTransparentBck:hover, .doctorTheme .btn.btnTransparentBck:active, .doctorTheme .btn.btnTransparentBck:focus, .doctorTheme .btn.btnTransparentBck:active:focus{
+    border: none;
+    color: #FFFFFF;
+    background-color: #2AA270;
+}
+.doctorTheme .panel-heading li{
+    border: 1px solid #45CF95;
+    border-right: none;
+}
+.doctorTheme .panel-heading li a{
+    color: #45CF95;
+}
+.doctorTheme .panel-heading li:first-of-type{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.doctorTheme .panel-heading li:last-of-type{
+    border-right: 1px solid #45CF95;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.doctorTheme .panel-heading li.active, .doctorTheme .panel-heading li.active a, .doctorTheme .panel-heading li:hover, .doctorTheme .panel-heading li a:hover, .doctorTheme .panel-heading li:focus, .doctorTheme .panel-heading li a:focus{
+    background-color: #45CF95;
+    color: #FFFFFF;
+}
+.doctorTheme .panel-heading li.active:first-of-type, .doctorTheme .panel-heading li.active:first-of-type a, .doctorTheme .panel-heading li:first-of-type:hover, .doctorTheme .panel-heading li:first-of-type a:hover, .doctorTheme .panel-heading li:first-of-type:focus, .doctorTheme .panel-heading li:first-of-type a:focus{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.doctorTheme .panel-heading li.active:last-of-type, .doctorTheme .panel-heading li.active:last-of-type a, .doctorTheme .panel-heading li:last-of-type:hover, .doctorTheme .panel-heading li:last-of-type a:hover, .doctorTheme .panel-heading li:last-of-type:focus, .doctorTheme .panel-heading li:last-of-type a:focus{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+
+
+
