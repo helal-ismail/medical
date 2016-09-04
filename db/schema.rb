@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160820092632) do
     t.integer  "counter",          limit: 4
     t.integer  "state",            limit: 4
     t.text     "notes",            limit: 65535
+    t.integer  "doctor_price_id",  limit: 4
+    t.integer  "patient_id",       limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
