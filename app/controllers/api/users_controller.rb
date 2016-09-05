@@ -1,19 +1,20 @@
 class Api::UsersController < ApiController
 
   api :POST, '/user', "User Registration"
-  
+
   param :user, Hash, :desc => "User Hash / JSONObject", :required => true do
-  
-  param :email, String, :desc => "Email", :required => true
-  param :password, String, :desc => "Password", :required => true
-  param :username, String, :desc => "Username / for Social Login / Future work", :required => false
-  param :type, String, :desc => "[doctor/admin/patient]", :required => true
-    
-  param :name, String, :desc => "Name", :required => false
-  
-  param :doctor_id, String, :desc => "Doctor ID", :required => true
-  param :doctor_id, String, :desc => "Doctor ID", :required => true
+
+    param :email, String, :desc => "Email", :required => true
+    param :password, String, :desc => "Password", :required => true
+    param :username, String, :desc => "Username / for Social Login / Future work", :required => false
+    param :type, String, :desc => "[doctor/admin/patient]", :required => true
+
+    param :name, String, :desc => "Name", :required => false
+
+    param :doctor_id, String, :desc => "Doctor ID", :required => true
+    param :doctor_id, String, :desc => "Doctor ID", :required => true
   end
+
   def register
     user_params = params[:user]
     validation = validate_new_user
@@ -48,6 +49,8 @@ class Api::UsersController < ApiController
   end
 
   api :POST, '/user/login', "User Login"
+  param :email, String, :desc => "Email", :required => true
+  param :password, String, :desc => "Password", :required => true
 
   def login
     user_params = params[:user]
@@ -56,7 +59,7 @@ class Api::UsersController < ApiController
       password = user_params[:password]
       encrypted_password = Digest::SHA256.hexdigest(password + user.password_salt)
       if encrypted_password == user.encrypted_password
-      # Authorized
+        # Authorized
         render :json => {:success => true, :data => user}
       else
         render :json => {:success => false, :msg => "Incorrect password"}
@@ -73,6 +76,7 @@ class Api::UsersController < ApiController
   end
 
   api :get, '/user/profile', "Get User Profile"
+  param :id, String, :desc => "user's UID", :required => true
 
   def get_profile
     user = User.find_by_uid(params["uid"])
