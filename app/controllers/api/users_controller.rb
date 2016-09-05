@@ -1,6 +1,19 @@
 class Api::UsersController < ApiController
 
   api :POST, '/user', "User Registration"
+  
+  param :user, Hash, :desc => "User Hash / JSONObject", :required => true do
+  
+  param :email, String, :desc => "Email", :required => true
+  param :password, String, :desc => "Password", :required => true
+  param :username, String, :desc => "Username / for Social Login / Future work", :required => false
+  param :type, String, :desc => "[doctor/admin/patient]", :required => true
+    
+  param :name, String, :desc => "Name", :required => false
+  
+  param :doctor_id, String, :desc => "Doctor ID", :required => true
+  param :doctor_id, String, :desc => "Doctor ID", :required => true
+  end
   def register
     user_params = params[:user]
     validation = validate_new_user
