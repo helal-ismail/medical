@@ -1,7 +1,14 @@
 class Api::AppointmentsController < ApiController
 
   api :POST, '/appointment', "Create a New Appointment"
-    
+  param :appointment, Hash, :desc => 'Appointment Hash', :required => true do
+    param :patient_id, String, :desc => "Patient ID", :required => true
+    param :doctor_id, String, :desc => "Doctor ID", :required => true
+    param :clinic_id, String, :desc => "Clinic ID", :required => true
+    param :discount, String, :desc => "discount percentage [0 - 100]", :required => false
+    param :appointment_date, String, :desc => "Date", :required => true
+    param :appointment_time, String, :desc => "Time", :required => true    
+ end
   def add_appointment
     appointment_params = params[:appointment]
     appointment = Appointment.create_from_params(appointment_params)
@@ -9,7 +16,10 @@ class Api::AppointmentsController < ApiController
   end
 
   
-  api :POST, '/appointment/note', "Leave Note in an Appointment"  
+  api :POST, '/appointment/note', "Leave Note in an Appointment"
+  param :appointment_id, String, :desc => "Appointment ID", :required => true
+  param :notes, String, :desc => "Text Note", :required => true
+  
   def add_note
     appointment = Appointment.find(params[:appointment_id])
     response = {}
@@ -25,6 +35,7 @@ class Api::AppointmentsController < ApiController
   end
 
   api :POST, '/appointment/cancel', "Cancel an Appointment"  
+  param :appointment_id, String, :desc => "Appointment ID", :required => true
   def cancel_appointment
     appointment = Appointment.find(params[:appointment_id])
     response = {}
@@ -44,7 +55,8 @@ class Api::AppointmentsController < ApiController
     
   end
   
-  api :GET, '/appointment', "Get an Appointment by ID"  
+  api :GET, '/appointment', "Get an Appointment by ID"
+  param :appointment_id, String, :desc => "Appointment ID", :required => true  
   def get_appointment
     appointment = Appointment.find(params[:id])
     response = {}
