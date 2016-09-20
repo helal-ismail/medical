@@ -8,11 +8,11 @@ class Api::UsersController < ApiController
     param :password, String, :desc => "Password", :required => true
     param :username, String, :desc => "Username / for Social Login / Future work", :required => false
     param :type, String, :desc => "[doctor/admin/patient]", :required => true
-
     param :name, String, :desc => "Name", :required => false
-
-    param :doctor_id, String, :desc => "Doctor ID", :required => true
-    param :doctor_id, String, :desc => "Doctor ID", :required => true
+    param :phone, String, :desc => "Phone", :required => true
+    param :address, String, :desc => "Address", :required => true
+    param :gender, String, :desc => "Gender [male/female]", :required => true
+    
   end
 
   def register
