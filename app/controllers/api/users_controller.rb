@@ -16,8 +16,9 @@ class Api::UsersController < ApiController
   end
 
   def register
+    
     user_params = params[:user]
-    validation = validate_new_user
+    validation = validate_new_user(user_params)
     if (!validation[:is_valid])
       render :json => {:success => false, :message => validation[:message]}
     end
@@ -31,13 +32,13 @@ class Api::UsersController < ApiController
     user.address = user_params[:address]
     user.gender = user_params[:gender]
 
-    user.password_salt = SecureRandom.hex(4)
-    user.encrypted_password = Digest::SHA256.hexdigest(password + user.password_salt)
-    access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.password_salt)
+    user.salt = SecureRandom.hex(4)
+    user.encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
+    access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
     user.access_token = access_token[0..30]
     user.channel = "c"+ access_token[0..10]
 
-    uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.password_salt)
+    uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
     user.uid = uid[0..10]
 
     if user.save
@@ -46,6 +47,7 @@ class Api::UsersController < ApiController
     else
       render :json => {:success =>false, :msg => "Username or Email already exists"}
     end
+    
   end
 
   api :POST, '/user/login', "User Login"
@@ -53,14 +55,14 @@ class Api::UsersController < ApiController
   param :password, String, :desc => "Password", :required => true
 
   def login
-    user_params = params[:user]
+    user_params = params
     user = User.find_by_email(user_params[:email])
     if user.present?
       password = user_params[:password]
-      encrypted_password = Digest::SHA256.hexdigest(password + user.password_salt)
+      encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
       if encrypted_password == user.encrypted_password
         # Authorized
-        render :json => {:success => true, :data => user}
+        render :json => {:success => true, :user => user}
       else
         render :json => {:success => false, :msg => "Incorrect password"}
       end
@@ -89,12 +91,12 @@ class Api::UsersController < ApiController
 
   private
 
-  def validate_new_user
+  def validate_new_user(user_params)
     result = {:is_valid=>true, :message=>"User credentials are valid"}
 
     # Check if the email exists
     users = User.find_by_email(user_params[:email])
-    if users.count > 0
+    if users.present? && users.count > 0
       result[:is_valid] = false
       result[:message] = "Email already exists"
     end
