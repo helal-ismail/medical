@@ -55,20 +55,8 @@ class Api::UsersController < ApiController
   param :password, String, :desc => "Password", :required => true
 
   def login
-    user_params = params
-    user = User.find_by_email(user_params[:email])
-    if user.present?
-      password = user_params[:password]
-      encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
-      if encrypted_password == user.encrypted_password
-        # Authorized
-        render :json => {:success => true, :user => user}
-      else
-        render :json => {:success => false, :msg => "Incorrect password"}
-      end
-    else
-      render :json => {:success => false, :msg => "Email not found"}
-    end
+    response = User.authenticate(params[:email], params[:password])
+    render :json=> response, :status=> response[:status]
   end
 
   api :POST, '/user/edit', "Update User Profile"
