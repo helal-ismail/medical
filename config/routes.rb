@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   namespace :api do
     post 'user' , to: 'users#register'
     post 'user/login' , to: 'users#login'
-
   end
+  
   root 'touch#touch'
 
 end
