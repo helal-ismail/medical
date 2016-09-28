@@ -1,0 +1,3 @@
+module Web::SessionHelper
+  
+end

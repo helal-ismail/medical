@@ -1,0 +1,2 @@
+module Web::ErrorHelper
+end
