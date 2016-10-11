@@ -29,4 +29,4 @@ gem 'rmagick'
 gem 'micro_magick'
 gem 'rest-client'
 
-
+gem 'geocoder'

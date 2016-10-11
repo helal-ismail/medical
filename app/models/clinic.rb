@@ -3,5 +3,7 @@ class Clinic < ActiveRecord::Base
   belongs_to :hospital
   belongs_to :specialization
   has_many :appointments, :through => :doctor_prices
+  geocoded_by :address
+  reverse_geocoded_by :latitude, :longitude
 
 end
