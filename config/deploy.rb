@@ -1,5 +1,5 @@
 # Change these
-server '139.59.213.230', roles: [:web, :app, :db], primary: true
+server '128.199.230.215', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/helal-ismail/medical.git'
 set :application,     'medical'
