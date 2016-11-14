@@ -20,7 +20,7 @@ class Api::UsersController < ApiController
     user_params = params[:user]
     validation = validate_new_user(user_params)
     if (!validation[:is_valid])
-      render :json => {:success => false, :message => validation[:message]}
+      render :json => {:success => false, :message => validation[:message]} and return
     end
     password = user_params[:password] || ''
     user = User.new
@@ -56,7 +56,7 @@ class Api::UsersController < ApiController
 
   def login
     response = User.authenticate(params[:email], params[:password])
-    render :json=> response, :status=> response[:status]
+    render :json=> response.except(:status), :status=> response[:status]
   end
 
   api :POST, '/user/edit', "Update User Profile"
@@ -83,8 +83,8 @@ class Api::UsersController < ApiController
     result = {:is_valid=>true, :message=>"User credentials are valid"}
 
     # Check if the email exists
-    users = User.find_by_email(user_params[:email])
-    if users.present? && users.count > 0
+    user = User.find_by_email(user_params[:email])
+    if user.present?
       result[:is_valid] = false
       result[:message] = "Email already exists"
     end

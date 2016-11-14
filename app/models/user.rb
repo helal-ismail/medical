@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  
+    enum gender: [ :male, :female ]
+
+  
   def self.authenticate(email, password)
     user = User.find_by_email(email)
     if user.present?
@@ -13,4 +17,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def as_json(options)
+    super(:only => [:id, :uid, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])
+  end
 end
