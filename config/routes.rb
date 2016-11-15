@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   namespace :api do
     post 'user' , to: 'users#register'
     post 'user/login' , to: 'users#login'
+    
+    namespace :hospitals do
+      get 'explore'
+    end
+    
+    
   end
   
   root 'touch#touch'

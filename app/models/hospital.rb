@@ -15,4 +15,8 @@ class Hospital < ActiveRecord::Base
     return result
   end
   
+  def as_json(options)
+    super(:only=>[:id, :uid, :name, :address, :latitude, :longitude, :phone, :website, :email])
+  end
+  
 end
