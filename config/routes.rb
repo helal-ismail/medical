@@ -19,7 +19,8 @@ Rails.application.routes.draw do
     
     namespace :hospitals do
       get 'explore'
-      get 'search'
+      post 'search'
+      get 'profile'
     end
     
     

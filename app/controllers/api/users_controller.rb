@@ -20,7 +20,7 @@ class Api::UsersController < ApiController
     user_params = params[:user]
     validation = validate_new_user(user_params)
     if (!validation[:is_valid])
-      render :json => {:success => false, :message => validation[:message]} and return
+      render :json => {:message => validation[:message]}, :status => 500 and return
     end
     password = user_params[:password] || ''
     user = User.new
@@ -42,10 +42,10 @@ class Api::UsersController < ApiController
     user.uid = uid[0..10]
 
     if user.save
-      render :json => {:success => true, :user => user}
+      render :json => {:user => user}
 
     else
-      render :json => {:success =>false, :msg => "Username or Email already exists"}
+      render :json => {:msg => "Username or Email already exists"}
     end
     
   end
@@ -71,9 +71,9 @@ class Api::UsersController < ApiController
   def get_profile
     user = User.find_by_uid(params["uid"])
     if user.present?
-      render :json => {:success =>true, :data => user}
+      render :json => {:data => user}
     else
-      render :json => {:success =>false, :msg => "User not found"}
+      render :json => {:msg => "User not found"}, :status => 400
     end
   end
 
