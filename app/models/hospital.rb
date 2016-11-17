@@ -4,6 +4,13 @@ class Hospital < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode          # auto-fetch coordinates
   
+  def self.search_by_pattern(pattern)
+    if pattern.blank?  # blank? covers both nil and empty string
+      all
+    else
+      where('name LIKE ?', "%#{pattern}%")
+    end
+  end
   
   def self.search(lat,lng, limit)
     result = []
