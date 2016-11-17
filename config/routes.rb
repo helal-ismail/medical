@@ -11,8 +11,11 @@ Rails.application.routes.draw do
 
   # API App
   namespace :api do
-    post 'user' , to: 'users#register'
-    post 'user/login' , to: 'users#login'
+    
+    namespace :users do
+      post 'register'
+      post 'login'
+    end
     
     namespace :hospitals do
       get 'explore'
