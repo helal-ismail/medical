@@ -1,15 +1,25 @@
 class Api::PatientsController < ApiController
   
-  api :GET, '/patient', "Get Patient by ID"
-  param :patient_id, String, :desc => "Patient ID", :required => true
-  def get_patient
-    patiend = Patient.find(params[:id])
-    render :json => {:success=>true, :data=>patient}
+
+  def profile
+    patient = Patient.find_by_uid(params[:uid])
+    if patient.present?
+      render :json => {:data => patient}
+    else
+      render :json => {:msg => "Patiend UID not found"}, :status => 400
+    end
   end
   
-  api :GET, '/patients', "Get a List of Patients by a Specific Query"
-  def get_patients
-    
+  def appointments
+    uid = params[:uid]
+    patient = Patient.find_by_uid(uid)
+    if patient.present?
+      render :json => {:data => patient.appointments}
+    else
+      render :json => {:msg => "Patient UID not found"}, :status => 400
+    end
   end
+  
+  
 
 end

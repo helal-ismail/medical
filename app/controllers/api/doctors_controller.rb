@@ -1,5 +1,38 @@
 class Api::DoctorsController < ApiController
 
+
+  def profile
+    uid = params[:uid]
+    doctor = Doctor.find_by_uid(uid)
+    if doctor.present?
+      render :json => {:data => doctor}
+    else
+      render :json => {:msg => "Doctor UID not found"}, :status => 400
+    end
+  end
+  
+  def schedule
+    uid = params[:uid]
+    doctor = Doctor.find_by_uid(uid)
+    if doctor.present?
+      start_time = "2:00pm"
+      count = 0
+      duration = 15*60
+      slots = []
+      9.times do
+        time = (Time.parse(start_time) + count * duration).strftime("%r")
+        count+=1
+        available = true
+        available = false if count % 2 == 0
+        slot = {:time => time, :availabe => available}
+        slots << slot
+      end
+      render :json => {:data => slots}
+    else
+      render :json => {:msg => "Doctor UID not found"}, :status => 400
+    end
+  end
+
   api :GET, '/doctor', "Get Doctor by ID"
   param :doctor_id, String, :desc => "Doctor ID", :required => true
   def get_doctor

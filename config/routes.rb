@@ -17,6 +17,11 @@ Rails.application.routes.draw do
       post 'login'
     end
     
+    namespace :doctors do
+      get 'profile'
+      get 'schedule'
+    end
+    
     namespace :hospitals do
       get 'explore'
       post 'search'
@@ -31,6 +36,14 @@ Rails.application.routes.draw do
     
     namespace :appointments do
       post 'new'
+      post 'edit'
+      post 'cancel'
+      get 'show'
+    end
+    
+    namespace :patients do
+      get 'profile'
+      get 'appointments'
     end
     
   end

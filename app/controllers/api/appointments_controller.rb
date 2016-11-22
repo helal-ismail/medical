@@ -7,19 +7,45 @@ class Api::AppointmentsController < ApiController
     param :clinic_id, String, :desc => "Clinic ID", :required => true
     param :discount, String, :desc => "discount percentage [0 - 100]", :required => false
     param :appointment_date, String, :desc => "Date", :required => true
-    param :appointment_time, String, :desc => "Time", :required => true    
- end
+    param :appointment_time, String, :desc => "Time", :required => true
+  end
+
   def new
     appointment_params = params[:appointment]
     appointment = Appointment.create_from_params(appointment_params)
     render :json=> {:data => appointment}
   end
-
   
+  def edit
+   
+   # appointment_params = params[:appointment]
+   # appointment = Appointment.create_from_params(appointment_params)
+    render :json => {:data => appointment, :msg => "Appointment updated"}
+  end
+  
+  
+  def cancel
+    appointment = Appointment.find(params[:id])
+    if appointment.present?
+      render :json => {:msg => "Appointment has been canceled"}
+    else
+      render :json => {:msg => "Appointment not found"}, :status => 400     
+    end
+  end
+
+  def show
+    appointment = Appointment.find(params[:id])
+    if appointment.present?
+      render :json => {:data => appointment}
+    else
+      render :jspn => {:msg => "Appointment ID doesn't exist"}, :status => 400
+    end
+  end
+
   api :POST, '/appointment/note', "Leave Note in an Appointment"
   param :appointment_id, String, :desc => "Appointment ID", :required => true
   param :notes, String, :desc => "Text Note", :required => true
-  
+
   def add_note
     appointment = Appointment.find(params[:appointment_id])
     response = {}
@@ -29,34 +55,37 @@ class Api::AppointmentsController < ApiController
       response = {:msg=> "Notes werer added", :success=> true}
     else
       response = {:msg=> "Invalid Appointment ID", :success=> false}
-      status = 400
+    status = 400
     end
     render :json => response , :status => status
   end
 
-  api :POST, '/appointment/cancel', "Cancel an Appointment"  
+  api :POST, '/appointment/cancel', "Cancel an Appointment"
   param :appointment_id, String, :desc => "Appointment ID", :required => true
+
   def cancel_appointment
     appointment = Appointment.find(params[:appointment_id])
     response = {}
     status = 200
     if appointment.present?
-#      appointment.status = ''
+      #      appointment.status = ''
       response = {:msg=> "Appointment was canceled", :success=> true}
     else
       response = {:msg=> "Invalid Appointment ID", :success=> false}
-      status = 400
+    status = 400
     end
     render :json => response , :status => status
   end
-  
-  api :POST, '/appointment/edit', "Edit an Appointment"  
+
+  api :POST, '/appointment/edit', "Edit an Appointment"
+
   def edit_appointment
-    
+
   end
-  
+
   api :GET, '/appointment', "Get an Appointment by ID"
-  param :appointment_id, String, :desc => "Appointment ID", :required => true  
+  param :appointment_id, String, :desc => "Appointment ID", :required => true
+
   def get_appointment
     appointment = Appointment.find(params[:id])
     response = {}
@@ -66,13 +95,14 @@ class Api::AppointmentsController < ApiController
       response = {:data=> appointment, :success=> true}
     else
       response = {:msg=> "Invalid Appointment ID", :success=> false}
-      status = 400
+    status = 400
     end
     render :json => response , :status => status
   end
-  
-  api :GET, '/appointments', "Get a List of Appointments by a Specific Query"  
+
+  api :GET, '/appointments', "Get a List of Appointments by a Specific Query"
+
   def get_appointments
-    
+
   end
 end
