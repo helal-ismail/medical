@@ -1,6 +1,6 @@
 class Api::AppointmentsController < ApiController
 
-  api :POST, '/appointment', "Create a New Appointment"
+  api :POST, '/appointments/new', "Create a New Appointment"
   param :appointment, Hash, :desc => 'Appointment Hash', :required => true do
     param :patient_id, String, :desc => "Patient ID", :required => true
     param :doctor_id, String, :desc => "Doctor ID", :required => true
@@ -9,10 +9,10 @@ class Api::AppointmentsController < ApiController
     param :appointment_date, String, :desc => "Date", :required => true
     param :appointment_time, String, :desc => "Time", :required => true    
  end
-  def add_appointment
+  def new
     appointment_params = params[:appointment]
     appointment = Appointment.create_from_params(appointment_params)
-    render :json=> {:data => appointment, :success => true}
+    render :json=> {:data => appointment}
   end
 
   

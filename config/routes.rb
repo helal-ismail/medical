@@ -23,6 +23,15 @@ Rails.application.routes.draw do
       get 'profile'
     end
     
+    namespace :clinics do
+      get 'explore'
+      post 'search'
+      get 'profile'
+    end
+    
+    namespace :appointments do
+      post 'new'
+    end
     
   end
   

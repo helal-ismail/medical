@@ -5,7 +5,7 @@ class Api::HospitalsController < ApiController
     render :json => {:data=>Hospital.all}
   end
   
-  api :POST, '/hospitals/search', "Explore Hospitals"
+  api :POST, '/hospitals/search', "Search Hospitals"
   def search
     pattern = params[:pattern]
     render :json => {:data=>Hospital.search_by_pattern(pattern)}
@@ -17,7 +17,7 @@ class Api::HospitalsController < ApiController
     id = params[:id]
     hospital = Hospital.find_by_uid(uid)
     if hospital.present?
-      render :json => {:data => hospital}
+      render :json => {:data => hospital, :clinics => hospital.clinics}
     else
       render :json => {:msg => "Couldn't find a hospital with the specified ID"}, :status => 400
     end
