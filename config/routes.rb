@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'home' ,to: 'web/dashboard#home'
   get 'error', to: 'web/error#error'
 
+  get 'hello', to: 'web/dashboard#hello'
   # API App
   namespace :api do
     
