@@ -5,4 +5,8 @@ class Web::DashboardController < WebController
   def hello
     
   end
+  
+  def hend
+    
+  end
 end

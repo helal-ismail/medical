@@ -1,2 +1,6 @@
-class Web::Dashboard::ClinicsController < ApplicationController
+class Web::Dashboard::ClinicsController < Web::DashboardController
+  
+  def index
+    
+  end
 end

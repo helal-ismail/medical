@@ -1,8 +1,23 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <meta name="description" content="Welcome to Doctor">
+        <meta name="keywords" content="Admin, doctor, hospital, clinic">
+        <title>Doctor</title>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet'>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        <%= stylesheet_link_tag 'web/bootstrap' %>
+        <%= stylesheet_link_tag 'web/template_style' %>
+        <%= stylesheet_link_tag 'web/dashboard' %>
 	</head>
 	
-	<body>
+	<body class="skin-black">
 		<%= yield %>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <%= javascript_include_tag 'web/jquery' %>
+        <%= javascript_include_tag 'web/bootstrap' %>
+        <%= javascript_include_tag 'web/app' %>
+        <%= javascript_include_tag 'web/dashboard' %>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 class WebController < ApplicationController
 
   rescue_from Exception, :with => :handle_exception
-  before_filter :handleSessionSecurity
+ # before_filter :handleSessionSecurity
 
 
   private

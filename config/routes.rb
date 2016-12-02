@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'error', to: 'web/error#error'
 
   get 'hello', to: 'web/dashboard#hello'
+  get 'hend' , to: 'web/dashboard#hend'
+
+
+  get 'clinics', to: 'web/dashboard/clinics#index'  
   # API App
   namespace :api do
     

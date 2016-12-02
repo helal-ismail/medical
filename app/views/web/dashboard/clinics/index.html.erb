@@ -1,0 +1,271 @@
+        <!-- UserLogged menu + Notification icon  -->
+        <header class="header">
+            <a href="#" class="logo">
+            	<%= image_tag("logo.png") %>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 4 notifications</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li><!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                	<%= image_tag("26115.jpg" , class:"img-circle") %>
+                                                </div>
+                                                <h4>
+                                                    Support Team
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                                <small class="pull-right"><i class="fa fa-clock-o"></i> 5 mins</small>
+                                            </a>
+                                        </li><!-- end message -->
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                	<%= image_tag("favicon.png", class: "img-circle") %>
+                                                </div>
+                                                <h4>
+                                                    Director Design Team
+
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                                <small class="pull-right"><i class="fa fa-clock-o"></i> 2 hours</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                	<%= image_tag("avatar.png", class:"img-circle")%>
+                                                </div>
+                                                <h4>
+                                                    Developers
+
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                                <small class="pull-right"><i class="fa fa-clock-o"></i> Today</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">                                                	
+                                                	<%= image_tag("26115.png", class:"img-circle")%>
+                                                </div>
+                                                <h4>
+                                                    Sales Department
+
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                                <small class="pull-right"><i class="fa fa-clock-o"></i> Yesterday</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                	<%= image_tag("avatar.png", class:"img-circle")%>
+                                                </div>
+                                                <h4>
+                                                    Reviewers
+
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                                <small class="pull-right"><i class="fa fa-clock-o"></i> 2 days</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user"></i>
+                                <span>Jane Doe <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                <li class="dropdown-header text-center">Account</li>
+
+                                <li>
+                                    <a href="#">
+                                    <i class="fa fa-clock-o fa-fw pull-right"></i>
+                                        <span class="badge badge-success pull-right">10</span> Updates</a>
+                                    <a href="#">
+                                    <i class="fa fa-envelope-o fa-fw pull-right"></i>
+                                        <span class="badge badge-danger pull-right">5</span> Messages</a>
+                                    <a href="#"><i class="fa fa-magnet fa-fw pull-right"></i>
+                                        <span class="badge badge-info pull-right">3</span> Subscriptions</a>
+                                    <a href="#"><i class="fa fa-question fa-fw pull-right"></i> <span class=
+                                        "badge pull-right">11</span> FAQ</a>
+                                </li>
+
+                                <li class="divider"></li>
+
+                                    <li>
+                                        <a href="#">
+                                        <i class="fa fa-user fa-fw pull-right"></i>
+                                            Profile
+                                        </a>
+                                        <a data-toggle="modal" href="#modal-user-settings">
+                                        <i class="fa fa-cog fa-fw pull-right"></i>
+                                            Settings
+                                        </a>
+                                        </li>
+
+                                        <li class="divider"></li>
+
+                                        <li>
+                                            <a href="#"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+        
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            
+            <!-- left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left info">
+                            <p>Hello, ADMIN</p>
+                        </div>
+                    </div>
+                    
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-home"></i><span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cogs"></i><span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-h-square"></i><span>Hospitals</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-hospital-o"></i><span>Clinics</span>
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="index.html">
+                                <i class="fa fa-user-md"></i><span>Doctors</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-bar-chart"></i><span>Statistics</span>
+                            </a>
+                        </li>
+                    </ul>
+                            
+                </section><!-- /.sidebar -->
+            </aside>
+
+            <!-- right side column. Contains the content of the page -->
+            <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel">
+                                <header class="panel-heading header-blue">
+                                    <i class="fa fa-hospital-o"></i>Clinics
+                                    <a href="doctor-add.html" class="btn btn-opaque btn-blue" ><i class="fa fa-plus"></i><span>Add New Clinic</span></a>
+                                </header>
+                                
+                                <div class="panel-body table-responsive">
+                                    <table class="table table-hover table-blue">
+                                        <thead>
+                                            <tr>
+                                                <th>Doctor Name</th>
+                                                <th>Specializations</th>
+                                                <th>Contact Phones</th>
+                                                <th>Email</th>
+                                                <th>Clinic(s)</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Ahmed ali</td>
+                                                <td>Cardiology</td>
+                                                <td>01232342,012323123</td>
+                                                <td>ahmed@yahoo.com</td>
+                                                <td>Clinic1, Clinic2</td>
+                                                <td>
+                                                    <a href="#" title="Details"><i class="fa fa-info-circle"></i></a>
+                                                    <a href="#" title="Delete" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ahmed ali</td>
+                                                <td>Cardiology</td>
+                                                <td>01232342,012323123</td>
+                                                <td>ahmed@yahoo.com</td>
+                                                <td>Clinic1, Clinic2</td>
+                                                <td>
+                                                    <a href="#" title="Details"><i class="fa fa-info-circle"></i></a>
+                                                    <a href="#" title="Delete"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>                                  
+                                </div><!-- /.panel-body -->
+                            </div>
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </section><!-- /.content -->
+                <!-- footer : copyrights -->
+            
+            </aside><!-- /.right-side -->
+            
+            <!--<div class="footer-main">
+                Copyright &copy Director, 2014
+            </div>-->
+            
+        </div><!-- ./wrapper -->
+        
+        <!-- Delete Modal -->
+        <div id="deleteModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="delete_button" type="button" class="btn btn-grad"><i class="fa fa-check"></i>Yes</button>
+                        <button type="button" class="btn btn-transparentBck" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
