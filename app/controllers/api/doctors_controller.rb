@@ -1,17 +1,13 @@
 class Api::DoctorsController < ApiController
-  #1 Define a function
-  def search
-    # ur code is here
-  end
 
   def add_schedule
     doctor = Doctor.find_by_uid(params[:doctor_uid])
     clinic = Clinic.findi_by_uid(params[:clinic_uid])
     doctor_price  = DoctorPrince.find_by_doctor_and_clinic
     doctor_price.add_daily_schedule(params) if doctor_price.present?
-    
+
     render :json => {:msg =>"Schedule updated"}
-    
+
   end
 
   def get_appointments
@@ -111,4 +107,5 @@ class Api::DoctorsController < ApiController
     pattern = params[:pattern]
     render :json => {:data=>Doctor.search_by_pattern(pattern)}
   end
+
 end

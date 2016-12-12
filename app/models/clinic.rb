@@ -1,5 +1,5 @@
 class Clinic < ActiveRecord::Base
-  
+
   belongs_to :hospital
   belongs_to :specialization
   has_many :doctor_prices
@@ -8,12 +8,12 @@ class Clinic < ActiveRecord::Base
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode          # auto-fetch coordinates
-  
-  
+
+
   def self.private_clinics
     Clinic.where(:hospital_id => 0)
   end
-  
+
     def self.search_by_pattern(pattern)
     if pattern.blank?  # blank? covers both nil and empty string
       private_clinics
@@ -25,6 +25,6 @@ class Clinic < ActiveRecord::Base
   def as_json(options)
     super(:only=>[:id, :uid, :name, :address ])
   end
-  
+
 
 end
