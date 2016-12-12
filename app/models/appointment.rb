@@ -3,6 +3,8 @@ class Appointment < ActiveRecord::Base
   belongs_to :doctor_prices
   has_one :doctor, :through => :doctor_prices
   has_one :clinic, :through => :doctor_prices
+  enum state: [ :pending, :confirmed, :past, :canceled ]
+
 
   def self.create_from_params(params)
     appointment = Appointment.new
