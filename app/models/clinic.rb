@@ -14,7 +14,7 @@ class Clinic < ActiveRecord::Base
     Clinic.where(:hospital_id => 0)
   end
   
-    def self.search_by_pattern(pattern)
+  def self.search_by_pattern(pattern)
     if pattern.blank?  # blank? covers both nil and empty string
       private_clinics
     else
