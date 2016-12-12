@@ -1,0 +1,405 @@
+/* ============================== GENERAL STYLE ============================== */
+
+/*html { width: 100%; height:100%; overflow:hidden; }*/
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ============================== LOGIN PAGE ============================== */
+#login-body{
+    background: url('../img/loginBck.jpg') no-repeat fixed center center;
+    background-size: cover;
+}
+
+#login-wrapper {
+    text-align: center;
+}
+
+.login-logo {
+    margin: 30px auto;
+}
+
+.login-logo h1 {
+    font-weight: bold;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'righteous', cursive;
+}
+
+.login-logo img{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.login-block {
+    width: 320px;
+    padding: 20px;
+    background: #FFFFFF;
+    border-top: 5px solid #25D0B3;
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+
+.login-block h1 {
+    text-align: center;
+    color: #23AEEA;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 50px 0 20px;
+    outline: none;
+}
+
+.login-block input.email {
+    background-image: url(../img/email.png);
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+}
+
+.login-block input.password {
+    background-image: url(../img/lock.png);
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #25D0B3;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(37, 208, 179, 1);
+}
+
+.login-block button {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    outline: none;
+    font-weight: bold;
+}
+
+/* ============================== HEADER ============================== */
+body > .header .logo {
+    text-align: center;
+    width: 220px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.navbar-right .messages-menu a.dropdown-toggle, .navbar-right .tasks-menu a.dropdown-toggle{
+    padding: 18px;
+}
+
+
+/* ======================= SIDEBAR - SIDENAV ======================= */
+.user-panel {
+    border-bottom: 1px solid #25D0B3;
+    margin: 0 10px;
+}
+.user-panel .info {
+    padding: 5px;
+    vertical-align: bottom;
+}
+.user-panel .info p {
+    vertical-align: bottom;
+}
+.left-side{
+    float: left;
+    position: relative;
+    top: 0;
+    width: 220px;
+}
+.left-side.sidebar-offcanvas{
+    z-index: 1001;
+    height: 100vh;
+}
+.sidebar-menu > li {
+    float: left;
+    width: 100%;
+}
+.sidebar-menu > li > a {
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    float: left;
+}
+.sidebar-menu li a i.fa {
+    margin-right: 10px;
+}
+
+.skin-black .sidebar > .sidebar-menu > li.active > a {
+    border-left: 4px solid #25D0B3;
+    padding-left: 11px; 
+}
+
+.skin-black .navbar {
+ background-color: #283744;    
+}
+
+.skin-black .navbar .nav a {
+    color: #FFFFFF;
+}
+
+.skin-black .navbar .nav .dropdown-menu-right a {
+    color: #333333;
+}
+
+.skin-black .navbar .nav .dropdown-menu-right a:hover {
+    color: #FFFFFF;
+}
+
+/* ======================= RIGHTSIDE - CONTENT ======================= */
+.right-side {
+    margin: 0px;
+}
+
+
+/* ======================= PAGE HEADERS ======================= */
+.panel .panel-heading {
+    font-weight: bold;
+}
+.panel-heading {
+    font-size: 24px;
+}
+.panel-heading .fa {
+    margin-right: 10px;
+}
+.panel-heading .btn {
+    float: right;
+}
+.panel-body {
+    padding: 25px;
+    height: 100% !important;
+}
+.panel-heading.header-green {
+    color: #25D0B3;
+}
+.panel-heading.header-red {
+    color: #D9534F;
+}
+.panel-heading.header-blue {
+    color: #00B8E5;
+}
+
+/* ======================= BUTTONS ======================= */
+.btn{
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.btn-opaque.btn-green {
+    background-color: #25D0B3;
+    color: #FFFFFF;
+    border: 2px solid #25D0B3;
+}
+.btn-opaque.btn-green:hover, .btn-opaque.btn-green:active:focus, .btn-opaque.btn-green:active, .btn-opaque.btn-green:focus {
+    color: #25D0B3;
+    background-color: #FFFFFF;
+    border: 2px solid #25D0B3;
+}
+.btn-transparent.btn-green {
+    background-color: #FFFFFF;
+    color: #25D0B3;
+    border: 2px solid #25D0B3;
+}
+.btn-transparent.btn-green:hover, .btn-transparent.btn-green:active:focus, .btn-transparent.btn-green:active, .btn-transparent.btn-green:focus {
+    color: #FFFFFF;
+    background-color: #25D0B3;
+    border: 2px solid #25D0B3;
+}
+.btn-opaque.btn-red {
+    background-color: #D9534F;
+    color: #FFFFFF;
+    border: 2px solid #D9534F;
+}
+.btn-opaque.btn-red:hover, .btn-opaque.btn-red:active:focus, .btn-opaque.btn-red:active, .btn-opaque.btn-red:focus {
+    color: #D9534F;
+    background-color: #FFFFFF;
+    border: 2px solid #D9534F;
+}
+.btn-opaque.btn-blue {
+    background-color: #00B8E5;
+    color: #FFFFFF;
+    border: 2px solid #00B8E5;
+}
+.btn-opaque.btn-blue:hover, .btn-opaque.btn-blue:active:focus, .btn-opaque.btn-blue:active, .btn-opaque.btn-blue:focus {
+    color: #00B8E5;
+    background-color: #FFFFFF;
+    border: 2px solid #00B8E5;
+}
+/*.btn.btn-grad {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%) repeat scroll 0 0;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
+    border-image: linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%);
+    border-image-slice: 1;
+}
+.btn.btn-grad:hover, .btn.btn-grad:active:focus, .btn.btn-grad:active, .btn.btn-grad:focus {
+    color: #25D0B3;
+    background: #FFFFFF;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
+    border-image: linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%);
+    border-image-slice: 1;  
+}
+.btn.btn-transparentBck:hover, .btn.btn-transparentBck:active:focus, .btn.btn-transparentBck:active, .btn.btn-transparentBck:focus {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%) repeat scroll 0 0;
+}
+.btn.btn-transparentBck {
+    color: #25D0B3;
+    background: #FFFFFF;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
+    border-image: linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%);
+    border-image-slice: 1;
+}*/
+
+/* ======================= TABLES ======================= */
+.table.table-hover tbody tr:hover {
+    background-color: #E9FBF8;
+}
+.table tbody tr td:last-of-type {
+    text-align: center;
+}
+.table tbody td i.fa-info-circle {
+    color: #31BFD7;
+}
+.table tbody td i.fa-trash {
+    color: #CC0000;
+}
+.table-green thead{
+    color: #FFFFFF;
+    /*background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%) repeat scroll 0 0; */
+    background-color: #25D0B3;
+    border: none;
+}
+.table-red thead{
+    color: #FFFFFF;
+    background-color: #D9534F;
+    border: none;
+}
+.table-blue thead{
+    color: #FFFFFF;
+    background-color: #00B8E5;
+    border: none;
+}
+
+/* ======================= MODALS ======================= */
+.modal-content p {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+#deleteModal .modal-footer .btn {
+    width: 100px;
+}
+
+#deleteModal .modal-footer .btn i.fa {
+    margin-right: 5px;
+}
+
+/* ======================= FORMS ======================= */
+form .form-group{
+    color: #283744;
+}
+.form-group label.second-col {
+    padding-left: 45px;
+}
+.form-group select {
+    -webkit-border-radius: 0px;
+    border-radius: 0;
+    background: transparent;
+    padding: 5px;
+    line-height: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.form-green select {
+    background: url("../img/arrow_green.png") no-repeat right !important;
+    border: 1px solid #25D0B3; 
+    outline: none;
+}
+.form-group input {
+    border-radius: 0;
+}
+.form-green input {
+    border: 1px solid #25D0B3;
+}
+.form-green select:active, .form-green select:hover, .form-green select:focus, .form-green select:active:focus, .form-green input:active, .form-green input:hover, .form-green input:focus, .form-green input:active:focus{
+    outline: none;
+    border: 1px solid #25D0B3 !important;
+}
+.form-green select:active, .form-green select:focus, .form-green select:active:focus, .form-green input:active, .form-green input:focus, .form-green input:active:focus{
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-group.btns-div {
+    float: right;
+    margin: 30px 10px;
+}
+.form-group.btns-div button {
+    margin-right: 20px;
+}
+.form-group.btns-div .btn {
+    min-width: 100px;
+}
+.form-green .btn .fa {
+    margin-right: 10px;
+}
+/* ======================= FOOTER - COPYrightS ======================= */
+
+/*.footer-main{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}*/
+
+
+
+/* ======================= RESPONSIVE ADDITIONS ======================= */
+
+/* - Mobile & Tablet - */
+
+@media (min-width: 480px) and (max-width: 992px){
+    .panel-heading a i.fa{
+        margin: 0 !important;
+    }
+    .panel-heading a span {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
