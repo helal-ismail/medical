@@ -6,9 +6,9 @@ development:
   timeout: 5000
   host: localhost
   username: root     # use user/pass from local mysql set up
-  password: abcd1234
+  password: yehia12345
 
-production:  
+production:
   adapter: mysql2
   encoding: utf8mb4
   database: medical

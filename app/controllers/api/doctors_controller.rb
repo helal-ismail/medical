@@ -105,4 +105,10 @@ class Api::DoctorsController < ApiController
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     render :json => {:success => true, :data => doctor_price.daily_schedule}
   end
+
+  api :POST, '/doctor/search', "Search Doctors"
+  def search
+    pattern = params[:pattern]
+    render :json => {:data=>Doctor.search_by_pattern(pattern)}
+  end
 end
