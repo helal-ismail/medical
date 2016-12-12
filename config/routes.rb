@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     namespace :doctors do
       get 'profile'
       get 'schedule'
+      #2 ur route goes here
     end
     
     namespace :hospitals do

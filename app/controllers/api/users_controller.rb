@@ -50,7 +50,7 @@ class Api::UsersController < ApiController
     
   end
 
-  api :POST, '/user/login', "User Login"
+  api :POST, '/users/login', "User Login"
   param :email, String, :desc => "Email", :required => true
   param :password, String, :desc => "Password", :required => true
 

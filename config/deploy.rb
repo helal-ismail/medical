@@ -4,6 +4,7 @@ server '128.199.230.215', roles: [:web, :app, :db], primary: true
 set :repo_url,        'https://github.com/helal-ismail/medical.git'
 set :application,     'medical'
 set :user,            'deploy'
+#012_ighg
 set :puma_threads,    [4, 16]
 set :puma_workers,    1
 
