@@ -4,14 +4,13 @@ class Api::AppointmentsController < ApiController
     appointment = Appointment.create_from_params(params[:appointment])
     render :json=> {:data => appointment}
   end
-  
+
   def edit
-   appointment = Appointment.find(params[:id])
-   # EDIT DETAILS
+   appointment = Appointment.edit_appointment_with_params(params[:appointment])
    render :json => {:data => appointment, :msg => "Appointment updated"}
   end
-  
-  
+
+
   def cancel
     appointment = Appointment.find(params[:id])
     if appointment.present?
@@ -19,7 +18,7 @@ class Api::AppointmentsController < ApiController
       appointment.save
       render :json => {:msg => "Appointment has been canceled"}
     else
-      render :json => {:msg => "Appointment not found"}, :status => 400     
+      render :json => {:msg => "Appointment not found"}, :status => 400
     end
   end
 
