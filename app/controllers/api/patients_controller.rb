@@ -1,5 +1,5 @@
 class Api::PatientsController < ApiController
-  
+
 
   def profile
     patient = Patient.find_by_uid(params[:uid])
@@ -9,7 +9,7 @@ class Api::PatientsController < ApiController
       render :json => {:msg => "Patiend UID not found"}, :status => 400
     end
   end
-  
+
   def appointments
     uid = params[:uid]
     patient = Patient.find_by_uid(uid)
@@ -19,7 +19,12 @@ class Api::PatientsController < ApiController
       render :json => {:msg => "Patient UID not found"}, :status => 400
     end
   end
-  
-  
+
+  api :POST, '/patient/search', "Search Patient"
+  def search
+    pattern = params[:pattern]
+    render :json => {:data => Patient.search_by_pattern(pattern)}
+  end
+
 
 end

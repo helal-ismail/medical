@@ -7,7 +7,7 @@ class Api::AppointmentsController < ApiController
 
   def edit
    appointment = Appointment.edit_appointment_with_params(params[:appointment])
-   render :json => {:data => appointment, :msg => "Appointment updated"}
+   render :json => {:data => appointment, :success=> true}, :status => 200
   end
 
 
@@ -41,18 +41,15 @@ class Api::AppointmentsController < ApiController
       appointment.save
       response = {:data => appointment, :success=> true}
     else
-      response = {:msg=> "Invalid Appointment ID", :success=> false}
+      response = {:msg => "Invalid Appointment ID", :success=> false}
     status = 400
     end
     render :json => response , :status => status
   end
 
   def get_appointments
-    # FETCH APPOINTMENT BY PATIENT AND DOCTOR
-    # GET PATIENT ID
-    # GET DOCTOR ID
-    # CLINIC ID
-    # GET DOCTORPRICE OBJECT
-    # FIND APPOINTMENTS THAT MAP TO PATIENT AND DOCOTORPRICE
+    appointments = Appointment.get_all_appointments_with_params(params[:appointment])
+    render :json => {:data => appointments, :success=> true}, :status => 200
+
   end
 end

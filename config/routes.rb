@@ -45,11 +45,13 @@ Rails.application.routes.draw do
       post 'edit'
       post 'cancel'
       get 'show'
+      post 'get_appointments'
     end
 
     namespace :patients do
       get 'profile'
       get 'appointments'
+      post 'search'
     end
 
   end

@@ -33,6 +33,14 @@ class Appointment < ActiveRecord::Base
     appointment
   end
 
+  def self.get_all_appointments_with_params(params)
+    doctor_price = 1
+    appointments = Appointment.where(:patient_id => params[:patient_id] and :doctor_price_id => doctor_price)
+
+
+    appointments
+  end
+
   def as_json(options)
         super(:only => [:id, :discount, :price, :patient_id, :appointment_date, :appointment_time])
   end
