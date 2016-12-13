@@ -1,8 +1,7 @@
 class Api::AppointmentsController < ApiController
 
   def new
-    appointment_params = params[:appointment]
-    appointment = Appointment.create_from_params(appointment_params)
+    appointment = Appointment.create_from_params(params[:appointment])
     render :json=> {:data => appointment}
   end
   
@@ -51,5 +50,10 @@ class Api::AppointmentsController < ApiController
 
   def get_appointments
     # FETCH APPOINTMENT BY PATIENT AND DOCTOR
+    # GET PATIENT ID
+    # GET DOCTOR ID
+    # CLINIC ID
+    # GET DOCTORPRICE OBJECT
+    # FIND APPOINTMENTS THAT MAP TO PATIENT AND DOCOTORPRICE
   end
 end
