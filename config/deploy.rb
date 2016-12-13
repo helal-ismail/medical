@@ -77,7 +77,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'puma:restart'
       Rake::Task["puma:restart"].reenable
-      
+
     end
   end
 

@@ -13,6 +13,8 @@ gem 'therubyracer'
 # API Doc Gem
 gem 'apipie-rails'
 
+gem 'capistrano', '2.15.5'
+
 
 
 group :development do
