@@ -13,7 +13,7 @@ class Doctor < User
 
   def as_json(options)
     #super(:only => [:id, :uid, :name])
-    result = {:id => self.id, :uid => self.uid, :name => self.name}
+    result = {:id => self.id, :uid => self.uid, :name => self.name, :description => self.description}
     clinics_result = []
     self.clinics.each do |clinic|
       sub_result = {}
