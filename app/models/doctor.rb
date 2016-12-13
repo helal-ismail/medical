@@ -14,17 +14,19 @@ class Doctor < User
   def as_json(options)
     #super(:only => [:id, :uid, :name])
     result = {:id => self.id, :uid => self.uid, :name => self.name, :description => self.description}
-    clinics_result = []
-    self.clinics.each do |clinic|
-      sub_result = {}
-      sub_result[:clinic_id] = clinic.id
-      sub_result[:clinic_name] = clinic.name
-      sub_result[:hospital_id] = clinic.hospital.id
-      sub_result[:hospital_name] = clinic.hospital.name
-      clinics_result << sub_result
-    end
-    result[:clinics] = clinics_result
     
+    if options[:detailed_info].present?
+      clinics_result = []
+      self.clinics.each do |clinic|
+        sub_result = {}
+        sub_result[:clinic_id] = clinic.id
+        sub_result[:clinic_name] = clinic.name
+        sub_result[:hospital_id] = clinic.hospital.id
+        sub_result[:hospital_name] = clinic.hospital.name
+        clinics_result << sub_result
+      end
+      result[:clinics] = clinics_result
+    end
     return result
   end
 

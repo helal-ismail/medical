@@ -30,7 +30,7 @@ class Api::DoctorsController < ApiController
     uid = params[:uid]
     doctor = Doctor.find_by_uid(uid)
     if doctor.present?
-      render :json => {:data => doctor}
+      render :json => {:data => doctor.to_json(:detailed_info=> true)}
     else
       render :json => {:msg => "Doctor UID not found"}, :status => 400
     end
