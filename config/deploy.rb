@@ -23,6 +23,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+set :assets_dependencies, %w(app/assets lib/assets vendor/assets Gemfile.lock config/routes.rb)
 
 ## Defaults:
 # set :scm,           :git
@@ -34,6 +35,10 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+# clear the previous precompile task
+Rake::Task["deploy:assets:precompile"].clear_actions
+class PrecompileRequired < StandardError; end
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -82,7 +87,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  #after  :finishing,    :compile_assets
+  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
