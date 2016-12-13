@@ -13,12 +13,10 @@ gem 'therubyracer'
 # API Doc Gem
 gem 'apipie-rails'
 
-gem 'capistrano', '2.15.5'
-
 
 
 group :development do
-  gem 'capistrano',         require: false
+  gem 'capistrano', '2.15.5'         require: false
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
