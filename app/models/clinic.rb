@@ -13,7 +13,7 @@ class Clinic < ActiveRecord::Base
   def self.private_clinics
     Clinic.where(:hospital_id => 0)
   end
-  
+
   def self.search_by_pattern(pattern)
     if pattern.blank?  # blank? covers both nil and empty string
       private_clinics
@@ -24,6 +24,7 @@ class Clinic < ActiveRecord::Base
 
   def as_json(options)
     super(:only=>[:id, :uid, :name, :address ])
+    result = {:id => self.id, :uid => self.uid, :name => self.name, :address => self.address, :specialization => self.specialization}
   end
 
 
