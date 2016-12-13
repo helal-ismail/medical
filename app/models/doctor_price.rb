@@ -9,17 +9,15 @@ class DoctorPrice < ActiveRecord::Base
     doctor_price
   end
 
-  def add_daily_schedule(schedule_params)
-    days = schedule_params[:days_of_week]
-    days.each do |day_of_week|
+  def add_daily_schedule(days_params)
+    days_params.each do |schedule_params|
       schedule = DailySchedule.new
-      schedule.day_of_week = day_of_week
+      schedule.day_of_week = schedule_params[:day_of_week]
       schedule.start_time = schedule_params[:start_time]
       schedule.end_time = schedule_params[:end_time]
       schedule.doctor_price = self
       schedule.save
     end
-
   end
 
   def get_next_appointment_num
