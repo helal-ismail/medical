@@ -17,7 +17,7 @@ class Api::ClinicsController < ApiController
     id = params[:id]
     clinic = Clinic.find_by_uid(uid)
     if clinic.present?
-      render :json => {:data => clinic, :doctors => [Doctor.first]}
+      render :json => {:data => clinic, :doctors => clinic.doctors}
     else
       render :json => {:msg => "Couldn't find a clinic with the specified ID"}, :status => 400
     end
