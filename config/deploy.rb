@@ -1,7 +1,8 @@
 # Change these
 server '128.199.230.215', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'https://github.com/helal-ismail/medical.git'
+#set :repo_url,        'https://github.com/helal-ismail/medical.git'
+set :repo_url,        'https://helal_ismail:012_ighg@bitbucket.org/helal_ismail/appointik_web.git'
 set :application,     'medical'
 set :user,            'deploy'
 #012_ighg
