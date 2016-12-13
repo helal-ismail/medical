@@ -3,6 +3,7 @@ class DoctorPrice < ActiveRecord::Base
   belongs_to :clinic
   has_many :daily_schedules
   has_many :appointments
+  
   def self.find_by_doctor_and_clinic(doctor_id, clinic_id)
     doctor_price = DoctorPrice.where(:doctor_id=>doctor_id, :clinic_id=>clinic_id).first
     doctor_price
