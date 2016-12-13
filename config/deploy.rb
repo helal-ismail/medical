@@ -52,6 +52,13 @@ namespace :puma do
   before :start, :make_dirs
 end
 
+namespace :database do
+  desc "DB SEED"
+  task :db_seed do
+    `rake db:seed:test-case1`
+  end
+end
+
 namespace :deploy do
   desc "DB  RESET"
   task :db_reset do
