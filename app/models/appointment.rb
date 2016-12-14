@@ -48,7 +48,8 @@ class Appointment < ActiveRecord::Base
         result = {:id => self.id, :discount => self.discount, :price => self.price, :state => self.state,
                   :appointment_date => self.appointment_date, :appointment_time => self.appointment_time,
                   :patient_id => self.patient.id, :patient_name => self.patient.name,
-                  :doctor_id => self.doctor_price.doctor.id, :doctor_name => self.doctor_price.doctor.name}
+                  :doctor_id => self.doctor_price.doctor.id, :doctor_name => self.doctor_price.doctor.name,
+                  :notes => self.notes}
   end
 
 
