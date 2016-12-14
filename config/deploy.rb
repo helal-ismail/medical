@@ -38,7 +38,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # clear the previous precompile task
-#Rake::Task["deploy:assets:precompile"].clear_actions
+Rake::Task["deploy:assets:precompile"].clear_actions
 #class PrecompileRequired < StandardError; end
 
 namespace :puma do
@@ -95,7 +95,7 @@ namespace :deploy do
   end
 
 #  before :starting,     :check_revision
-  after  :finishing,    :compile_assets
+#  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
