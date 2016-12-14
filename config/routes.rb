@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     namespace :appointments do
       post 'new'
       post 'edit'
-      post 'cancel'
+      get 'cancel'
       get 'show'
       post 'get_appointments'
     end

@@ -2,32 +2,42 @@ class Api::AppointmentsController < ApiController
 
   def new
     appointment = Appointment.create_from_params(params[:appointment])
-    render :json=> {:data => appointment}
+    if appointment.present?
+      render :json=> {:data => appointment, :success=> true}, :status => 200
+    else
+      render :json => {:msg => "Appointment creation failed", :success=> false}, :status => 400
+    end
   end
+
 
   def edit
    appointment = Appointment.edit_appointment_with_params(params[:appointment])
-   render :json => {:data => appointment, :success=> true}, :status => 200
+   if appointment.present?
+     render :json => {:data => appointment, :success=> true}, :status => 200
+   else
+    render :json => {:msg => "Appointment not found", :success=> false}, :status => 400
+    end
   end
 
 
   def cancel
     appointment = Appointment.find(params[:id])
     if appointment.present?
-      appointment.status = 'canceled'
+      appointment.state = 'canceled'
       appointment.save
-      render :json => {:msg => "Appointment has been canceled"}
+      render :json => {:msg => "Appointment has been canceled", :success=> true}, :status => 200
     else
-      render :json => {:msg => "Appointment not found"}, :status => 400
+      render :json => {:msg => "Appointment not found", :success=> false}, :status => 400
     end
   end
+
 
   def show
     appointment = Appointment.find(params[:id])
     if appointment.present?
-      render :json => {:data => appointment}
+      render :json => {:data => appointment, :success=> true}, :status => 200
     else
-      render :jspn => {:msg => "Appointment ID doesn't exist"}, :status => 400
+      render :jspn => {:msg => "Appointment not found", :success=> false}, :status => 400
     end
   end
 
@@ -47,9 +57,14 @@ class Api::AppointmentsController < ApiController
     render :json => response , :status => status
   end
 
-  def get_appointments
-    appointments = Appointment.get_all_appointments_with_params(params[:appointment])
-    render :json => {:data => appointments, :success=> true}, :status => 200
 
+  def get_appointments
+    appointments = Appointment.get_all_appointments_with_params(params)
+    if appointments.present?
+      render :json => {:data => appointments, :success=> true}, :status => 200
+    else
+      render :jspn => {:msg => "Appointment not found", :success=> false}, :status => 400
+    end
   end
+
 end
