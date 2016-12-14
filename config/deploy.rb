@@ -56,6 +56,7 @@ end
 namespace :database do
   desc "DB SEED"
   task :db_seed do
+    `bundle exec rake db:schema:load RAILS_ENV=production`
     `bundle exec rake db:seed:test-case1 RAILS_ENV=production`
     `bundle exec rake db:seed:test-case2 RAILS_ENV=production`
   end

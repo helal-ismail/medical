@@ -1,6 +1,3 @@
-# CLEAR DB
-`rake db:schema:load`
-
 # Unified PASSWORD
 password = "123456"
 
