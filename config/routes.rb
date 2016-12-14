@@ -45,7 +45,8 @@ Rails.application.routes.draw do
       post 'edit'
       get 'cancel'
       get 'show'
-      post 'get_appointments'
+      post 'get_all_appointments'
+      post 'add_notes'
     end
 
     namespace :patients do
@@ -53,7 +54,7 @@ Rails.application.routes.draw do
       get 'appointments'
       post 'search'
     end
-    
+
     namespace :schedules do
       post 'create'
       post 'edit'

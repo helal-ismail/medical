@@ -42,8 +42,8 @@ class Api::AppointmentsController < ApiController
   end
 
 
-  def add_note
-    appointment = Appointment.find(params[:appointment_id])
+  def add_notes
+    appointment = Appointment.find(params[:id])
     response = {}
     status = 200
     if appointment.present?
@@ -58,7 +58,7 @@ class Api::AppointmentsController < ApiController
   end
 
 
-  def get_appointments
+  def get_all_appointments
     appointments = Appointment.get_all_appointments_with_params(params)
     if appointments.present?
       render :json => {:data => appointments, :success=> true}, :status => 200
