@@ -53,6 +53,13 @@ Rails.application.routes.draw do
       get 'appointments'
       post 'search'
     end
+    
+    namespace :schedules do
+      post 'create'
+      post 'edit'
+      post 'cancel'
+      get 'display'
+    end
 
   end
 

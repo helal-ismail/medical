@@ -25,7 +25,7 @@ class Api::SchedulesController < ApiController
     end
   end
 
-  def get_schedule
+  def display
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     render :json => {:data => doctor_price.daily_schedule}
   end
