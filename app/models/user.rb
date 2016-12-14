@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
   end
 
   def as_json(options)
-    super(:only => [:id, :uid, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])
+    super(:only => [:id, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])
   end
 end

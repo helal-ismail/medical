@@ -13,7 +13,7 @@ class Doctor < User
 
   def as_json(options)
     #super(:only => [:id, :uid, :name])
-    result = {:id => self.id, :uid => self.uid, :name => self.name, :description => self.description || ''}
+    result = {:id => self.id, :name => self.name, :description => self.description || ''}
     
     if options[:detailed_info].present?
       clinics_result = []

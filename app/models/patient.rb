@@ -10,6 +10,6 @@ class Patient < User
   end
 
   def as_json(options)
-    super(:only => [:id, :uid, :name])
+    super(:only => [:id, :name])
   end
 end

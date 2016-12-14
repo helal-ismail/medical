@@ -23,7 +23,7 @@ class Hospital < ActiveRecord::Base
   end
   
   def as_json(options)
-    super(:only=>[:id, :uid, :name, :address, :latitude, :longitude, :phone, :website, :email ])
+    super(:only=>[:id, :name, :address, :latitude, :longitude, :phone, :website, :email ])
   end
   
 end
