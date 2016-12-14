@@ -16,10 +16,6 @@ class User < ActiveRecord::Base
   end
 
   def as_json(options)
-    if type == "Doctor"
-      super(:only => [:id, :uid, :name])
-    else
-      super(:only => [:id, :uid, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])
-    end
+    super(:only => [:id, :uid, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])
   end
 end

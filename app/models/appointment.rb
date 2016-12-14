@@ -46,10 +46,10 @@ class Appointment < ActiveRecord::Base
   def as_json(options)
         # super(:only => [:id, :discount, :price, :patient_id, :appointment_date, :appointment_time])
         result = {:id => self.id, :discount => self.discount, :price => self.price, :state => self.state,
-                  :appointment_date => self.appointment_date, :appointment_time => self.appointment_time,
+                  :appointment_date => self.appointment_date, :appointment_time => self.appointment_time.strftime('%r'),
                   :patient_id => self.patient.id, :patient_name => self.patient.name,
                   :doctor_id => self.doctor_price.doctor.id, :doctor_name => self.doctor_price.doctor.name,
-                  :notes => self.notes}
+                  :notes => self.notes || ''}
   end
 
 

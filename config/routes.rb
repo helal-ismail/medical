@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
     namespace :doctors do
       get 'profile'
-      get 'schedule'
       post 'search'
     end
 
@@ -43,10 +42,12 @@ Rails.application.routes.draw do
     namespace :appointments do
       post 'new'
       post 'edit'
-      get 'cancel'
+      post 'cancel'
       get 'show'
-      post 'get_all_appointments'
       post 'add_notes'
+      get 'by_patient'
+      get 'by_doctor_and_clinic'
+      get 'by_all_params'
     end
 
     namespace :patients do
@@ -56,10 +57,10 @@ Rails.application.routes.draw do
     end
 
     namespace :schedules do
-      post 'create'
+      post 'new'
       post 'edit'
       post 'cancel'
-      get 'display'
+      get 'show'
     end
 
   end

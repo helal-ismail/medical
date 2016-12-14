@@ -13,9 +13,7 @@ class Api::HospitalsController < ApiController
   
   api :GET, '/hospitals/profile', "Fetch Hospital Profile"
   def profile
-    uid = params[:uid]
-    id = params[:id]
-    hospital = Hospital.find_by_uid(uid)
+    hospital = Hospital.find(params[:id])
     if hospital.present?
       render :json => {:data => hospital, :clinics => hospital.clinics}
     else

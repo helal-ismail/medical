@@ -1,6 +1,6 @@
 class Api::SchedulesController < ApiController
-  def create
-    doctor_price  = DoctorPrince.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
+  def new
+    doctor_price  = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     doctor_price.add_daily_schedule(params[:schedule]) if doctor_price.present?
     render :json => {:msg =>"Schedule updated"}
   end
@@ -25,9 +25,9 @@ class Api::SchedulesController < ApiController
     end
   end
 
-  def display
+  def show
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
-    render :json => {:data => doctor_price.daily_schedule}
+    render :json => {:data => doctor_price.daily_schedules}
   end
 
   def schedule
