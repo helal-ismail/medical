@@ -8,9 +8,13 @@ Hospital.create(name: 'Andalusia Hospital', address: '35 Bahaa Eldeen ElGhatoury
 Hospital.create(name: 'ICC Hospital', address: '24 Bahaa Eldeen ElGhatoury street, Alexandria, Egypt', uid: '4', phone: '123123123', website: 'www.hospital.com', email: 'contact@hospital.com')
 
 spec_names = ["أمراض القلب","أمراض الباطنية","العيون والابصار","الأوعية الدموية","الأسنان والتركيبات", "الأنف و الأذن", "الأمراض الجلدية", "الأمراض النفسية","الأمراض الصدرية", "العظام والمفاصل", "المسالك البولية والتناسلية","الاشعة والتصوير","الجهاز الهضمي", "النساء والولادة", "الجراحة", "الاورام"]
+image_urls = ["ic_heart_clinic.png", "ic_internal_medicine_clinic.png", "ic_eye_clinic.png","ic_surgery_clinic.png","ic_dental_clinic.png", "ic_nose_clinic.png", "ic_dermatology_clinic.png", "ic_mental_clinic.png", "ic_thoracic_clinic.png","ic_bones_clinic.png","ic_urinary_clinic.png", "ic_x_ray_clinic.png", "ic_digestive_clinic.png", "ic_obstetrics_gynecology_clinic.png", "ic_surgery_clinic.png", "ic_tumors_clinic.png"]
+
 specs = []
+index = 0
 spec_names.each do |spec|
-   specs << Specialization.create(name: "#{spec}")
+   specs << Specialization.create(name: "#{spec}", image_url: "#{image_urls[index]}")
+   index = index + 1
 end
 
 
