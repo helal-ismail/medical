@@ -2,7 +2,12 @@ class Api::ClinicsController < ApiController
   
   api :GET, '/clinics/explore', "Explore Clinics"
   def explore
-    render :json => {:data=>private_clinics}
+    if params[:specialization_id].present?
+      render :json => {:data=>private_clinics.where(:specialization_id => params[:specialization_id])}
+    else
+      render :json => {:data=>private_clinics}      
+    end
+
   end
   
   api :POST, '/clinics/search', "Search Clinics"
@@ -23,6 +28,9 @@ class Api::ClinicsController < ApiController
   end
   
   
+  def specializations
+    render :json => {:data => Specialization.all}
+  end
  
   
   private 

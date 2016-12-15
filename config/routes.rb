@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       get 'explore'
       post 'search'
       get 'profile'
+      get 'specializations'
     end
 
     namespace :appointments do
