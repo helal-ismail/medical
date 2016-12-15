@@ -88,6 +88,11 @@ class Api::UsersController < ApiController
       result[:is_valid] = false
       result[:message] = "Email already exists"
     end
+    
+    if ["Doctor","Patient"].include? user_params[:type]
+      result[:is_valid] = false
+      result[:message] = "Invalid User Type"
+    end
 
     return result
 
