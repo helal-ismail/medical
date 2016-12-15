@@ -7,7 +7,10 @@ Hospital.create(name: 'Louran Hospital', address: 'St. - Louran, 13 Shaarawy, Sa
 Hospital.create(name: 'Andalusia Hospital', address: '35 Bahaa Eldeen ElGhatoury street, Alexandria, Egypt', uid: '3', phone: '123123123', website: 'www.hospital.com', email: 'contact@hospital.com')
 Hospital.create(name: 'ICC Hospital', address: '24 Bahaa Eldeen ElGhatoury street, Alexandria, Egypt', uid: '4', phone: '123123123', website: 'www.hospital.com', email: 'contact@hospital.com')
 
-spec_names = ["أمراض القلب","أمراض الباطنية","العيون والابصار","الأوعية الدموية"]
+spec_names = ["أمراض القلب","أمراض الباطنية","العيون والابصار","الأوعية الدموية"
+              ,"الأسنان والتركيبات", "الأنف و الأذن", "الأمراض الجلدية", "الأمراض النفسية"
+              ,"الأمراض الصدرية", "العظام والمفاصل", "المسالك البولية والتناسلية","الاشعة والتصوير"
+              ,"الجهاز الهضمي", "النساء والولادة", "الجراحة", "الاورام"]
 specs = []
 spec_names.each do |spec|
    specs << Specialization.create(name: "#{spec}")

@@ -1,9 +1,6 @@
 password = "123456"
-spec_names = ["أمراض القلب","أمراض الباطنية","العيون والابصار","الأوعية الدموية"]
-specs = []
-spec_names.each do |spec|
-   specs << Specialization.create(name: "#{spec}")
-end
+
+specs = Specialization.all
 
 doctor_names = ["أحمد محمد", "محمود عبد الله", "سيد موسى","عمرو عبد الناصر","شريف حازم"]
 doctor_emails = ["d1@example.com", "d2@example.com","d3@example.com","d4@example.com", "d5@example.com"]
@@ -23,7 +20,7 @@ doctor_emails = ["d1@example.com", "d2@example.com","d3@example.com","d4@example
   uid = Digest::SHA256.hexdigest(DateTime.now.to_s + doctor.salt)
   doctor.uid = uid[0..10]
   
-  desc = "إستشاري" + " " + spec_names[random_index]
+  desc = "إستشاري" + " " + specs[random_index].name
   doctor.description = desc
   doctor.save
   doctor_price = DoctorPrice.create(doctor_id: "#{doctor.id}", clinic_id: "#{clinic.id}", price: "100.00")
