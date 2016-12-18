@@ -23,17 +23,13 @@ class Api::UsersController < ApiController
       render :json => {:message => validation[:message]}, :status => 500 and return
     end
     user = nil
-    if params[:type] == "Patient"
-      user = Patient.new
-    elsif params[:type] == "Doctor"
-      user = Doctor.new
-    end
+    
     password = user_params[:password] || ''
-    #user = User.new
+    user = User.new
     user.name = user_params[:name]
     user.username = user_params[:username]
     user.email = user_params[:email]
-    #user.type = user_params[:type]
+    user.type = user_params[:type]
     user.phone = user_params[:phone]
     user.address = user_params[:address]
     user.gender = user_params[:gender]
