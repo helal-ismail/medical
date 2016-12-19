@@ -24,7 +24,7 @@ class Clinic < ActiveRecord::Base
 
   def as_json(options)
     # super(:only=>[:id, :uid, :name, :address ])
-    result = {:id => self.id, :name => self.name, :address => self.address, :specialization => self.specialization}
+    result = {:id => self.id, :name => self.name, :address => self.address, :specialization => self.specialization, :address=> self.address, :latitude=> self.latitude, :longitude=>self.longitude}
   end
 
 
