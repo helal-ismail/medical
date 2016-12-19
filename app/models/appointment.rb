@@ -49,9 +49,7 @@ class Appointment < ActiveRecord::Base
                   :appointment_date => self.appointment_date, :appointment_time => self.appointment_time.strftime('%r'),
                   :patient_id => self.patient.id, :patient_name => self.patient.name,
                   :doctor_id => self.doctor_price.doctor.id, :doctor_name => self.doctor_price.doctor.name,
-                  :notes => self.notes || '', :clinic_id => self.doctor_price.clinic.id
-                  , :clinic_name => self.doctor_price.clinic.name
-                  , :specialization => self.doctor_price.clinic.specialization.name}
+                  :notes => self.notes || '', :clinic_id => self.doctor_price.clinic.id, :clinic_name => self.doctor_price.clinic.name, :specialization => self.doctor_price.clinic.specialization.name }
   end
 
 
