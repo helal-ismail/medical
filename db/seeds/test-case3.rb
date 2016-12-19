@@ -21,7 +21,7 @@ specializations.each do |spec|
 end
 
 100.times do |index|
-  patient = FakerHelper.create_patient
+  patient = FakerHelper.create_patient("patient"+index.to_s)
   forward_date = Faker::Date.forward(15).strftime
   backward_date = Faker::Date.backward(15).strftime
   
