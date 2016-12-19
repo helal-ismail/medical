@@ -30,3 +30,4 @@ gem 'micro_magick'
 gem 'rest-client'
 
 gem 'geocoder'
+gem 'faker'
