@@ -115,7 +115,7 @@ class Api::UsersController < ApiController
     user.encrypted_password = Digest::SHA256.hexdigest(new_password + user.salt)
     access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
     user.access_token = access_token[0..30]
-
+    user.save
     render :json => {:msg => "Password has been changed"}
 
   end
