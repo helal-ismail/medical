@@ -93,7 +93,7 @@ class Api::UsersController < ApiController
       user.edit_field("phone",params[:phone])
     end
     
-    render :json => {:msg => "Fields have been updated"}
+    render :json => {:msg => "Fields have been updated", :data => user}
     
 
   end
