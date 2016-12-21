@@ -14,6 +14,13 @@ class User < ActiveRecord::Base
       return {:success => false, :msg => "Email not found", :status => 400}
     end
   end
+  
+  def edit_field(key, value)
+    self["#{key}"] = value
+    self.save
+  end
+
+  
 
   def as_json(options)
     super(:only => [:id, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])

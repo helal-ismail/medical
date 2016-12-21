@@ -12,18 +12,18 @@ class Api::UsersController < ApiController
     param :phone, String, :desc => "Phone", :required => true
     param :address, String, :desc => "Address", :required => true
     param :gender, String, :desc => "Gender [male/female]", :required => true
-    
+
   end
 
   def register
-    
+
     user_params = params[:user]
     validation = validate_new_user(user_params)
     if (!validation[:is_valid])
       render :json => {:message => validation[:message]}, :status => 500 and return
     end
     user = nil
-    
+
     password = user_params[:password] || ''
     user = User.new
     user.name = user_params[:name]
@@ -49,7 +49,7 @@ class Api::UsersController < ApiController
     else
       render :json => {:msg => "Username or Email already exists"}
     end
-    
+
   end
 
   api :POST, '/users/login', "User Login"
@@ -79,6 +79,47 @@ class Api::UsersController < ApiController
     end
   end
 
+  def edit
+    user = User.find(params[:user_id])
+    if !user.present?
+      render :json => {:msg => "User not found"}, :status => 400 and return
+    end
+    
+    if params[:name].present?
+      user.edit_field("name",params[:name])
+    end
+    
+    if params[:phone].present?
+      user.edit_field("phone",params[:phone])
+    end
+    
+    render :json => {:msg => "Fields have been updated"}
+    
+
+  end
+
+  def change_password
+
+    new_password = params[:new_password]
+    old_password = params[:old_password]
+
+    user = User.find(params[:user_id])
+    if !user.present?
+      render :json => {:msg => "User not found"}, :status => 400 and return
+    end
+    old_encrypted_password = Digest::SHA256.hexdigest(old_password + user.salt)
+    if (old_encrypted_password != user.encrypted_password)
+      render :json => {:msg => "Incorrect old password"}, :status => 500 and return
+    end
+
+    user.encrypted_password = Digest::SHA256.hexdigest(new_password + user.salt)
+    access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
+    user.access_token = access_token[0..30]
+
+    render :json => {:msg => "Password has been changed"}
+
+  end
+
   private
 
   def validate_new_user(user_params)
@@ -90,7 +131,7 @@ class Api::UsersController < ApiController
       result[:is_valid] = false
       result[:message] = "Email already exists"
     end
-    
+
     if !["Doctor","Patient"].include? user_params[:type]
       result[:is_valid] = false
       result[:message] = "Invalid User Type"

@@ -1,4 +1,4 @@
-module FakeHelper
+class FakerHelper
   
   def self.create_hospital
     hospital = Hospital.new
@@ -45,10 +45,11 @@ module FakeHelper
   end
   
   
-  def self.create_patient
+  def self.create_patient(email)
     
     name = Faker::Name.name
-    email = Faker::Internet.email
+    #email = Faker::Internet.email
+    
     phone = Faker::PhoneNumber.cell_phone
     patient = Patient.create(name: name, email: email, gender: 'male', phone: phone)
     patient.salt = SecureRandom.hex(4)

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     namespace :users do
       post 'register'
       post 'login'
+      post 'edit'
+      post 'change_password'
     end
 
     namespace :doctors do
