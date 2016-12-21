@@ -65,6 +65,11 @@ Rails.application.routes.draw do
       post 'cancel'
       get 'show'
     end
+    
+    namespace :notifications do
+      post 'register_device'
+      post 'send_push'
+    end
 
   end
 

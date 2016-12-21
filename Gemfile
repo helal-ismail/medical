@@ -31,3 +31,4 @@ gem 'rest-client'
 
 gem 'geocoder'
 gem 'faker'
+gem 'httparty'

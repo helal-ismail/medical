@@ -1,3 +1,4 @@
+
 class ApiController < ApplicationController
   
   rescue_from Exception, :with => :handle_exception
