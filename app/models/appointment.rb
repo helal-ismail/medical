@@ -44,6 +44,13 @@ class Appointment < ActiveRecord::Base
 
 
   def as_json(options)
+    
+        date = Date.today
+        if date > self.appointment_date
+          self.state = 'past'
+          self.save
+        end
+    
         # super(:only => [:id, :discount, :price, :patient_id, :appointment_date, :appointment_time])
         result = {:id => self.id, :discount => self.discount, :price => self.price, :state => self.state,
                   :appointment_date => self.appointment_date, :appointment_time => self.appointment_time.strftime('%r'),
