@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :feedbacks
+  has_many :notifications
 
   enum gender: [ :male, :female ]
   def self.authenticate(email, password)
