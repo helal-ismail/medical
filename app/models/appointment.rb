@@ -46,7 +46,7 @@ class Appointment < ActiveRecord::Base
   def as_json(options)
     
         date = Date.today
-        if date > self.appointment_date
+        if date > self.appointment_date && self.state!= 'canceled'
           self.state = 'past'
           self.save
         end
