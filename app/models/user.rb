@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :feedbacks
+
   enum gender: [ :male, :female ]
   def self.authenticate(email, password)
     user = User.find_by_email(email)
@@ -14,13 +16,13 @@ class User < ActiveRecord::Base
       return {:success => false, :msg => "Email not found", :status => 400}
     end
   end
-  
+
   def edit_field(key, value)
     self["#{key}"] = value
     self.save
   end
 
-  
+
 
   def as_json(options)
     super(:only => [:id, :name, :email, :phone, :access_token, :channel, :gender, :address, :type])

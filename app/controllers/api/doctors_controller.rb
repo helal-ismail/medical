@@ -1,4 +1,5 @@
 class Api::DoctorsController < ApiController
+  include ActionView::Helpers::NumberHelper
 
   def add_schedule
     doctor = Doctor.find_by_uid(params[:doctor_uid])
@@ -49,6 +50,43 @@ class Api::DoctorsController < ApiController
   def search
     pattern = params[:pattern]
     render :json => {:data=>Doctor.search_by_pattern(pattern)}
+  end
+
+
+  api :POST, '/doctor/add_feedback', "Add Feedback"
+  def add_feedback
+
+    if(!(1..5).include? params[:stars])
+      render :json => {:msg => "Rating out of rang!"}, :status => 500 and return
+    end
+
+    params[:entity_type] = "Doctor"
+    params[:entity_id] = params[:doctor_id]
+    feedback = Feedback.add_feedback_with_params(params)
+
+    if feedback.present?
+      render :json => {:data => feedback}
+    else
+      render :json => {:msg => "Something went wrong!"}, :status => 400
+    end
+  end
+
+  api :GET, '/doctor/get_feedback', "Get Feedback"
+  def get_feedback
+    feedbacks = Feedback.get_feedback("Doctor", params[:doctor_id])
+
+    if feedbacks.present?
+      rating = 0
+      feedbacks.each do |f|
+        rating += f.stars
+      end
+
+      rating = rating.to_f / feedbacks.length
+      rating = number_with_precision(rating, :precision => 2)
+      render :json => {:data => feedbacks, :total_rate => rating}
+    else
+      render :json => {:msg => "Feedback not found!"}, :status => 400
+    end
   end
 
 end
