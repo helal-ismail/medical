@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     namespace :doctors do
       get 'profile'
       post 'search'
+      post 'add_feedback'
+      get 'get_feedback'
     end
 
     namespace :hospitals do
@@ -66,7 +68,7 @@ Rails.application.routes.draw do
       post 'cancel'
       get 'show'
     end
-    
+
     namespace :notifications do
       post 'register_device'
       post 'send_push'
