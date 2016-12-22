@@ -16,7 +16,7 @@ class Appointment < ActiveRecord::Base
     appointment.discount = params[:discount]
     original_price = 100
     appointment.price = original_price - ( params[:discount].to_i * original_price / 100 )
-    appointment.state = 'pending'
+    appointment.state = 'confirmed'
 
     appointment.save
 
