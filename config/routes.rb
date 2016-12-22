@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       post 'login'
       post 'edit'
       post 'change_password'
+      post 'social_login'
     end
 
     namespace :doctors do

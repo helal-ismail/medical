@@ -15,6 +15,38 @@ class Api::UsersController < ApiController
 
   end
 
+  def social_login
+    user_params = params[:user]
+    user = User.find_by_username(user_params[:username])
+    if user.present?
+      render :json => {:user => user} and return
+    end
+
+    user = User.new
+    user.name = user_params[:name]
+    user.username = user_params[:username]
+    #user.email = user_params[:email]
+    user.type = user_params[:type]
+    user.phone = user_params[:phone]
+    user.address = user_params[:address]
+    user.gender = user_params[:gender]
+    password = ''
+    user.salt = SecureRandom.hex(4)
+    user.encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
+    access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
+    user.access_token = access_token[0..30]
+    user.channel = "c"+ access_token[0..10]
+
+    uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
+    user.uid = uid[0..10]
+
+    if user.save
+      render :json => {:user => user}
+    else
+      render :json => {:msg => "Error while trying to save user"}, :status => 500
+    end
+  end
+
   def register
 
     user_params = params[:user]
