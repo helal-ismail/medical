@@ -48,6 +48,14 @@ class Api::NotificationsController < ApiController
     
   end
   
+  def user_notifications
+    user = User.find(params[:user_id])
+    if user.present?
+      render :json => {:data => user.notifications}
+    else
+      render :json => {:msg => "User not found"}, :status => 400
+    end
+  end
 
   private 
   def execute_request(url, body)

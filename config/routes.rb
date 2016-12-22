@@ -72,6 +72,7 @@ Rails.application.routes.draw do
     namespace :notifications do
       post 'register_device'
       post 'send_push'
+      get 'user_notifications'
     end
 
   end
