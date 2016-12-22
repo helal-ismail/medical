@@ -25,7 +25,7 @@ class Api::UsersController < ApiController
     user = User.new
     user.name = user_params[:name]
     user.username = user_params[:username]
-    #user.email = user_params[:email]
+    user.email = user_params[:email]
     user.type = user_params[:type]
     user.phone = user_params[:phone]
     user.address = user_params[:address]
