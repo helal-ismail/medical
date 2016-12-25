@@ -17,7 +17,7 @@ class Api::NotificationsController < ApiController
   def set_seen
     user = User.find(params[:user_id])
     notification = Notification.find(params[:notification_id])
-    if ( user.present? && notification.present )
+    if ( user.present? && notification.present? )
       notification.state = 1
       notification.save
       counter = user.notifications.where(:state => 0)
