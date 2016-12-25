@@ -9,7 +9,7 @@ class Notification < ActiveRecord::Base
     
     body[:contents] = {:en => msg}
     player_ids = []
-    player_ids << user.channel
+    player_ids << user.channel || ''
     body[:include_player_ids] = player_ids
     url = "https://onesignal.com/api/v1/notifications"
     response = Api::NotificationsController.execute_request(url, body.to_json)

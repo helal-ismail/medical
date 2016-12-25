@@ -19,6 +19,11 @@ class Appointment < ActiveRecord::Base
     appointment.state = 'confirmed'
 
     appointment.save
+    
+    
+    Notification.push(appointment.patient,"New Appointment", "A new Appointment has been created" )
+    Notification.push(doctor_price.doctor,"New Appointment", "A new Appointment has been created" )
+    
 
     appointment
   end
