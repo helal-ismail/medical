@@ -14,7 +14,7 @@ class Api::NotificationsController < ApiController
   end
 
   def self.execute_request(url, body)
-    body["app_id"] = APP_ID
+    body[:app_id] = APP_ID
     headers = {'Authorization' => AUTH_KEY , 'Content-Type' => 'application/json'}
     HTTParty.post(url,:body => body.to_json, :headers => headers)
     
