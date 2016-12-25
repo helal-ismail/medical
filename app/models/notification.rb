@@ -15,7 +15,7 @@ class Notification < ActiveRecord::Base
     response = Api::NotificationsController.execute_request(url, body)
     notification = nil
     if response["recipients"].present? && response["recipients"].to_i > 0
-      notification = Notificaiton.create(user_id: user.id, title: title, description: msg)
+      notification = create(user_id: user.id, title: title, description: msg)
     end
     notification
   end
