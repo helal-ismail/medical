@@ -8,9 +8,22 @@ class Api::NotificationsController < ApiController
     user = User.find(params[:user_id])
     if user.present?
       counter = user.notifications.where(:state => 0)
-      render :json => {:data => user.notifications, :pending_notifications => counter.length}
+      render :json => {:data => user.notifications, :pending => counter.length}
     else
       render :json => {:msg => "User not found"}, :status => 400
+    end
+  end
+
+  def set_seen
+    user = User.find(params[:user_id])
+    notification = Notification.find(params[:notification_id])
+    if ( user.present? && notification.present )
+      notification.state = 1
+      notification.save
+      counter = user.notifications.where(:state => 0)
+      render :json => {:msg => "State has been changed to seen", :pending => counter.length}
+    else
+      render :json => {:msg => "User or notification not found"}, :status => 400
     end
   end
 

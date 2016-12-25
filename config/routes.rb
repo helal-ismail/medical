@@ -74,6 +74,7 @@ Rails.application.routes.draw do
       post 'register_device'
       post 'send_push'
       get 'user_notifications'
+      post 'set_seen'
     end
 
   end
