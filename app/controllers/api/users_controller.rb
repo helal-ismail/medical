@@ -66,6 +66,7 @@ class Api::UsersController < ApiController
     user.phone = user_params[:phone]
     user.address = user_params[:address]
     user.gender = user_params[:gender]
+    user.local = "en"
 
     user.salt = SecureRandom.hex(4)
     user.encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
@@ -75,7 +76,7 @@ class Api::UsersController < ApiController
 
     uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
     user.uid = uid[0..10]
-    
+
     user.register_device(params[:device])
 
     if user.save
@@ -119,17 +120,17 @@ class Api::UsersController < ApiController
     if !user.present?
       render :json => {:msg => "User not found"}, :status => 400 and return
     end
-    
+
     if params[:name].present?
       user.edit_field("name",params[:name])
     end
-    
+
     if params[:phone].present?
       user.edit_field("phone",params[:phone])
     end
-    
+
     render :json => {:msg => "Fields have been updated", :data => user}
-    
+
 
   end
 
@@ -153,6 +154,14 @@ class Api::UsersController < ApiController
     user.save
     render :json => {:msg => "Password has been changed"}
 
+  end
+
+
+  def edit_local
+    user = User.find(params[:user_id])
+    user.local = params[:user_local]
+    user.save
+    render :json => {:user_local =>user.local, :msg => "User local has been changed"}
   end
 
   private

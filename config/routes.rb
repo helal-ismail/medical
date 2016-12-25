@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       post 'edit'
       post 'change_password'
       post 'social_login'
+      get 'edit_local'
     end
 
     namespace :doctors do
