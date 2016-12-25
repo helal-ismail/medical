@@ -23,9 +23,9 @@ class Notification < ActiveRecord::Base
   def as_json(options)
     result = {:id => self.id, :title => self.title, :state => self.state }
      if (user.local == "en")
-       result[:description] => self.description_en
+       result[:description] = self.description_en
      else
-       result[:description] => self.description_ar
+       result[:description] = self.description_ar
      end
     result
   end
