@@ -1,6 +1,6 @@
 class Notification < ActiveRecord::Base
   belongs_to :user
-  enum state: [ :pending, :seen]
+  enum state: [ :pending, :seen ]
   
   
   def self.push(user, title, msg)
