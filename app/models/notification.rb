@@ -1,9 +1,10 @@
 class Notification < ActiveRecord::Base
   belongs_to :user
+  belongs_to :notification
   enum state: [ :pending, :seen ]
 
 
-  def self.push(user, title, msg, msg_ar)
+  def self.push(entity_type, entity_id, user, title, msg, msg_ar)
 
     body = {}
 
@@ -15,13 +16,16 @@ class Notification < ActiveRecord::Base
     response = Api::NotificationsController.execute_request(url, body)
     notification = nil
     if response["recipients"].present? && response["recipients"].to_i > 0
-      notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar)
+      notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar, entity_type: entity_type, entity_id: entity_id)
     end
     notification
   end
 
   def as_json(options)
-    result = {:id => self.id, :title => self.title, :state => self.state }
+    result = {:id => self.id, :title => self.title, :state => self.state,
+              :entity_type => self.entity_type, :entity_id => self.entity_id,
+              :date => self.created_at.strftime('%Y-%m-%d'), :time => self.created_at.strftime('%r')}
+
      if (user.local == "en")
        result[:description] = self.description_en
      else

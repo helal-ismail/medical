@@ -21,8 +21,8 @@ class Appointment < ActiveRecord::Base
     appointment.save
 
 
-    Notification.push(appointment.patient,"New Appointment", "A new Appointment has been created", "تم حجز موعد جديد" )
-    Notification.push(doctor_price.doctor,"New Appointment", "A new Appointment has been created", "تم حجز موعد جديد" )
+    Notification.push("appointment", appointment.id, appointment.patient,"New Appointment", "A new Appointment has been created", "تم حجز موعد جديد" )
+    Notification.push("appointment", appointment.id, doctor_price.doctor,"New Appointment", "A new Appointment has been created", "تم حجز موعد جديد" )
 
 
     appointment
