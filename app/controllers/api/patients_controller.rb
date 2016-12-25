@@ -2,11 +2,11 @@ class Api::PatientsController < ApiController
 
 
   def profile
-    patient = Patient.find_by_uid(params[:uid])
+    patient = Patient.find_by_uid(params[:id])
     if patient.present?
       render :json => {:data => patient}
     else
-      render :json => {:msg => "Patiend UID not found"}, :status => 400
+      render :json => {:msg => "Patiend ID not found"}, :status => 400
     end
   end
 
