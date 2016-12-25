@@ -39,6 +39,7 @@ class Api::UsersController < ApiController
 
     uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
     user.uid = uid[0..10]
+    user.register_device(params[:device])
 
     if user.save
       render :json => {:user => user}
@@ -74,6 +75,8 @@ class Api::UsersController < ApiController
 
     uid = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
     user.uid = uid[0..10]
+    
+    user.register_device(params[:device])
 
     if user.save
       render :json => {:user => user}
