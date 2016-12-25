@@ -19,11 +19,11 @@ class Appointment < ActiveRecord::Base
     appointment.state = 'confirmed'
 
     appointment.save
-    
-    
-    Notification.push(appointment.patient,"New Appointment", "A new Appointment has been created" )
-    Notification.push(doctor_price.doctor,"New Appointment", "A new Appointment has been created" )
-    
+
+
+    Notification.push(appointment.patient,"New Appointment", "A new Appointment has been created", "تم حجز موعد جديد" )
+    Notification.push(doctor_price.doctor,"New Appointment", "A new Appointment has been created", "تم حجز موعد جديد" )
+
 
     appointment
   end
@@ -49,13 +49,13 @@ class Appointment < ActiveRecord::Base
 
 
   def as_json(options)
-    
+
         date = Date.today
         if date > self.appointment_date && self.state!= 'canceled'
           self.state = 'past'
           self.save
         end
-    
+
         # super(:only => [:id, :discount, :price, :patient_id, :appointment_date, :appointment_time])
         result = {:id => self.id, :discount => self.discount, :price => self.price, :state => self.state,
                   :appointment_date => self.appointment_date, :appointment_time => self.appointment_time.strftime('%r'),
