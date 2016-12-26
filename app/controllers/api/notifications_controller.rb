@@ -9,7 +9,7 @@ class Api::NotificationsController < ApiController
     if user.present?
       counter = user.notifications.where(:state => 0).count
       Notification.set_pending_to_delivered
-      render :json => {:data => user.notifications, :pending => counter}
+      render :json => {:data => user.notifications.reverse, :pending => counter}
     else
       render :json => {:msg => "User not found"}, :status => 400
     end
