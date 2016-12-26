@@ -1,7 +1,7 @@
 class Notification < ActiveRecord::Base
   belongs_to :user
   belongs_to :notification
-  enum state: [ :pending, :seen ]
+  enum state: [ :pending, :delivered, :seen ]
 
 
   def self.push(entity_type, entity_id, user, title, msg, msg_ar)
@@ -19,6 +19,10 @@ class Notification < ActiveRecord::Base
       notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar, entity_type: entity_type, entity_id: entity_id)
     end
     notification
+  end
+  
+  def self.set_pending_to_delivered
+    Notification.where(:state => 0).update_all(state: 1)
   end
 
   def as_json(options)
