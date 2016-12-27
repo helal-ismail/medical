@@ -17,6 +17,21 @@ class Doctor < User
     #super(:only => [:id, :uid, :name])
     result = {:id => self.id, :name => self.name, :description => self.description || ''}
 
+
+    feedbacks = Feedback.get_feedback("Doctor", self.id)
+
+    if feedbacks.present?
+      rating = 0
+      feedbacks.each do |f|
+        rating += f.stars
+      end
+
+      rating = rating.to_f / feedbacks.length
+      rating = number_with_precision(rating, :precision => 2)
+
+      result[:total_rate] = rating
+    end
+
     if options[:detailed_info].present?
       clinics_result = []
       self.clinics.each do |clinic|
@@ -29,19 +44,8 @@ class Doctor < User
       end
       result[:clinics] = clinics_result
 
-      feedbacks = Feedback.get_feedback("Doctor", self.id)
-
       if feedbacks.present?
-        rating = 0
-        feedbacks.each do |f|
-          rating += f.stars
-        end
-
-        rating = rating.to_f / feedbacks.length
-        rating = number_with_precision(rating, :precision => 2)
-
         result[:feedbacks] = feedbacks
-        result[:total_rate] = rating
       end
 
     end

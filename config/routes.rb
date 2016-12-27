@@ -75,6 +75,7 @@ Rails.application.routes.draw do
       post 'send_push'
       get 'user_notifications'
       post 'set_seen'
+      get 'get_counter'
     end
 
   end
