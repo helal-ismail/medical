@@ -1,4 +1,4 @@
-require "~/lib/helpers"
+require "/../lib/helpers/faker_helper.rb"
 
 # Unified PASSWORD
 password = "123456"
