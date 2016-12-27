@@ -1,4 +1,5 @@
 class Doctor < User
+  include ActionView::Helpers::NumberHelper
   has_many :doctor_prices
   has_many :clinics, :through => :doctor_prices
   has_many :appointments, :through => :doctor_prices
