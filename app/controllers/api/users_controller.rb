@@ -97,17 +97,11 @@ class Api::UsersController < ApiController
     render :json=> response.except(:status), :status=> response[:status]
   end
 
-  api :POST, '/user/edit', "Update User Profile"
 
-  def edit_profile
-
-  end
-
-  api :get, '/user/profile', "Get User Profile"
-  param :id, String, :desc => "user's UID", :required => true
+ param :id, String, :desc => "user's ID", :required => true
 
   def get_profile
-    user = User.find_by_uid(params["uid"])
+    user = User.find_by_id(params[:id])
     if user.present?
       render :json => {:data => user}
     else
@@ -127,6 +121,14 @@ class Api::UsersController < ApiController
 
     if params[:phone].present?
       user.edit_field("phone",params[:phone])
+    end
+    
+    if params[:img_url].present?
+      user.edit_field("img_url",params[:img_url])
+    end
+    
+    if params[:img_base64].present?
+      user.edit_field("img_base64",params[:img_base64])
     end
 
     render :json => {:msg => "Fields have been updated", :data => user}
