@@ -15,7 +15,7 @@ class Doctor < User
 
   def as_json(options)
     #super(:only => [:id, :uid, :name])
-    result = {:id => self.id, :name => self.name, :description => self.description || '', :total_rate => "0.0", :feedbacks=>[] }
+    result = {:id => self.id, :name => self.name, :description => self.description || '', :total_rate => "0.0", :feedbacks=>[], :img_url => self.img_url || '', :img_base64 => self.img_base64 || '' }
 
 
     feedbacks = Feedback.get_feedback("Doctor", self.id)
