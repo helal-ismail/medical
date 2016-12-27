@@ -38,8 +38,13 @@ class Doctor < User
         sub_result = {}
         sub_result[:clinic_id] = clinic.id
         sub_result[:clinic_name] = clinic.name
-        sub_result[:hospital_id] = clinic.hospital.id
-        sub_result[:hospital_name] = clinic.hospital.name
+        
+        sub_result[:hospital_id] = -0
+        sub_result[:hospital_name] = ""
+        if clinic.hospital.present?
+         sub_result[:hospital_id] = clinic.hospital.id
+         sub_result[:hospital_name] = clinic.hospital.name
+        end
         clinics_result << sub_result
       end
       result[:clinics] = clinics_result
