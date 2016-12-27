@@ -1,6 +1,7 @@
 class Feedback < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :appointment
 
   def self.add_feedback_with_params(params)
     feedback = Feedback.new
@@ -9,6 +10,7 @@ class Feedback < ActiveRecord::Base
     feedback.user_id = params[:user_id]
     feedback.comment = params[:comment]
     feedback.stars = params[:stars]
+    feedback.appointment_id = params[:appointment_id]
 
     feedback.save
     feedback
