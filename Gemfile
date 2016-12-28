@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'therubyracer'
 # API Doc Gem
 gem 'apipie-rails'
+gem 'sprockets', '~> 2.8'
 
 
 
