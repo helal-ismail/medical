@@ -30,6 +30,8 @@ class Api::UsersController < ApiController
     user.phone = user_params[:phone]
     user.address = user_params[:address]
     user.gender = user_params[:gender]
+    user.img_url = user_params[:img_url]
+    
     password = ''
     user.salt = SecureRandom.hex(4)
     user.encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
