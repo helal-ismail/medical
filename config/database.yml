@@ -6,7 +6,7 @@ development:
   timeout: 5000
   host: localhost
   username: root     # use user/pass from local mysql set up
-  password: yehia12345
+  password: abcd1234
 
 staging:
   adapter: mysql2
