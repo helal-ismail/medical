@@ -6,8 +6,8 @@ development:
   timeout: 5000
   host: localhost
   username: root     # use user/pass from local mysql set up
-  password: abcd1234
-  
+  password: yehia12345
+
 staging:
   adapter: mysql2
   encoding: utf8mb4
@@ -18,8 +18,8 @@ staging:
   username: root     # use user/pass from local mysql set up
   password: 012_yehia
 
-  
-production:  
+
+production:
   adapter: mysql2
   encoding: utf8mb4
   database: medical
