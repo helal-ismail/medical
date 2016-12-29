@@ -38,6 +38,8 @@ set :keep_releases, 3
 
 # clear the previous precompile task
 Rake::Task["deploy:assets:precompile"].clear_actions
+Rake::Task["deploy:assets:backup_manifest"].clear_actions
+
 #class PrecompileRequired < StandardError; end
 
 namespace :puma do

@@ -131,6 +131,7 @@ class Api::UsersController < ApiController
     
     if params[:img_base64].present?
       user.edit_field("img_base64",params[:img_base64])
+      user.edit_field("img_url","")
     end
 
     render :json => {:msg => "Fields have been updated", :data => user}
