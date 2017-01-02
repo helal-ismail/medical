@@ -8,6 +8,18 @@ class Patient < User
       where('name LIKE ?', "%#{pattern}%")
     end
   end
+  
+  def self.search_by_pattern_and_doctor(pattern, doctor)
+    patients = []
+    patient_ids = {}
+    doctor.appointments.each do |appointment|
+      unless patient_ids["#{appointment.patient.id}"].present?
+        patients << appointment.patient
+      end    
+    end
+    
+    patients
+  end
 
   def as_json(options)
     super(:only => [:id, :name])
