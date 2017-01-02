@@ -13,6 +13,14 @@ class Doctor < User
     end
   end
 
+  def clinics
+    clinics = []
+    self.octor_prices.each do |doctor_price|
+      clinics << doctor_price.clinic
+    end
+    return clinics
+  end
+  
   def as_json(options)
     #super(:only => [:id, :uid, :name])
     result = {:id => self.id, :name => self.name, :description => self.description || '', :total_rate => "0.0", :feedbacks=>[], :img_url => self.img_url || '', :img_base64 => self.img_base64 || '' }

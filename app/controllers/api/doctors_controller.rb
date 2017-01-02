@@ -35,6 +35,15 @@ class Api::DoctorsController < ApiController
       render :json => {:msg => "Doctor ID not found"}, :status => 400
     end
   end
+  
+  def clinics
+    doctor = Doctor.find(params[:id])
+    if doctor.present?
+      render :json => {:data => doctor.clinics }
+    else
+      render :json => {:msg => "Doctor ID not found"}, :status => 400
+    end
+  end
 
 
   api :GET, '/doctor/schedule', "Get Doctor's Schedule"

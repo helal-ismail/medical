@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       post 'search'
       post 'add_feedback'
       get 'get_feedback'
+      get 'clinics'
     end
 
     namespace :hospitals do

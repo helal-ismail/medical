@@ -8,6 +8,10 @@ class DoctorPrice < ActiveRecord::Base
     doctor_price = DoctorPrice.where(:doctor_id=>doctor_id, :clinic_id=>clinic_id).first
     doctor_price
   end
+  
+  def appointments_by_date(date)
+    self.appointments
+  end
 
   def add_daily_schedule(days_params)
     days_params.each do |schedule_params|
