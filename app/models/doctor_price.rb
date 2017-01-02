@@ -10,7 +10,7 @@ class DoctorPrice < ActiveRecord::Base
   end
   
   def appointments_by_date(date)
-    self.appointments
+    self.appointments.where("appointment_date = ? ", date)
   end
 
   def add_daily_schedule(days_params)

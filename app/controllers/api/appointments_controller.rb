@@ -85,7 +85,7 @@ class Api::AppointmentsController < ApiController
     def by_doctor_and_clinic_and_date
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     if doctor_price.present?
-      render :json => {:data => doctor_price.appointments_by_date(Date.today)}
+      render :json => {:data => doctor_price.appointments_by_date(params[:date])}
     else
       render :json => {:msg => "Couldn't find records for specified IDs"}, :status => 400
     end

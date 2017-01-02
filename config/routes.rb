@@ -55,6 +55,7 @@ Rails.application.routes.draw do
       post 'add_notes'
       get 'by_patient'
       get 'by_doctor_and_clinic'
+      get 'by_doctor_and_clinic_and_date'
       get 'by_all_params'
     end
 
