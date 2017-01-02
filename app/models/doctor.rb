@@ -15,7 +15,7 @@ class Doctor < User
 
   def clinics
     clinics = []
-    self.octor_prices.each do |doctor_price|
+    self.doctor_prices.each do |doctor_price|
       clinics << doctor_price.clinic
     end
     return clinics
