@@ -21,6 +21,8 @@ class Api::AppointmentsController < ApiController
     appointment = Appointment.find(params[:id])
     if appointment.present?
       appointment.state = 'canceled'
+      appointment.notes = params[:notes] || 'Canceled'
+      
       appointment.save
       render :json => {:msg => "Appointment has been canceled"}
     else
