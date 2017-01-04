@@ -1,4 +1,4 @@
-require "/../lib/helpers/faker_helper.rb"
+require_relative "libs/faker_helper"
 
 # Unified PASSWORD
 password = "123456"
@@ -29,7 +29,7 @@ end
 
 specializations.each do |spec|
   2.times do
-    FakeHelper.create_clinic(spec)
+    FakerHelper.create_clinic(spec)
   end
 end
 

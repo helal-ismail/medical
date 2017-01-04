@@ -1,4 +1,5 @@
 class FakerHelper
+
   
   def self.create_hospital
     hospital = Hospital.new
@@ -23,7 +24,7 @@ class FakerHelper
   
   
   def self.create_doctor(clinic_id)
-  
+  password = "123456"
   name = Faker::Name.name
   email = Faker::Internet.email
   phone = Faker::PhoneNumber.cell_phone
@@ -40,13 +41,13 @@ class FakerHelper
   desc = "إستشاري" + " " + spec.name
   doctor.description = desc 
   doctor.save
-  doctor_price = DoctorPrice.create(doctor_id: "#{doctor.id}", clinic_id: "#{clinic.id}", price: "100.00")
+  doctor_price = DoctorPrice.create(doctor_id: "#{doctor.id}", clinic_id: "#{clinic_id}", price: "100.00")
   doctor    
   end
   
   
   def self.create_patient(email)
-    
+    password = "123456"
     name = Faker::Name.name
     #email = Faker::Internet.email
     
