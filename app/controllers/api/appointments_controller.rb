@@ -85,5 +85,15 @@ class Api::AppointmentsController < ApiController
     end
   end
   
+  
+  def search
+    doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
+    appointments = doctor_price.appointments
+    result = []
+    appointments.each do |appointment|
+      result << appointment if appointment.patient.name.include? params[:pattern]
+    end
+    render :json => {:data => result }
+  end
 
 end
