@@ -20,7 +20,7 @@ class Api::AppointmentsController < ApiController
   def cancel
     appointment = Appointment.find(params[:id])
     if appointment.present?
-      appointment.state = 'canceled'
+      appointment.state = 3
       appointment.notes = params[:notes] || 'Canceled'
       
       appointment.save
