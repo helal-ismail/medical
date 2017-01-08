@@ -9,6 +9,8 @@ class Notification < ActiveRecord::Base
     body = {}
 
     body[:contents] = {:en => msg, :ar => msg_ar}
+    body[:entity] = {:entity_type => entity_type, :entity_id => entity_id}
+    
     player_ids = []
     player_ids << user.channel || ''
     body[:include_player_ids] = player_ids
