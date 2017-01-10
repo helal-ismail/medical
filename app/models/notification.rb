@@ -5,21 +5,23 @@ class Notification < ActiveRecord::Base
 
 
   def self.push(entity_type, entity_id, user, title, msg, msg_ar)
+    
+    notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar, entity_type: entity_type, entity_id: entity_id)
 
     body = {}
 
     body[:contents] = {:en => msg, :ar => msg_ar}
-    body[:data] = {:entity_type => entity_type, :entity_id => entity_id}
+    body[:data] = {:entity_type => entity_type, :entity_id => entity_id, :notification_id => notification.id}
     
     player_ids = []
     player_ids << user.channel || ''
     body[:include_player_ids] = player_ids
     url = "https://onesignal.com/api/v1/notifications"
     response = Api::NotificationsController.execute_request(url, body)
-    notification = nil
-    if response["recipients"].present? && response["recipients"].to_i > 0
-      notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar, entity_type: entity_type, entity_id: entity_id)
-    end
+#    notification = nil
+#    if response["recipients"].present? && response["recipients"].to_i > 0
+#      notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar, entity_type: entity_type, entity_id: entity_id)
+#    end
     notification
   end
 
