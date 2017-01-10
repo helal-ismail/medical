@@ -70,14 +70,14 @@ body > .header {
   .left-side {
     top: 50px;
   }
-  /*right side strech mode*/
+  /*Right side strech mode*/
   .right-side.strech {
     margin-left: 0;
   }
   .right-side.strech > .content-header {
     margin-top: 0px;
   }
-  /* left side collapse */
+  /* Left side collapse */
   .left-side.collapse-left {
     left: -220px;
   }
@@ -3105,7 +3105,7 @@ vertical-align: top;
     background-size: 200px 20px;
   }
 }
-.pace .pace-progress {
+/*.pace .pace-progress {
   background: #00c0ef;
   position: fixed;
   z-index: 2000;
@@ -3119,7 +3119,7 @@ vertical-align: top;
 }
 .pace-inactive {
   display: none;
-}
+}*/
 
 .pace {
   -webkit-pointer-events: none;

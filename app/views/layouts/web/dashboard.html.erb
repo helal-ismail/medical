@@ -8,16 +8,25 @@
 		<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet'>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 		<%= stylesheet_link_tag 'web/bootstrap' %>
-		<%= stylesheet_link_tag 'web/template_style' %>
-		<%= stylesheet_link_tag 'web/dashboard' %>
+		<%= stylesheet_link_tag 'web/style' %>
+		<%= stylesheet_link_tag 'web/custom-style' %>
 	</head>
 
 	<body class="skin-black">
-
+<!-- The header of the page -->
 		<%= render :file=> "layouts/web/dashboard/_header" %>
+
+		<!-- Left side column. Contains the side nav -->
 		<div class="wrapper row-offcanvas row-offcanvas-left">
 			<%= render :file=> "layouts/web/dashboard/_side_nav" %>
+
+			<!-- Right side column. Contains the navbar and content of the page -->
+			            <div class="right-side">
+
+			                <section class="content">
 			<%= yield %>
+		</section>
+</div>
 		</div>
 
 		<!--<div class="footer-main">
@@ -50,6 +59,7 @@
 		<%= javascript_include_tag 'web/jquery' %>
 		<%= javascript_include_tag 'web/bootstrap' %>
 		<%= javascript_include_tag 'web/app' %>
+		<%= javascript_include_tag 'web/chart' %>
 		<%= javascript_include_tag 'web/dashboard' %>
 	</body>
 </html>

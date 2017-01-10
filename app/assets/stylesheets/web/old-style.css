@@ -147,11 +147,11 @@ body > .header .logo {
 
 .skin-black .sidebar > .sidebar-menu > li.active > a {
     border-left: 4px solid #25D0B3;
-    padding-left: 11px; 
+    padding-left: 11px;
 }
 
 .skin-black .navbar {
- background-color: #283744;    
+ background-color: #283744;
 }
 
 .skin-black .navbar .nav a {
@@ -263,7 +263,7 @@ body > .header .logo {
     -moz-border-image: -moz-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
     -webkit-border-image: -webkit-linear-gradient(top, #5dcddb 0%, #5ddfc8 100%);
     border-image: linear-gradient(to bottom, #5dcddb 0%, #5ddfc8 100%);
-    border-image-slice: 1;  
+    border-image-slice: 1;
 }
 .btn.btn-transparentBck:hover, .btn.btn-transparentBck:active:focus, .btn.btn-transparentBck:active, .btn.btn-transparentBck:focus {
     color: #FFFFFF;
@@ -342,7 +342,7 @@ form .form-group{
 }
 .form-green select {
     background: url("../img/arrow_green.png") no-repeat right !important;
-    border: 1px solid #25D0B3; 
+    border: 1px solid #25D0B3;
     outline: none;
 }
 .form-group input {
@@ -395,10 +395,3 @@ form .form-group{
         display: none;
     }
 }
-
-
-
-
-
-
-

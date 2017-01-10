@@ -495,7 +495,7 @@ $(window).load(function() {
             source: "",
             //Callbacks
             onLoadStart: function(box) {
-            }, //right after the button has been clicked
+            }, //Right after the button has been clicked
             onLoadDone: function(box) {
             } //When the source has been loaded
 
@@ -670,7 +670,7 @@ $(window).load(function() {
         this.css({
             "position": "absolute",
             "top": ((($(parent).height() - this.outerHeight()) / 2) + $(parent).scrollTop() + "px"),
-            "left": ((($(parent).width() - this.outerWidth()) / 2) + $(parent).scrollleft() + "px")
+            "left": ((($(parent).width() - this.outerWidth()) / 2) + $(parent).scrollLeft() + "px")
         });
         return this;
     }
