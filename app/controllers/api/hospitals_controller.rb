@@ -16,8 +16,7 @@ class Api::HospitalsController < ApiController
     hospital = Hospital.find(params[:id])
     if hospital.present?
       
-      insurance_cos = [ {:name => "AIG Insurance"},{:name => "AXA Insurance"} ]
-      
+      insurance_cos = [ {:name => "AIG Insurance", :website=>"http://aig.com"},{:name => "AXA Insurance", :website => "http://axa.com"} ]      
       render :json => {:data => hospital, :clinics => hospital.clinics, :insurance_companies => insurance_cos}
     else
       render :json => {:msg => "Couldn't find a hospital with the specified ID"}, :status => 400

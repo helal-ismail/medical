@@ -23,7 +23,7 @@ class Api::ClinicsController < ApiController
     if clinic.present?
       
      insurance_cos = []
-     insurance_cos = [ {:name => "AIG Insurance"},{:name => "AXA Insurance"} ] if clinic.hospital.present?
+     insurance_cos = [ {:name => "AIG Insurance", :website=>"http://aig.com"},{:name => "AXA Insurance", :website => "http://axa.com"} ] if clinic.hospital.present?
      render :json => {:data => clinic, :doctors => clinic.doctors, :insurance_companies => insurance_cos }
     else
       render :json => {:msg => "Couldn't find a clinic with the specified ID"}, :status => 400
