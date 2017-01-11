@@ -19,9 +19,15 @@ body>.header .navbar {
     background-color: #283744;
 }
 
+
+/* - TOGGLE MENU BUTTON - */
+
 body>.header .navbar .sidebar-toggle span.icon-bar {
     background-color: #F0F3F4;
 }
+
+
+/* - USER MENU - RIGHT - */
 
 .skin-black .navbar .nav a {
     color: #F0F3F4;
@@ -45,6 +51,9 @@ body>.header .navbar .sidebar-toggle span.icon-bar {
     color: #FFFFFF;
 }
 
+
+/* - HEADER LOGO - */
+
 body>.header .logo {
     text-align: center;
 }
@@ -53,4 +62,112 @@ body>.header .logo img {
     width: 130px;
     height: 35px;
     margin: 8px 0;
+}
+
+
+/* ============================== SIDE NAV ============================== */
+
+.skin-black .sidebar>.sidebar-menu>li:first-of-type {
+    border-top: none;
+}
+
+.sidebar .sidebar-menu>li>a {
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.sidebar .sidebar-menu>li.active>a {
+    padding-left: 15px;
+}
+
+.sidebar-menu li.active.dashboard {
+    border-left: 5px solid #FFA71A;
+}
+
+.sidebar-menu li.active.hospitals {
+    border-left: 5px solid #FB7537;
+}
+
+.sidebar-menu li.active.clinics {
+    border-left: 5px solid #45CF95;
+}
+
+.sidebar-menu li.active.doctors {
+    border-left: 5px solid #F63C3C;
+}
+
+.sidebar-menu li.active.appointments {
+    border-left: 5px solid #3399FF;
+}
+
+
+/* ============================== CONTENT ============================== */
+
+.row.new-div {
+    padding: 15px 0;
+}
+
+.heading-btn a {
+    float: right;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+
+/* ============= GREEN THEME ============= */
+
+.green-theme .panel-heading {
+    color: #45CF95;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+/* - BUTTONS - */
+
+.green-theme .btn.transparent-back {
+    background-color: #FFFFFF;
+    border: 2px solid #45CF95;
+    color: #45CF95;
+}
+
+.green-theme .btn.transparent-back:hover, .green-theme .btn.transparent-back:active:focus, .green-theme .btn.transparent-back:active, .green-theme .btn.transparent-back:focus {
+    background-color: #45CF95;
+    color: #FFFFFF;
+}
+
+.green-theme .btn.opaque-back {
+    background-color: #45CF95;
+    border: 2px solid #45CF95;
+    color: #FFFFFF;
+}
+
+.green-theme .btn.opaque-back:hover, .green-theme .btn.opaque-back:active:focus, .green-theme .btn.opaque-back:active, .green-theme .btn.opaque-back:focus {
+    background-color: #FFFFFF;
+    color: #45CF95;
+}
+
+
+/* - TABLES - */
+
+.table i.fa {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.table i.fa-trash {
+    color: #F63C3C;
+}
+
+.table i.fa-info-circle {
+    color: #3399ff;
+}
+
+.green-theme .table thead {
+    background-color: #45CF95;
+    color: #FFFFFF;
 }

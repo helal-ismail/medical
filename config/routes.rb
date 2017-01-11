@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get 'hend' , to: 'web/dashboard#hend'
 
 
+  get 'hospitals', to: 'web/dashboard/hospitals#index'
   get 'clinics', to: 'web/dashboard/clinics#index'
+  get 'doctors', to: 'web/dashboard/doctors#index'
   # API App
   namespace :api do
 
@@ -57,7 +59,7 @@ Rails.application.routes.draw do
       get 'by_doctor_and_clinic'
       get 'by_all_params'
       post 'search'
-      
+
     end
 
     namespace :patients do
