@@ -2,9 +2,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-		<meta name="description" content="Welcome to Doctor">
-		<meta name="keywords" content="Admin, doctor, hospital, clinic">
-		<title>Doctor</title>
+		<meta name="description" content="Welcome to Appointik App">
+		<meta name="keywords" content="Appointik, Admin, doctor, hospital, clinic">
+		<title>Appointik</title>
 		<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet'>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 		<%= stylesheet_link_tag 'web/bootstrap' %>
@@ -13,7 +13,7 @@
 	</head>
 
 	<body class="skin-black">
-<!-- The header of the page -->
+		<!-- The header of the page -->
 		<%= render :file=> "layouts/web/dashboard/_header" %>
 
 		<!-- Left side column. Contains the side nav -->
@@ -21,12 +21,12 @@
 			<%= render :file=> "layouts/web/dashboard/_side_nav" %>
 
 			<!-- Right side column. Contains the navbar and content of the page -->
-			            <div class="right-side">
+			<div class="right-side">
 
-			                <section class="content">
-			<%= yield %>
-		</section>
-</div>
+				<section class="content">
+					<%= yield %>
+				</section>
+			</div>
 		</div>
 
 		<!--<div class="footer-main">
