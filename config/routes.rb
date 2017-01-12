@@ -14,8 +14,12 @@ Rails.application.routes.draw do
 
 
   get 'hospitals', to: 'web/dashboard/hospitals#index'
+  get 'hospitals/dashboard', to: 'web/dashboard/hospitals#dashboard'
   get 'clinics', to: 'web/dashboard/clinics#index'
+  get 'clinics/dashboard', to: 'web/dashboard/clinics#dashboard'
   get 'doctors', to: 'web/dashboard/doctors#index'
+  get 'doctors/dashboard', to: 'web/dashboard/doctors#dashboard'
+  get 'appointments', to: 'web/dashboard/appointments#index'
   # API App
   namespace :api do
 

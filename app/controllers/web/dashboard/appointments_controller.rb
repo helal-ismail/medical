@@ -1,2 +1,7 @@
-class Web::Dashboard::AppointmentsController < ApplicationController
+class Web::Dashboard::AppointmentsController < Web::DashboardController
+
+  def index
+    
+  end
+
 end
