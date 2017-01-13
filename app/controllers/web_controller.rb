@@ -3,6 +3,7 @@ class WebController < ApplicationController
   rescue_from Exception, :with => :handle_exception
  # before_filter :handleSessionSecurity
 
+ $url_admin_dashboard = "/dashboard"
  $url_hospitals = "/hospitals"
  $url_clinics = "/clinics"
  $url_doctors = "/doctors"
