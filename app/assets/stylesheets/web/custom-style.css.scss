@@ -58,6 +58,7 @@ body > .header .logo img {
     width: 130px;
     height: 35px;
     margin: 8px 0;
+    image-rendering: pixelated;
 }
 /* ============================== SIDE NAV ============================== */
 .skin-black .sidebar > .sidebar-menu > li:first-of-type {
