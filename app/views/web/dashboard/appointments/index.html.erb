@@ -14,22 +14,22 @@
                                     <header class="panel-heading custom-tabs">
                                         <ul class="nav nav-tabs">
                                             <li class="active">
-                                                <a data-toggle="tab" href="#home">
+                                                <a data-toggle="tab" href="#confimed">
                                                     <i class="fa fa-calendar-check-o"></i>Confirmed</a>
                                             </li>
                                             <li class="">
-                                                <a data-toggle="tab" href="#about">
+                                                <a data-toggle="tab" href="#canceled">
                                                     <i class="fa fa-calendar-times-o"></i>Canceled</a>
                                             </li>
                                             <li class="">
-                                                <a data-toggle="tab" href="#profile">
+                                                <a data-toggle="tab" href="#missed">
                                                     <i class="fa fa-calendar-minus-o"></i>Missed</a>
                                             </li>
                                         </ul>
                                     </header>
                                     <div class="panel-body">
                                         <div class="tab-content">
-                                            <div id="home" class="tab-pane active">
+                                            <div id="confimed" class="tab-pane active">
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
@@ -43,10 +43,10 @@
                                                             <td>xyz xyz xyz xyz</td>
                                                             <td>09:15 PM</td>
                                                             <td>
-                                                                <a href="#" title="Cancel" role="button">
+                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Cancel" role="button">
                                                                     <i class="fa fa-calendar-times-o"></i>
                                                                 </a>
-                                                                <a href="#" title="Missed" role="button">
+                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Missed" role="button">
                                                                     <i class="fa fa-calendar-minus-o"></i>
                                                                 </a>
                                                             </td>
@@ -54,6 +54,50 @@
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            <div id="canceled" class="tab-pane">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Time</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>xyz xyz xyz xyz</td>
+                                                            <td>09:15 PM</td>
+                                                            <td>
+                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
+                                                                    <i class="fa fa-calendar-check-o"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div id="missed" class="tab-pane">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Time</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>xyz xyz xyz xyz</td>
+                                                            <td>09:15 PM</td>
+                                                            <td>
+                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
+                                                                    <i class="fa fa-calendar-check-o"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                             <div id="about" class="tab-pane">
                                                 <table class="table table-hover">
                                                     <thead>
@@ -68,51 +112,7 @@
                                                             <td>xyz xyz xyz xyz</td>
                                                             <td>09:15 PM</td>
                                                             <td>
-                                                                <a href="#" title="Confirm" role="button">
-                                                                    <i class="fa fa-calendar-check-o"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div id="profile" class="tab-pane">
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Time</th>
-                                                            <th>Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>xyz xyz xyz xyz</td>
-                                                            <td>09:15 PM</td>
-                                                            <td>
-                                                                <a href="#" title="Confirm" role="button">
-                                                                    <i class="fa fa-calendar-check-o"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div id="about" class="tab-pane">
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Time</th>
-                                                            <th>Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>xyz xyz xyz xyz</td>
-                                                            <td>09:15 PM</td>
-                                                            <td>
-                                                                <a href="#" title="Confirm" role="button">
+                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
                                                                     <i class="fa fa-calendar-check-o"></i>
                                                                 </a>
                                                             </td>
@@ -123,11 +123,12 @@
                                         </div>
                                     </div>
                                 </section>
-                                <!--tab nav start-->
+                                <!--tab nav end-->
                             </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
+</div>

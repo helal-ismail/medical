@@ -265,6 +265,31 @@ body>.header .logo img {
 }
 
 
+/* blue */
+
+.blue-theme .btn.transparent-back {
+    background-color: #FFFFFF;
+    border: 2px solid #23B7E5;
+    color: #23B7E5;
+}
+
+.blue-theme .btn.transparent-back:hover, .blue-theme .btn.transparent-back:active:focus, .blue-theme .btn.transparent-back:active, .blue-theme .btn.transparent-back:focus {
+    background-color: #23B7E5;
+    color: #FFFFFF;
+}
+
+.blue-theme .btn.opaque-back {
+    background-color: #23B7E5;
+    border: 2px solid #23B7E5;
+    color: #FFFFFF;
+}
+
+.blue-theme .btn.opaque-back:hover, .blue-theme .btn.opaque-back:active:focus, .blue-theme .btn.opaque-back:active, .blue-theme .btn.opaque-back:focus {
+    background-color: #FFFFFF;
+    color: #23B7E5;
+}
+
+
 /* - TABLES - */
 
 .table thead th {
@@ -457,4 +482,36 @@ body>.header .logo img {
 
 .blue-theme .panel-heading .nav>li.active>a, .blue-theme .panel-heading .nav>li.active>a, .blue-theme .panel-heading .nav>li>a:hover {
     color: #23B7E5;
+}
+
+
+/* - MODAL - */
+
+.modal-content p {
+    font-size: 16px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-footer .btn {
+    width: 100px;
+}
+
+.modal-footer .btn+.btn {
+    margin-left: 20px;
+}
+
+.modal-footer .btn i.fa {
+    margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 400px;
+        margin: 40px auto;
+    }
 }

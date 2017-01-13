@@ -4,7 +4,7 @@ class Web::Dashboard::ClinicsController < Web::DashboardController
 
   end
 
-  def dashboard
+  def new
 
   end
 end

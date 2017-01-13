@@ -9,7 +9,7 @@
                     <div class="panel-body">
                         <div class="row new-div">
                             <div class="col-md-12 heading-btn">
-                                <a class="btn btn-default opaque-back" href="#" role="button">Add New Clinic</a>
+                                <%= link_to "Add New Clinic","/clinics/new",:class => "btn btn-default opaque-back" %>
                             </div>
                         </div>
                         <div class="row new-div">
@@ -25,8 +25,12 @@
                                         <tr>
                                             <td>xyz xyz xyz xyz</td>
                                             <td>
-                                                <a href="#" title="Details" role="button"><i class="fa fa-info-circle"></i></a>
-                                                <a href="#" title="Delete" role="button"><i class="fa fa-trash"></i></a>
+                                                <a href="#" title="Details" role="button">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </a>
+                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>

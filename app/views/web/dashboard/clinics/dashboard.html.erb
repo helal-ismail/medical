@@ -2,9 +2,7 @@
     <div class="row new-div">
         <div class="col-md-6">
             <div class="sm-st clearfix">
-                <a href="#" class="sm-st-icon st-red">
-                    <i class="fa fa-user-md"></i>
-                </a>
+                <%= link_to ('<i class="fa fa-user-md"></i>').html_safe,$url_doctors,:class => "sm-st-icon st-red" %>
                 <div class="sm-st-info red-info">
                     <span>200</span>
                     Doctors
@@ -13,12 +11,11 @@
         </div>
         <div class="col-md-6">
             <div class="sm-st clearfix">
-                <a href="#" class="sm-st-icon st-blue">
-                    <i class="fa fa-calendar"></i>
-                </a>
+                <%= link_to ('<i class="fa fa-calendar"></i>').html_safe,$url_appointments,:class => "sm-st-icon st-blue" %>
                 <div class="sm-st-info blue-info">
                     <span>3200</span>
-                    Appointments <small>(Today)</small>
+                    Appointments
+                    <small>(Today)</small>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 $("document").ready(function() {
     // << ====================== Functions Calls ====================== >>
     highlightNavItem();
-
+    styleConfirmModal();
 
 
 
@@ -25,4 +25,23 @@ $("document").ready(function() {
             }
         });
     };
+
+
+    // --- this function is to add css class to the modal depending on the theme  ---
+    function styleConfirmModal() {
+        var confirmModal = $("#confirm_modal");
+        var themeColor = $('div[class*="-theme"]').attr('class');
+        if (themeColor.length > 0) {
+            themeColor = themeColor.split(" ");
+            themeColor = themeColor[themeColor.length - 1];
+            $(confirmModal).addClass(themeColor);
+        }
+    };
+
+
+
+
+
+
+
 });

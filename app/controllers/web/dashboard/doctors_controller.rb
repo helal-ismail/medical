@@ -3,8 +3,8 @@ class Web::Dashboard::DoctorsController < Web::DashboardController
   def index
 
   end
-  
-  def dashboard
+
+  def new
 
   end
 end
