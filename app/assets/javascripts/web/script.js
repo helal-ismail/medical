@@ -31,7 +31,7 @@ $("document").ready(function() {
     function styleConfirmModal() {
         var confirmModal = $("#confirm_modal");
         var themeColor = $('div[class*="-theme"]').attr('class');
-        if (themeColor.length > 0) {
+        if (themeColor) {
             themeColor = themeColor.split(" ");
             themeColor = themeColor[themeColor.length - 1];
             $(confirmModal).addClass(themeColor);
