@@ -15,15 +15,19 @@ $("document").ready(function() {
         var navURL = window.location.href.toLowerCase();
         var allNavElements = $("ul.sidebar-menu li a");
         var activeListItem;
+        if (navURL.indexOf("dashboard") != -1) {
+            $("#dashboard_nav_elem").addClass("active dashboard");
+        } else {
+            $(allNavElements).each(function() {
+                activeListItem = $(this).find('span').text().toLowerCase();
+                $(this).parent().removeClass();
+                if (navURL.indexOf(activeListItem) != -1) {
+                    $(this).parent().addClass("active");
+                    $(this).parent().addClass(activeListItem);
+                }
+            });
+        }
 
-        $(allNavElements).each(function() {
-            activeListItem = $(this).find('span').text().toLowerCase();
-            $(this).parent().removeClass();
-            if (navURL.indexOf(activeListItem) != -1) {
-                $(this).parent().addClass("active");
-                $(this).parent().addClass(activeListItem);
-            }
-        });
     };
 
 
