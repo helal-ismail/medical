@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   get 'clinics/new', to: 'web/dashboard/clinics#new'
   get 'clinics/dashboard', to: 'web/dashboard/clinics#dashboard'
   get 'doctors', to: 'web/dashboard/doctors#index'
-  get 'doctors/new', to: 'web/dashboard/doctors#new'
-  get 'doctors/dashboard', to: 'web/dashboard/doctors#dashboard'
   get 'appointments', to: 'web/dashboard/appointments#index'
   # API App
   namespace :api do
