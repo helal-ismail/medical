@@ -583,15 +583,18 @@ span.required {
 /* --- DATEPICKER --- */
 .ui-datepicker {
     padding: 0;
+    font-family: 'Maven Pro', sans-serif;
+    width: 19em;
 }
 
 .ui-datepicker .ui-datepicker-header {
     padding: 8px;
+    margin-top: 0;
 }
 
 .ui-widget-header {
     background-color: #39435C;
-    color: #FFFFFF;
+    color: #BDBFC1;
     padding: 8px;
     border: none;
 }
@@ -624,7 +627,6 @@ span.required {
 
 .ui-corner-all {
     border-radius: 0;
-    margin-top: 4px;
 }
 
 .ui-button:focus,
@@ -642,10 +644,34 @@ span.required {
 .ui-datepicker .ui-datepicker-next-hover,
 .ui-datepicker .ui-datepicker-prev-hover {
     top: 2;
+    cursor: pointer;
 }
-.ui-datepicker .ui-datepicker-next-hover{
-  left:2;
+
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 2;
 }
-.ui-datepicker .ui-datepicker-prev-hover{
-  right: 2;
+
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 2;
+}
+
+.ui-datepicker-calendar thead span {
+    color: #39435C;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+    background-color: #FFFFFF;
+    border: none;
+    color: #39435C;
+    text-align: center;
+    padding: 0.5em 0.2em;
+}
+
+.ui-state-default.ui-state-active {
+    color: #FFFFFF;
+    background-color: #23B7E5;
+    border: none;
+    padding: 0.5em 0.2em;
+    border-radius: 15px;
 }
