@@ -2,18 +2,18 @@
     <div class="row new-div">
         <div class="col-md-6">
             <div class="sm-st clearfix">
-                <%= link_to ('<i class="fa fa-hospital-o"></i>').html_safe,$url_hospitals,:class => "sm-st-icon st-green" %>
+                <%= link_to ('<i class="fa fa-hospital-o"></i>').html_safe,@clinics_url,:class => "sm-st-icon st-green" %>
                 <div class="sm-st-info green-info">
-                    <span>200</span>
+                    <span><%= @clinics %></span>
                     Clinics
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="sm-st clearfix">
-                <%= link_to ('<i class="fa fa-user-md"></i>').html_safe,$url_doctors,:class => "sm-st-icon st-red" %>
+                <%= link_to ('<i class="fa fa-user-md"></i>').html_safe,@doctors_url,:class => "sm-st-icon st-red" %>
                 <div class="sm-st-info red-info">
-                    <span>3200</span>
+                    <span><%=@doctors%></span>
                     Doctors
                 </div>
             </div>
