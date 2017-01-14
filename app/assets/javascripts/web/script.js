@@ -6,8 +6,7 @@ $("document").ready(function() {
     // -- datepicker for the appoinments page --
     //$("#app_date").datepicker().datepicker("setDate", new Date());
     $("#app_date").datepicker({
-        dateFormat: 'dd-mm-yy',
-        maxDate: '0'
+        dateFormat: 'dd-mm-yy'
     });
     $("#app_date").datepicker().datepicker('setDate', 'today');
 
