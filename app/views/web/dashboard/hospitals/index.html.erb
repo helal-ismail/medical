@@ -22,8 +22,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <% @hospitals.each do |hospital| %>
                                         <tr>
-                                            <td>xyz xyz xyz xyz</td>
+                                            <td><%= hospital.name %></td>
                                             <td>
                                                 <a href="#" title="Details" role="button">
                                                     <i class="fa fa-info-circle"></i>
@@ -33,6 +34,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <% end %>
                                     </tbody>
                                 </table>
                             </div>
