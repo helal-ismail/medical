@@ -3,8 +3,13 @@ $("document").ready(function() {
     highlightNavItem();
     styleConfirmModal();
 
-
-
+    // -- datepicker for the appoinments page --
+    //$("#app_date").datepicker().datepicker("setDate", new Date());
+    $("#app_date").datepicker({
+        dateFormat: 'dd-mm-yy',
+        maxDate: '0'
+    });
+    $("#app_date").datepicker().datepicker('setDate', 'today');
 
 
 
