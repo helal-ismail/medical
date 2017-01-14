@@ -454,11 +454,11 @@ body > .header .logo img {
 .blue-theme .panel-heading .nav > li.active > a {
     border-top: 2px solid #23B7E5;
     padding: 13px 15px;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #DDDDDD;
 }
 
 .custom-tabs .nav-tabs li.active:last-of-type a {
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #DDDDDD;
 }
 
 .blue-theme .panel-heading .nav > li > a:hover,
@@ -552,7 +552,100 @@ span.required {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(240, 80, 80, 1);
     border-color: #F05050 !important;
 }
+/* blue form */
+.blue-theme select {
+    background: image-url("arrow_blue.png") no-repeat right;
+}
+
+.blue-theme .form-control,
+.blue-theme .form-control:active,
+.blue-theme .form-control:active:focus,
+.blue-theme .form-control:focus,
+.blue-theme .form-control:hover {
+    outline: none;
+    border: 1px solid #23B7E5;
+}
+
+.blue-theme input:active,
+.blue-theme input:active:focus,
+.blue-theme input:focus,
+.blue-theme select:active,
+.blue-theme select:active:focus,
+.blue-theme select:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(35, 183, 229, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(35, 183, 229, 1);
+    border-color: #23B7E5 !important;
+}
 /* alerts */
 .alert {
     margin-bottom: 0;
+}
+/* --- DATEPICKER --- */
+.ui-datepicker {
+    padding: 0;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    padding: 8px;
+}
+
+.ui-widget-header {
+    background-color: #39435C;
+    color: #FFFFFF;
+    padding: 8px;
+    border: none;
+}
+
+.ui-widget-header a {
+    color: #7C8991;
+}
+
+.ui-widget-header .ui-icon {
+    background-image: image-url('glyphiconshalflings-grey.png');
+}
+
+.ui-icon-circle-triangle-w {
+    background-position: -430px -71px;
+}
+
+.ui-icon-circle-triangle-e {
+    background-position: -456px -71px;
+}
+
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span {
+    margin-top: 0;
+    top: 25%;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid #DDDDDD;
+}
+
+.ui-corner-all {
+    border-radius: 0;
+    margin-top: 4px;
+}
+
+.ui-button:focus,
+.ui-button:hover,
+.ui-state-focus,
+.ui-state-hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-focus,
+.ui-widget-header .ui-state-hover {
+    background: transparent;
+    border: none;
+}
+
+.ui-datepicker .ui-datepicker-next-hover,
+.ui-datepicker .ui-datepicker-prev-hover {
+    top: 2;
+}
+.ui-datepicker .ui-datepicker-next-hover{
+  left:2;
+}
+.ui-datepicker .ui-datepicker-prev-hover{
+  right: 2;
 }
