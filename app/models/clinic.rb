@@ -14,6 +14,11 @@ class Clinic < ActiveRecord::Base
     Clinic.where(:hospital_id => 0)
   end
 
+  def appointments_by_date(date)
+    date = Date.today.strftime unless date.present?
+    self.appointments.where(:appointment_date => Date.parse(date) )
+  end
+
   def self.search_by_pattern(pattern)
     if pattern.blank?  # blank? covers both nil and empty string
       private_clinics

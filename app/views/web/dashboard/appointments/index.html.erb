@@ -47,9 +47,10 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                      <%@appointments.each do |appointment| %>
                                                         <tr>
-                                                            <td>xyz xyz xyz xyz</td>
-                                                            <td>09:15 PM</td>
+                                                            <td><%= appointment.patient.name%></td>
+                                                            <td><%= appointment.appointment_date %></td>
                                                             <td>
                                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Cancel" role="button">
                                                                     <i class="fa fa-calendar-times-o"></i>
@@ -59,6 +60,7 @@
                                                                 </a>
                                                             </td>
                                                         </tr>
+                                                      <%end%>
                                                     </tbody>
                                                 </table>
                                             </div>

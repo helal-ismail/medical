@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'clinics/:id/doctors', to: 'web/dashboard/doctors#index'
 
   get 'appointments', to: 'web/dashboard/appointments#index'
+  get 'clinics/:id/appointments', to: 'web/dashboard/appointments#index'
+
   # API App
   namespace :api do
 
