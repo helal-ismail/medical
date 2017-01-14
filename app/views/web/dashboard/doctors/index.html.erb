@@ -1,4 +1,4 @@
-<div class="row red-theme">
+  <div class="row red-theme">
     <div class="col-lg-12">
         <div class="row">
             <div class="col-md-12">
@@ -7,6 +7,7 @@
                         Doctors
                     </header>
                     <div class="panel-body">
+                        <% if @clinics.count > 0%>
                         <div class="row new-div">
                             <div class="col-md-12">
                                 <form class="form form-inline" role="form">
@@ -19,10 +20,10 @@
                                         <label for="clinicList">Clinic<span class="required">*</span>
                                         </label>
                                         <select class="form-control">
-                                            <option>Select</option>
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
+                                          <% @clinics.each do |clinic| %>
+                                            <option><%=clinic.name%></option>
+                                          <%end%>
+
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-default opaque-back">ADD DOCTOR TO CLINIC</button>
@@ -47,6 +48,7 @@
                                 </div>
                             </div>
                         </div>
+                        <%end%>
                         <div class="row new-div">
                             <div class="col-md-12">
                                 <table class="table table-hover">
@@ -57,8 +59,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <%@doctors.each do |doctor|%>
                                         <tr>
-                                            <td>xyz xyz xyz xyz</td>
+                                            <td><%= doctor.name %></td>
                                             <td>
                                                 <a href="#" title="Details" role="button">
                                                     <i class="fa fa-info-circle"></i>
@@ -68,6 +71,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <%end%>
                                     </tbody>
                                 </table>
                             </div>
