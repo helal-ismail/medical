@@ -640,10 +640,13 @@ span.required {
     background: transparent;
     border: none;
 }
-
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev{
+  top: 4;
+}
 .ui-datepicker .ui-datepicker-next-hover,
 .ui-datepicker .ui-datepicker-prev-hover {
-    top: 2;
+    top: 4;
     cursor: pointer;
 }
 

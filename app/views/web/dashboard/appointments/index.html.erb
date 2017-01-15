@@ -15,14 +15,14 @@
                                         </label>
                                         <input type="text" class="form-control" id="app_date">
                                     </div>
-                                    <button type="submit" class="btn btn-default opaque-back">VIEW APPOINTMENTS</button>
+                                    <button id="view_appointments" class="btn btn-default opaque-back">VIEW APPOINTMENTS</button>
                                 </form>
                                 <!--tab nav start-->
                                 <section class="panel general">
                                     <header class="panel-heading">
                                         <ul class="nav nav-tabs">
                                             <li class="active">
-                                                <a data-toggle="tab" href="#confimed">
+                                                <a data-toggle="tab" href="#confirmed">
                                                     <i class="fa fa-calendar-check-o"></i>Confirmed</a>
                                             </li>
                                             <li class="">
@@ -37,13 +37,13 @@
                                     </header>
                                     <div class="panel-body">
                                         <div class="tab-content">
-                                            <div id="confimed" class="tab-pane active">
+                                            <div id="confirmed" class="tab-pane active">
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
                                                             <th>Name</th>
                                                             <th>Time</th>
-                                                            <th>Actions</th>
+                                                            <th class="action-header">Actions</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -51,7 +51,7 @@
                                                         <tr>
                                                             <td><%= appointment.patient.name%></td>
                                                             <td><%= appointment.appointment_date %></td>
-                                                            <td>
+                                                            <td class="action-col">
                                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Cancel" role="button">
                                                                     <i class="fa fa-calendar-times-o"></i>
                                                                 </a>
@@ -70,14 +70,14 @@
                                                         <tr>
                                                             <th>Name</th>
                                                             <th>Time</th>
-                                                            <th>Actions</th>
+                                                            <th class="action-header">Actions</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>xyz xyz xyz xyz</td>
                                                             <td>09:15 PM</td>
-                                                            <td>
+                                                            <td class="action-col">
                                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
                                                                     <i class="fa fa-calendar-check-o"></i>
                                                                 </a>
@@ -92,14 +92,14 @@
                                                         <tr>
                                                             <th>Name</th>
                                                             <th>Time</th>
-                                                            <th>Actions</th>
+                                                            <th class="action-header">Actions</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>xyz xyz xyz xyz</td>
                                                             <td>09:15 PM</td>
-                                                            <td>
+                                                            <td class="action-col">
                                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
                                                                     <i class="fa fa-calendar-check-o"></i>
                                                                 </a>
@@ -121,7 +121,7 @@
                                                         <tr>
                                                             <td>xyz xyz xyz xyz</td>
                                                             <td>09:15 PM</td>
-                                                            <td>
+                                                            <td class="action-col">
                                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
                                                                     <i class="fa fa-calendar-check-o"></i>
                                                                 </a>
