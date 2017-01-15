@@ -12,8 +12,25 @@ Rails.application.routes.draw do
   get 'hello', to: 'web/dashboard#hello'
   get 'hend' , to: 'web/dashboard#hend'
 
+  get 'dashboard', to: 'web/dashboard/admin#index'
+
+  get 'hospitals', to: 'web/dashboard/hospitals#index'
+  get 'hospitals/new', to: 'web/dashboard/hospitals#new'
+  get 'hospitals/:id', to: 'web/dashboard/hospitals#dashboard'
 
   get 'clinics', to: 'web/dashboard/clinics#index'
+  get 'hospitals/:id/clinics', to: 'web/dashboard/clinics#index'
+
+  get 'clinics/new', to: 'web/dashboard/clinics#new'
+  get 'clinics/:id', to: 'web/dashboard/clinics#dashboard'
+
+  get 'doctors', to: 'web/dashboard/doctors#index'
+  get 'hospitals/:id/doctors', to: 'web/dashboard/doctors#index'
+  get 'clinics/:id/doctors', to: 'web/dashboard/doctors#index'
+
+  get 'appointments', to: 'web/dashboard/appointments#index'
+  get 'clinics/:id/appointments', to: 'web/dashboard/appointments#index'
+
   # API App
   namespace :api do
 
@@ -57,7 +74,7 @@ Rails.application.routes.draw do
       get 'by_doctor_and_clinic'
       get 'by_all_params'
       post 'search'
-      
+
     end
 
     namespace :patients do

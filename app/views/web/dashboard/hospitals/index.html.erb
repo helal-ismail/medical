@@ -1,15 +1,15 @@
-<div class="row green-theme">
+<div class="row orange-theme">
     <div class="col-lg-12">
         <div class="row">
             <div class="col-md-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        Clinics
+                        Hospitals
                     </header>
                     <div class="panel-body">
                         <div class="row new-div">
                             <div class="col-md-12 heading-btn">
-                                <%= link_to "Add New Clinic","/clinics/new",:class => "btn btn-default opaque-back" %>
+                                <%= link_to "Add New Hospital","/hospitals/new",:class => "btn btn-default opaque-back" %>
                             </div>
                         </div>
                         <div class="row new-div">
@@ -22,11 +22,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      <% @clinics.each do |clinic|%>
+                                      <% @hospitals.each do |hospital| %>
                                         <tr>
-                                            <td><%= clinic.name %></td>
+                                            <td><%= hospital.name %></td>
                                             <td>
-                                                <a href="<%= "/clinics/#{clinic.id}"%>" title="Details" role="button">
+                                                <a href="/hospitals/<%= hospital.id %>" title="Details" role="button">
                                                     <i class="fa fa-info-circle"></i>
                                                 </a>
                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
@@ -34,7 +34,7 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <%end%>
+                                        <% end %>
                                     </tbody>
                                 </table>
                             </div>

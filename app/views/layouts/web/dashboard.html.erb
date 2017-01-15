@@ -2,43 +2,54 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-		<meta name="description" content="Welcome to Doctor">
-		<meta name="keywords" content="Admin, doctor, hospital, clinic">
-		<title>Doctor</title>
-		<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet'>
+		<meta name="description" content="Welcome to Appointik App">
+		<meta name="keywords" content="Appointik, Admin, doctor, hospital, clinic">
+		<title>Appointik</title>
+		<%= favicon_link_tag 'logo.png' %>
+		<link href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' rel='stylesheet'>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet'>
 		<%= stylesheet_link_tag 'web/bootstrap' %>
-		<%= stylesheet_link_tag 'web/template_style' %>
-		<%= stylesheet_link_tag 'web/dashboard' %>
+		<%= stylesheet_link_tag 'web/style' %>
+		<%= stylesheet_link_tag 'web/custom-style' %>
 	</head>
 
 	<body class="skin-black">
-
+		<!-- The header of the page -->
 		<%= render :file=> "layouts/web/dashboard/_header" %>
+
+		<!-- Left side column. Contains the side nav -->
 		<div class="wrapper row-offcanvas row-offcanvas-left">
 			<%= render :file=> "layouts/web/dashboard/_side_nav" %>
-			<%= yield %>
+
+			<!-- Right side column. Contains the navbar and content of the page -->
+			<div class="right-side">
+
+				<section class="content">
+					<%= yield %>
+				</section>
+			</div>
 		</div>
 
 		<!--<div class="footer-main">
 		Copyright &copy Director, 2014
 		</div>-->
-		<!-- Delete Modal -->
-		<div id="deleteModal" class="modal fade" role="dialog">
+		<!-- Confirmation Modal -->
+		<div id="confirm_modal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-body">
 						<p>
-							Are you sure you want to delete this?
+							Do you want to continue this action?
 						</p>
 					</div>
 					<div class="modal-footer">
-						<button id="delete_button" type="button" class="btn btn-grad">
+						<button id="yes_button" type="button" class="btn opaque-back">
 							<i class="fa fa-check"></i>Yes
 						</button>
-						<button type="button" class="btn btn-transparentBck" data-dismiss="modal">
+						<button type="button" class="btn transparent-back" data-dismiss="modal">
 							<i class="fa fa-times"></i>Cancel
 						</button>
 					</div>
@@ -48,8 +59,11 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<%= javascript_include_tag 'web/jquery' %>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<%= javascript_include_tag 'web/bootstrap' %>
 		<%= javascript_include_tag 'web/app' %>
-		<%= javascript_include_tag 'web/dashboard' %>
+		<%= javascript_include_tag 'web/chart' %>
+		<%= javascript_include_tag 'web/script' %>
 	</body>
 </html>

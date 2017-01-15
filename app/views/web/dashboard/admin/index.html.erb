@@ -1,0 +1,58 @@
+<div class="yellow-theme">
+    <div class="row new-div">
+        <div class="col-md-4">
+            <div class="sm-st clearfix">
+                <%= link_to ('<i class="fa fa-h-square"></i>').html_safe,$url_hospitals,:class => "sm-st-icon st-orange" %>
+                <div class="sm-st-info orange-info">
+                    <span><%=@hospitals%></span>
+                    Hospitals
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sm-st clearfix">
+                <%= link_to ('<i class="fa fa-hospital-o"></i>').html_safe,$url_clinics,:class => "sm-st-icon st-green" %>
+                <div class="sm-st-info green-info">
+                    <span><%=@clinics%></span>
+                    Clinics
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sm-st clearfix">
+                <%= link_to ('<i class="fa fa-user-md"></i>').html_safe,$url_doctors,:class => "sm-st-icon st-red" %>
+                <div class="sm-st-info red-info">
+                    <span><%=@doctors%></span>
+                    Doctors
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+    <div class="row">
+
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Appointments / month
+                </header>
+                <div class="panel-body"></div>
+            </section>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Appointments / 6 months
+                </header>
+                <div class="panel-body"></div>
+            </section>
+        </div>
+
+    </div>
+</div>

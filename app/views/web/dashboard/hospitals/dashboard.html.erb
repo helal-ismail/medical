@@ -1,0 +1,49 @@
+<div class="yellow-theme">
+    <div class="row new-div">
+        <div class="col-md-6">
+            <div class="sm-st clearfix">
+                <%= link_to ('<i class="fa fa-hospital-o"></i>').html_safe,@clinics_url,:class => "sm-st-icon st-green" %>
+                <div class="sm-st-info green-info">
+                    <span><%= @clinics %></span>
+                    Clinics
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="sm-st clearfix">
+                <%= link_to ('<i class="fa fa-user-md"></i>').html_safe,@doctors_url,:class => "sm-st-icon st-red" %>
+                <div class="sm-st-info red-info">
+                    <span><%=@doctors%></span>
+                    Doctors
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+    <div class="row">
+
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Appointments / month
+                </header>
+                <div class="panel-body"></div>
+            </section>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Appointments / 6 months
+                </header>
+                <div class="panel-body"></div>
+            </section>
+        </div>
+
+    </div>
+</div>
