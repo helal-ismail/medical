@@ -1,4 +1,5 @@
 $("document").ready(function() {
+
     // << ====================== Functions Calls ====================== >>
     highlightNavItem();
     styleConfirmModal();
@@ -9,6 +10,27 @@ $("document").ready(function() {
         dateFormat: 'dd-mm-yy'
     });
     $("#app_date").datepicker().datepicker('setDate', 'today');
+
+
+
+
+    // << ====================== EVENTs ====================== >>
+    // -- remove actions if selected date < today's date --
+    $("#view_appointments").click(function() {
+        var todaysDate = new Date();
+        var datePickerVal = $("#app_date").val();
+        datePickerVal = datePickerVal.split('-');
+        var temp = datePickerVal[0];
+        datePickerVal[0] = datePickerVal[1];
+        datePickerVal[1] = temp;
+        datePickerVal = datePickerVal[0] + "-" + datePickerVal[1] + "-" + datePickerVal[2];
+        datePickerVal = new Date(datePickerVal);
+        if (datePickerVal.setHours(0, 0, 0, 0) < todaysDate.setHours(0, 0, 0, 0)) {
+            $(".action-header,action-col").hide();
+        }
+    });
+
+
 
 
 
