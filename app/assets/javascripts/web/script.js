@@ -11,6 +11,21 @@ $("document").ready(function() {
     });
     $("#app_date").datepicker().datepicker('setDate', 'today');
 
+    $('.table').DataTable({
+        bFilter: false,
+        bLengthChange: false,
+        bSort: false,
+        pageLength: 20,
+        oLanguage: {
+            "oPaginate": {
+                "sNext": '&gt>',
+                "sLast": '&raquo;>>',
+                "sFirst": '&laquo;<<',
+                "sPrevious": '&lt;<'
+            },
+            "sInfo": "_START_ - _END_ of _TOTAL_"
+        }
+    });
 
 
 
