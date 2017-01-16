@@ -26,15 +26,13 @@ class Api::SchedulesController < ApiController
   end
 
   def show
-    doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
-    if doctor_price.daily_schedules.count == 0
-      daily_schedule = DailySchedule.new
-      daily_schedule.start_time = "7:00 pm"
-      daily_schedule.end_time = "9:00 pm"
-      daily_schedule.day_of_week = 1
-      doctor_price.daily_schedules << daily_schedule
-    end
-    render :json => {:data => doctor_price.daily_schedules}
+  #  doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
+#    if doctor_price.daily_schedules.count == 0
+      result = [{:start_time => "10:00 AM", :end_time => "1:00 PM"},{:start_time => "07:00 PM", :end_time => "10:00 PM"}]
+#      daily_schedule.day_of_week = 1
+#      doctor_price.daily_schedules << daily_schedule
+#    end
+    render :json => {:data => result}
   end
 
 
