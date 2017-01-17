@@ -1,0 +1,961 @@
+/* ============================== GENERAL STYLE ============================== */
+/*html { width: 100%; height:100%; overflow:hidden; }*/
+/* line 4, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+body {
+  font-family: 'Maven Pro', sans-serif;
+  overflow-x: hidden;
+  font-style: normal;
+  font-variant: normal;
+}
+
+/* ============================== HEADER ============================== */
+/* line 11, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+body > .header .navbar {
+  height: auto;
+}
+
+/* line 15, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .navbar {
+  background-color: #283744;
+}
+
+/* --- TOGGLE MENU BUTTON --- */
+/* line 19, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+body > .header .navbar .sidebar-toggle span.icon-bar {
+  background-color: #F0F3F4;
+}
+
+/* --- USER MENU - RIGHT --- */
+/* line 23, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .navbar .nav a {
+  color: #F0F3F4;
+}
+
+/* line 32, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .navbar .nav .open > a,
+.skin-black .navbar .nav .open > a:focus,
+.skin-black .navbar .nav .open > a:hover,
+.skin-black .navbar .nav > li > a:active,
+.skin-black .navbar .nav > li > a:focus,
+.skin-black .navbar .nav > li > a:hover {
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+/* line 39, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .navbar .nav > li > a:not(:active),
+.skin-black .navbar .nav > li > a:not(:focus),
+.skin-black .navbar .nav > li > a:not(:hover) {
+  background-color: #283744;
+  color: #F0F3F4;
+}
+
+/* line 44, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .navbar .nav .dropdown-menu-right a {
+  color: #333333;
+}
+
+/* line 50, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .navbar .nav .dropdown-menu-right a:active,
+.skin-black .navbar .nav .dropdown-menu-right a:focus,
+.skin-black .navbar .nav .dropdown-menu-right a:hover {
+  color: #FFFFFF;
+}
+
+/* --- HEADER LOGO --- */
+/* line 54, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+body > .header .logo {
+  text-align: left;
+}
+
+/* line 58, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+body > .header .logo img {
+  width: 130px;
+  height: 35px;
+  margin: 8px 0;
+  image-rendering: pixelated;
+}
+
+/* ============================== SIDE NAV ============================== */
+/* line 65, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.skin-black .sidebar > .sidebar-menu > li:first-of-type {
+  border-top: none;
+}
+
+/* line 69, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar .sidebar-menu > li > a {
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+/* line 74, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar .sidebar-menu > li.active > a {
+  padding-left: 15px;
+}
+
+/* line 78, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar-menu li.active.dashboard {
+  border-left: 5px solid #FFA71A;
+}
+
+/* line 82, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar-menu li.active.hospitals {
+  border-left: 5px solid #FB7537;
+}
+
+/* line 86, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar-menu li.active.clinics {
+  border-left: 5px solid #45CF95;
+}
+
+/* line 90, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar-menu li.active.doctors {
+  border-left: 5px solid #F05050;
+}
+
+/* line 94, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sidebar-menu li.active.appointments {
+  border-left: 5px solid #23B7E5;
+}
+
+/* ============================== CONTENT ============================== */
+/* line 98, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.row.new-div {
+  padding: 15px 0;
+}
+
+/* line 102, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.heading-btn a {
+  float: right;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* line 108, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.btn {
+  border-radius: 0;
+}
+
+/* --- PANEL HEADING --- */
+/* line 112, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.panel-heading {
+  font-size: 22px;
+}
+
+/* green */
+/* line 116, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .panel-heading {
+  color: #45CF95;
+}
+
+/* orange */
+/* line 120, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .panel-heading {
+  color: #FB7537;
+}
+
+/* red */
+/* line 124, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .panel-heading {
+  color: #F05050;
+}
+
+/* yellow */
+/* line 128, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.yellow-theme .panel-heading {
+  color: #FFA71A;
+}
+
+/* blue */
+/* line 132, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .panel-heading {
+  color: #23B7E5;
+}
+
+/* --- BUTTONS --- */
+/* green */
+/* line 137, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .btn.transparent-back {
+  background-color: #FFFFFF;
+  border: 2px solid #45CF95;
+  color: #45CF95;
+}
+
+/* line 146, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .btn.transparent-back:active,
+.green-theme .btn.transparent-back:active:focus,
+.green-theme .btn.transparent-back:focus,
+.green-theme .btn.transparent-back:hover {
+  background-color: #45CF95;
+  color: #FFFFFF;
+}
+
+/* line 151, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .btn.opaque-back {
+  background-color: #45CF95;
+  border: 2px solid #45CF95;
+  color: #FFFFFF;
+}
+
+/* line 160, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .btn.opaque-back:active,
+.green-theme .btn.opaque-back:active:focus,
+.green-theme .btn.opaque-back:focus,
+.green-theme .btn.opaque-back:hover {
+  background-color: #FFFFFF;
+  color: #45CF95;
+}
+
+/* orange */
+/* line 165, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .btn.transparent-back {
+  background-color: #FFFFFF;
+  border: 2px solid #FB7537;
+  color: #FB7537;
+}
+
+/* line 174, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .btn.transparent-back:active,
+.orange-theme .btn.transparent-back:active:focus,
+.orange-theme .btn.transparent-back:focus,
+.orange-theme .btn.transparent-back:hover {
+  background-color: #FB7537;
+  color: #FFFFFF;
+}
+
+/* line 179, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .btn.opaque-back {
+  background-color: #FB7537;
+  border: 2px solid #FB7537;
+  color: #FFFFFF;
+}
+
+/* line 188, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .btn.opaque-back:active,
+.orange-theme .btn.opaque-back:active:focus,
+.orange-theme .btn.opaque-back:focus,
+.orange-theme .btn.opaque-back:hover {
+  background-color: #FFFFFF;
+  color: #FB7537;
+}
+
+/* red */
+/* line 193, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .btn.transparent-back {
+  background-color: #FFFFFF;
+  border: 2px solid #F05050;
+  color: #F05050;
+}
+
+/* line 202, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .btn.transparent-back:active,
+.red-theme .btn.transparent-back:active:focus,
+.red-theme .btn.transparent-back:focus,
+.red-theme .btn.transparent-back:hover {
+  background-color: #F05050;
+  color: #FFFFFF;
+}
+
+/* line 207, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .btn.opaque-back {
+  background-color: #F05050;
+  border: 2px solid #F05050;
+  color: #FFFFFF;
+}
+
+/* line 216, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .btn.opaque-back:active,
+.red-theme .btn.opaque-back:active:focus,
+.red-theme .btn.opaque-back:focus,
+.red-theme .btn.opaque-back:hover {
+  background-color: #FFFFFF;
+  color: #F05050;
+}
+
+/* yellow */
+/* line 221, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.yellow-theme .btn.transparent-back {
+  background-color: #FFFFFF;
+  border: 2px solid #FFA71A;
+  color: #FFA71A;
+}
+
+/* line 230, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.yellow-theme .btn.transparent-back:active,
+.yellow-theme .btn.transparent-back:active:focus,
+.yellow-theme .btn.transparent-back:focus,
+.yellow-theme .btn.transparent-back:hover {
+  background-color: #FFA71A;
+  color: #FFFFFF;
+}
+
+/* line 235, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.yellow-theme .btn.opaque-back {
+  background-color: #FFA71A;
+  border: 2px solid #FFA71A;
+  color: #FFFFFF;
+}
+
+/* line 244, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.yellow-theme .btn.opaque-back:active,
+.yellow-theme .btn.opaque-back:active:focus,
+.yellow-theme .btn.opaque-back:focus,
+.yellow-theme .btn.opaque-back:hover {
+  background-color: #FFFFFF;
+  color: #FFA71A;
+}
+
+/* blue */
+/* line 249, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .btn.transparent-back {
+  background-color: #FFFFFF;
+  border: 2px solid #23B7E5;
+  color: #23B7E5;
+}
+
+/* line 258, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .btn.transparent-back:active,
+.blue-theme .btn.transparent-back:active:focus,
+.blue-theme .btn.transparent-back:focus,
+.blue-theme .btn.transparent-back:hover {
+  background-color: #23B7E5;
+  color: #FFFFFF;
+}
+
+/* line 263, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .btn.opaque-back {
+  background-color: #23B7E5;
+  border: 2px solid #23B7E5;
+  color: #FFFFFF;
+}
+
+/* line 272, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .btn.opaque-back:active,
+.blue-theme .btn.opaque-back:active:focus,
+.blue-theme .btn.opaque-back:focus,
+.blue-theme .btn.opaque-back:hover {
+  background-color: #FFFFFF;
+  color: #23B7E5;
+}
+
+/* --- TABLES --- */
+/* line 277, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table thead th {
+  font-weight: normal;
+}
+
+/* line 281, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table i.fa {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+/* line 286, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table i.fa-trash {
+  color: #F05050;
+}
+
+/* line 290, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table i.fa-info-circle {
+  color: #23B7E5;
+}
+
+/* line 294, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table i.fa-calendar-check-o {
+  color: #45CF95;
+}
+
+/* line 298, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table i.fa-calendar-times-o {
+  color: #F05050;
+}
+
+/* line 302, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.table i.fa-calendar-minus-o {
+  color: #FFA71A;
+}
+
+/* green */
+/* line 306, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .table thead {
+  background-color: #45CF95;
+  color: #FFFFFF;
+}
+
+/* orange */
+/* line 311, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .table thead {
+  background-color: #FB7537;
+  color: #FFFFFF;
+}
+
+/* red */
+/* line 316, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .table thead {
+  background-color: #F05050;
+  color: #FFFFFF;
+}
+
+/* blue */
+/* line 321, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .table thead {
+  background-color: #23B7E5;
+  color: #FFFFFF;
+}
+
+/* --- COUNT BOXES --- */
+/* line 326, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sm-st {
+  padding: 35px;
+}
+
+/* line 330, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sm-st-icon {
+  width: 70px;
+  height: 70px;
+  margin-right: 30px;
+}
+
+/* line 336, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sm-st-icon i {
+  font-size: 40px;
+  padding: 12px;
+}
+
+/* line 341, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sm-st-info {
+  font-size: 22px;
+}
+
+/* line 345, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.sm-st-info span {
+  color: #000000;
+}
+
+/* green */
+/* line 349, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-info {
+  color: #45CF95;
+}
+
+/* line 356, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.st-green:active,
+.st-green:active:focus,
+.st-green:focus,
+.st-green:hover {
+  color: #45CF95;
+  background-color: #FFFFFF;
+  border: 2px solid #45CF95;
+}
+
+/* red */
+/* line 362, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-info {
+  color: #F05050;
+}
+
+/* line 369, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.st-red:active,
+.st-red:active:focus,
+.st-red:focus,
+.st-red:hover {
+  color: #F05050;
+  background-color: #FFFFFF;
+  border: 2px solid #F05050;
+}
+
+/* blue */
+/* line 375, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-info {
+  color: #23B7E5;
+}
+
+/* line 382, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.st-blue:active,
+.st-blue:active:focus,
+.st-blue:focus,
+.st-blue:hover {
+  color: #23B7E5;
+  background-color: #FFFFFF;
+  border: 2px solid #23B7E5;
+}
+
+/* orange */
+/* line 388, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-info {
+  color: #FB7537;
+}
+
+/* line 392, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.st-orange {
+  background-color: #FB7537;
+}
+
+/* line 399, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.st-orange:active,
+.st-orange:active:focus,
+.st-orange:focus,
+.st-orange:hover {
+  color: #FB7537;
+  background-color: #FFFFFF;
+  border: 2px solid #FB7537;
+}
+
+/* --- CUSTOM TABS --- */
+/* line 405, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .panel-heading {
+  background: #FFFFFF;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-bottom: none;
+  padding: 20px 15px;
+}
+
+/* line 413, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .panel-body {
+  padding: 30px 5px;
+}
+
+/* line 417, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .nav-tabs > li {
+  background-color: #F0F3F4;
+}
+
+/* line 421, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .nav-tabs li a {
+  border-left: 1px solid #ddd;
+  margin: 0;
+  font-size: 15px;
+  padding: 15px;
+}
+
+/* line 428, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .nav-tabs li a i.fa {
+  margin-right: 8px;
+  font-size: 19px;
+}
+
+/* line 435, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.panel-heading .nav > li > a:hover i.fa-calendar-check-o,
+.panel-heading .nav > li.active > a i.fa-calendar-check-o,
+.panel-heading .nav > li.active > a i.fa-calendar-check-o {
+  color: #45CF95;
+}
+
+/* line 441, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.panel-heading .nav > li > a:hover i.fa-calendar-times-o,
+.panel-heading .nav > li.active > a i.fa-calendar-times-o,
+.panel-heading .nav > li.active > a i.fa-calendar-times-o {
+  color: #F05050;
+}
+
+/* line 447, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.panel-heading .nav > li > a:hover i.fa-calendar-minus-o,
+.panel-heading .nav > li.active > a i.fa-calendar-minus-o,
+.panel-heading .nav > li.active > a i.fa-calendar-minus-o {
+  color: #FFA71A;
+}
+
+/* line 451, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .nav-tabs li:first-of-type a {
+  border: none;
+}
+
+/* line 455, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .panel-heading .nav > li.active > a {
+  border-top: 2px solid #23B7E5;
+  padding: 13px 15px;
+  border-left: 1px solid #DDDDDD;
+}
+
+/* line 461, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.custom-tabs .nav-tabs li.active:last-of-type a {
+  border-right: 1px solid #DDDDDD;
+}
+
+/* line 467, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .panel-heading .nav > li > a:hover,
+.blue-theme .panel-heading .nav > li.active > a,
+.blue-theme .panel-heading .nav > li.active > a {
+  color: #23B7E5;
+}
+
+/* --- MODAL --- */
+/* line 471, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.modal-content p {
+  font-size: 16px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+/* line 477, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.modal-footer {
+  text-align: center;
+}
+
+/* line 481, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.modal-footer .btn {
+  width: 100px;
+}
+
+/* line 485, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.modal-footer .btn + .btn {
+  margin-left: 20px;
+}
+
+/* line 489, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.modal-footer .btn i.fa {
+  margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+  /* line 493, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+  .modal-dialog {
+    width: 400px;
+    margin: 50px auto;
+  }
+}
+/* --- FORMS --- */
+/* line 499, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+span.required {
+  color: #F05050;
+  padding: 0 3px;
+}
+
+/* line 504, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.form-group select {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 5px;
+  line-height: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* line 515, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.form label {
+  font-weight: normal;
+}
+
+/* line 519, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.form .form-control {
+  border-radius: 0;
+  height: 36px;
+  width: 200px;
+}
+
+/* inline form */
+/* line 525, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.form.form-inline .form-group {
+  margin-right: 50px;
+}
+
+/* line 529, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.form.form-inline label {
+  padding-right: 8px;
+}
+
+/* red */
+/* line 533, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme select {
+  background: url(/assets/arrow_red-00b090b9a15d6f21a942169f892858cb.png) no-repeat right;
+}
+
+/* line 541, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .form-control,
+.red-theme .form-control:active,
+.red-theme .form-control:active:focus,
+.red-theme .form-control:focus,
+.red-theme .form-control:hover {
+  outline: none;
+  border: 1px solid #F05050;
+}
+
+/* line 551, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme input:active,
+.red-theme input:active:focus,
+.red-theme input:focus,
+.red-theme select:active,
+.red-theme select:active:focus,
+.red-theme select:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f05050;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f05050;
+  border-color: #F05050 !important;
+}
+
+/* blue */
+/* line 557, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme select {
+  background: url(/assets/arrow_blue-d48bcf6fcad0fd19fd06f898518831a6.png) no-repeat right;
+}
+
+/* line 565, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .form-control,
+.blue-theme .form-control:active,
+.blue-theme .form-control:active:focus,
+.blue-theme .form-control:focus,
+.blue-theme .form-control:hover {
+  outline: none;
+  border: 1px solid #23B7E5;
+}
+
+/* line 575, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme input:active,
+.blue-theme input:active:focus,
+.blue-theme input:focus,
+.blue-theme select:active,
+.blue-theme select:active:focus,
+.blue-theme select:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #23b7e5;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #23b7e5;
+  border-color: #23B7E5 !important;
+}
+
+/* alerts */
+/* line 581, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.alert {
+  margin-bottom: 0;
+}
+
+/* --- DATEPICKER --- */
+/* line 585, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker {
+  padding: 0;
+  font-family: 'Maven Pro', sans-serif;
+  width: 19em;
+}
+
+/* line 591, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker .ui-datepicker-header {
+  padding: 8px;
+  margin-top: 0;
+}
+
+/* line 596, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-widget-header {
+  background-color: #39435C;
+  color: #BDBFC1;
+  padding: 8px;
+  border: none;
+}
+
+/* line 603, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-widget-header a {
+  color: #7C8991;
+}
+
+/* line 607, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-widget-header .ui-icon {
+  background-image: url(/assets/glyphiconshalflings-grey-41eb3598a6aaa4fff9d5fae3d4e57209.png);
+}
+
+/* line 611, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-icon-circle-triangle-w {
+  background-position: -430px -71px;
+}
+
+/* line 615, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-icon-circle-triangle-e {
+  background-position: -456px -71px;
+}
+
+/* line 620, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span {
+  margin-top: 0;
+  top: 25%;
+}
+
+/* line 625, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-widget.ui-widget-content {
+  border: 1px solid #DDDDDD;
+}
+
+/* line 629, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-corner-all {
+  border-radius: 0;
+}
+
+/* line 640, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-button:focus,
+.ui-button:hover,
+.ui-state-focus,
+.ui-state-hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-focus,
+.ui-widget-header .ui-state-hover {
+  background: transparent;
+  border: none;
+}
+
+/* line 646, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev {
+  top: 4;
+}
+
+/* line 651, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker .ui-datepicker-next-hover,
+.ui-datepicker .ui-datepicker-prev-hover {
+  top: 4;
+  cursor: pointer;
+}
+
+/* line 656, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 2;
+}
+
+/* line 660, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 2;
+}
+
+/* line 664, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-datepicker-calendar thead span {
+  color: #39435C;
+}
+
+/* line 669, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+  background-color: #FFFFFF;
+  border: none;
+  color: #39435C;
+  text-align: center;
+  padding: 0.5em 0.2em;
+}
+
+/* line 677, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.ui-state-default.ui-state-active {
+  color: #FFFFFF;
+  background-color: #23B7E5;
+  border: none;
+  padding: 0.5em 0.2em;
+  border-radius: 15px;
+}
+
+/* --- TABLE PAGINATION --- */
+/* green */
+/* line 686, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .dataTables_info {
+  color: #45CF95;
+}
+
+/* line 690, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+  border: 1px solid #45CF95;
+  border-radius: 0;
+  margin: 0;
+  color: #45CF95 !important;
+  background-color: #FFFFFF;
+}
+
+/* line 700, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.green-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.green-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.green-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: #FFFFFF !important;
+  background: none;
+  background-color: #45CF95;
+  border: 1px solid #45CF95;
+}
+
+/* red */
+/* line 707, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .dataTables_info {
+  color: #F05050;
+}
+
+/* line 711, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+  border: 1px solid #F05050;
+  border-radius: 0;
+  margin: 0;
+  color: #F05050 !important;
+  background-color: #FFFFFF;
+}
+
+/* line 721, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.red-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.red-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.red-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: #FFFFFF !important;
+  background: none;
+  background-color: #F05050;
+  border: 1px solid #F05050;
+}
+
+/* blue */
+/* line 728, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .dataTables_info {
+  color: #23B7E5;
+}
+
+/* line 732, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+  border: 1px solid #23B7E5;
+  border-radius: 0;
+  margin: 0;
+  color: #23B7E5 !important;
+  background-color: #FFFFFF;
+}
+
+/* line 742, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.blue-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.blue-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.blue-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: #FFFFFF !important;
+  background: none;
+  background-color: #23B7E5;
+  border: 1px solid #23B7E5;
+}
+
+/* orange */
+/* line 749, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .dataTables_info {
+  color: #FB7537;
+}
+
+/* line 753, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+  border: 1px solid #FB7537;
+  border-radius: 0;
+  margin: 0;
+  color: #FB7537 !important;
+  background-color: #FFFFFF;
+}
+
+/* line 763, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.orange-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.orange-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.orange-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: #FFFFFF !important;
+  background: none;
+  background-color: #FB7537;
+  border: 1px solid #FB7537;
+}
+
+/* - all themes - */
+/* line 771, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+table.dataTable.no-footer {
+  border-bottom: none;
+  margin-bottom: 40px;
+}
+
+/* line 777, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  border: 1px solid #B7B7B7;
+  color: #B7B7B7 !important;
+}
+
+/* line 782, /Users/helalismail/Desktop/appointk/medical/app/assets/stylesheets/web/custom-style.css.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+  color: #FFFFFF !important;
+  background-color: #B7B7B7 !important;
+  border: 1px solid #B7B7B7 !important;
+}
