@@ -136,7 +136,7 @@ class Api::UsersController < ApiController
 
     if params[:img_file].present?
       result = Cloudinary::Uploader.upload(params[:img_file])
-      user.edit_field("img_url",result.url) if result.url.present?
+      user.edit_field("img_url",result["url"]) if result["url"].present?
     end
 
     render :json => {:msg => "Fields have been updated", :data => user}
