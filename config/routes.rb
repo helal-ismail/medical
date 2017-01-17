@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   get 'clinics/:id/doctors', to: 'web/dashboard/doctors#index'
 
   get 'appointments', to: 'web/dashboard/appointments#index'
-  get 'clinics/:id/appointments', to: 'web/dashboard/appointments#index'
+  get 'clinics/:id/appointments/', to: 'web/dashboard/appointments#index'
+  get 'clinics/:id/appointments/:date', to: 'web/dashboard/appointments#index'
 
   # API App
   namespace :api do
@@ -96,6 +97,10 @@ Rails.application.routes.draw do
       get 'user_notifications'
       post 'set_seen'
       get 'get_counter'
+    end
+
+    namespace :attachments do
+      post 'upload'
     end
 
   end

@@ -1,0 +1,18 @@
+development:
+  cloud_name: trianglz
+  api_key: '131355685262966'
+  api_secret: X19CzldQfklo1zXhofF82rWU9l8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: trianglz
+  api_key: '131355685262966'
+  api_secret: X19CzldQfklo1zXhofF82rWU9l8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: trianglz
+  api_key: '131355685262966'
+  api_secret: X19CzldQfklo1zXhofF82rWU9l8
+  enhance_image_tag: true
+  static_image_support: false
