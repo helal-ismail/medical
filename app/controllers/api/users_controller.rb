@@ -31,7 +31,7 @@ class Api::UsersController < ApiController
     user.address = user_params[:address]
     user.gender = user_params[:gender]
     user.img_url = user_params[:img_url]
-    
+
     password = ''
     user.salt = SecureRandom.hex(4)
     user.encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
@@ -124,14 +124,19 @@ class Api::UsersController < ApiController
     if params[:phone].present?
       user.edit_field("phone",params[:phone])
     end
-    
+
     if params[:img_url].present?
       user.edit_field("img_url",params[:img_url])
     end
-    
+
     if params[:img_base64].present?
       user.edit_field("img_base64",params[:img_base64])
       user.edit_field("img_url","")
+    end
+
+    if params[:img_file].present?
+      result = Cloudinary::Uploader.upload(params[:img_file])
+      user.edit_field("img_url",result.url) if result.url.present?
     end
 
     render :json => {:msg => "Fields have been updated", :data => user}

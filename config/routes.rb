@@ -99,6 +99,10 @@ Rails.application.routes.draw do
       get 'get_counter'
     end
 
+    namespace :attachments do
+      post 'upload'
+    end
+
   end
 
   root 'touch#touch'
