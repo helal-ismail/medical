@@ -9,6 +9,7 @@
  * Global variables. If you change any of these vars, don't forget
  * to change the values in the less files!
  */
+
 var left_side_width = 220; //Sidebar width in pixels
 
 $(function() {
@@ -106,7 +107,7 @@ $(function() {
     function _fix() {
         //Get window height and the wrapper height
         var height = $(window).height() - $("body > .header").height() - ($("body > .footer").outerHeight() || 0);
-        //$(".wrapper").css("min-height", height + "px");
+        $(".wrapper").css("min-height", height + "px");
         var content = $(".wrapper").height();
         //If the wrapper height is greater than the window
         if (content > height)
