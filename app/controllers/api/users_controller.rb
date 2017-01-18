@@ -12,7 +12,6 @@ class Api::UsersController < ApiController
     param :phone, String, :desc => "Phone", :required => true
     param :address, String, :desc => "Address", :required => true
     param :gender, String, :desc => "Gender [male/female]", :required => true
-
   end
 
   def social_login

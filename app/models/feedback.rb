@@ -25,7 +25,7 @@ class Feedback < ActiveRecord::Base
   def as_json(options)
       # super(:only => [:comment, :stars, :user_id])
       result = {:id => self.id, :comment => self.comment, :stars => self.stars,
-                :user_id => self.user_id, :user_name => self.user.name, :date => self.created_at.strftime('%Y-%m-%d')}
+                :user_id => self.user_id, :user_name => self.user.name, :user_image => self.user.img_url || '' ,:date => self.created_at.strftime('%Y-%m-%d')}
   end
 
 end
