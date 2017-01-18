@@ -30,6 +30,13 @@ class Api::NotificationsController < ApiController
 
   def self.execute_request(url, body)
     body[:app_id] = APP_ID
+
+    body[:android_background_layout] = {}
+    body[:android_background_layout][:headings_color] = "000000"
+    body[:android_background_layout][:contents_color] = "000000"
+    body[:small_icon] = "ic_home"
+    body[:large_icon] = "ic_notification_green"
+
     headers = {'Authorization' => AUTH_KEY , 'Content-Type' => 'application/json'}
     HTTParty.post(url,:body => body.to_json, :headers => headers)
 
