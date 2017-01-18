@@ -105,6 +105,6 @@ Rails.application.routes.draw do
 
   end
 
-  root 'touch#touch'
+  root 'web/dashboard#home'
 
 end
