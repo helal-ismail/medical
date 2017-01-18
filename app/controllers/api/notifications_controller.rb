@@ -31,9 +31,11 @@ class Api::NotificationsController < ApiController
   def self.execute_request(url, body)
     body[:app_id] = APP_ID
 
+#    body[:buttons] = [{"id": "id1", "text": "Dismiss"}]
     body[:android_background_layout] = {}
-    body[:android_background_layout][:headings_color] = "000000"
-    body[:android_background_layout][:contents_color] = "000000"
+    body[:android_background_layout][:image]="http://www.whitetablegallery.org/src/share/default.jpg"
+    body[:android_background_layout][:headings_color] = "FFFF0000"
+    body[:android_background_layout][:contents_color] = "FFFF0000"
     body[:small_icon] = "ic_home"
     body[:large_icon] = "ic_notification_green"
 
