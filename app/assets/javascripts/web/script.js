@@ -46,7 +46,7 @@ $("document").ready(function() {
         }
 
         // -- get appointments by clinic id --
-        request_appointments($(this).val());
+        request_appointments($(this).data("value"));
     });
 
 
