@@ -7,7 +7,7 @@ $("document").ready(function() {
     // -- datepicker for the appoinments page --
     //$("#app_date").datepicker().datepicker("setDate", new Date());
     $("#app_date").datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'dd-mm-yy'
     });
     $("#app_date").datepicker().datepicker('setDate', 'today');
 
@@ -21,7 +21,8 @@ $("document").ready(function() {
                 "sNext": '&gt>',
                 "sLast": '&raquo;>>',
                 "sFirst": '&laquo;<<',
-                "sPrevious": '&lt;<'
+                "sPrevious": '&lt;<',
+                "sEmptyTable": "My Custom Message On Empty Table"
             },
             "sInfo": "_START_ - _END_ of _TOTAL_"
         }
@@ -35,9 +36,9 @@ $("document").ready(function() {
         var todaysDate = new Date();
         var datePickerVal = $("#app_date").val();
         datePickerVal = datePickerVal.split('-');
-        var temp = datePickerVal[1];
-        datePickerVal[1] = datePickerVal[2];
-        datePickerVal[2] = temp;
+        var temp = datePickerVal[0];
+        datePickerVal[0] = datePickerVal[1];
+        datePickerVal[1] = temp;
         datePickerVal = datePickerVal[0] + "-" + datePickerVal[1] + "-" + datePickerVal[2];
         datePickerVal = new Date(datePickerVal);
         if (datePickerVal.setHours(0, 0, 0, 0) < todaysDate.setHours(0, 0, 0, 0)) {
