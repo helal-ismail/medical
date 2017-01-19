@@ -2,26 +2,26 @@
     <section class="sidebar">
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li id="dashboard_nav_elem">
+            <li id="dashboard_nav_elem" class="dashboard">
                 <%= link_to ('<i class="fa fa-dashboard"></i>
               <span>Dashboard</span>').html_safe,$url_admin_dashboard %>
             </li>
-            <li>
+            <li class="hospitals">
                 <%= link_to ('<i class="fa fa-h-square"></i>
               <span>Hospitals</span>').html_safe,$url_hospitals %>
             </li>
 
-            <li>
+            <li class="clinics">
                 <%= link_to ('<i class="fa fa-hospital-o"></i>
               <span>Clinics</span>').html_safe,$url_clinics %>
             </li>
 
-            <li>
+            <li class="doctors">
                 <%= link_to ('<i class="fa fa-user-md"></i>
               <span>Doctors</span>').html_safe,$url_doctors %>
             </li>
 
-            <li>
+            <li class="appointments">
                 <%= link_to ('<i class="fa fa-calendar"></i>
               <span>Appointments</span>').html_safe,$url_appointments %>
             </li>

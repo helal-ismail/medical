@@ -35,20 +35,33 @@ $("document").ready(function() {
 
     // --- this function is to get the menu item that should be active and highlight it ---
     function highlightNavItem() {
-        var navURL = window.location.href.toLowerCase();
-        var allNavElements = $("ul.sidebar-menu li a");
-        var activeListItem;
-        if (navURL.indexOf("dashboard") != -1) {
-            $("#dashboard_nav_elem").addClass("active dashboard");
-        } else {
-            $(allNavElements).each(function() {
-                activeListItem = $(this).find('span').text().toLowerCase();
-                $(this).parent().removeClass();
-                if (navURL.indexOf(activeListItem) != -1) {
-                    $(this).parent().addClass("active");
-                    $(this).parent().addClass(activeListItem);
-                }
-            });
+        var themeClasses = $("#main_content").attr("class");
+        themeClasses = themeClasses.split(' ');
+        var themeColor;
+        $.each(themeClasses, function(index, value) {
+            if (value.indexOf("theme") != -1) {
+                themeColor = value.split('-');
+                themeColor = themeColor[0];
+            }
+
+        });
+        $(".sidebar-menu .active").removeClass("active");
+        switch (themeColor) {
+            case "yellow":
+                $(".sidebar-menu .dashboard").addClass('active');
+                break;
+            case "orange":
+                $(".sidebar-menu .hospitals").addClass('active');
+                break;
+            case "green":
+                $(".sidebar-menu .clinics").addClass('active');
+                break;
+            case "red":
+                $(".sidebar-menu .doctors").addClass('active');
+                break;
+            case "blue":
+                $(".sidebar-menu .appointments").addClass('active');
+                break;
         }
 
     };

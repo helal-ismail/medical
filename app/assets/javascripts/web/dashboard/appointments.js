@@ -41,7 +41,7 @@ $("document").ready(function() {
         datePickerVal = datePickerVal[2] + "-" + datePickerVal[1] + "-" + datePickerVal[0];
         datePickerVal = new Date(datePickerVal);
         if (datePickerVal.setHours(0, 0, 0, 0) < todaysDate.setHours(0, 0, 0, 0)) {
-            $(".action-header,action-col").hide();
+            $(".action-header,.action-col").hide();
         }
 
         // -- get appointments by clinic id --
