@@ -1,11 +1,6 @@
-function request_assign_doctor() {
-
-    doctor_uid = $('#doctor_uid').val()
-    clinic_id = $('#clinics_list').val()
-    data = {"clinic_id":clinic_id, "doctor_uid":doctor_uid};
-
+function request_assign_doctor(clinic_id, doctor_uid, assign_flag) {
+    data = {"clinic_id":clinic_id, "doctor_uid":doctor_uid, "assign_flag": assign_flag};
     url = "/api/clinics/assign_doctor";
-
     execute_request(url, "POST", data, callback)
 }
 
@@ -33,6 +28,14 @@ function callback(result) {
 
 $("document").ready(function() {
     $("#assign_doctor_btn").click(function() {
-        request_assign_doctor();
+      doctor_uid = $('#doctor_uid').val()
+      clinic_id = $('#clinics_list').val()
+        request_assign_doctor(clinic_id, doctor_uid, true);
+    });
+
+
+    $("#yes_button").click(function() {
+        $("#confirm_modal").modal('hide');
+
     });
 });

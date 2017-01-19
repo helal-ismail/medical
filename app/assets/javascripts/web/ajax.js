@@ -1,7 +1,5 @@
 function execute_request(url, type, data, success_callback){
 
-
-
   $.ajax({
      type: type,// GET in place of POST
      contentType: "application/json; charset=utf-8",

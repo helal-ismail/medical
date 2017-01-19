@@ -33,9 +33,12 @@ class Api::ClinicsController < ApiController
   def assign_doctor
     doctor = Doctor.where(:uid => params[:doctor_uid]).first
     clinic = Clinic.find(params[:clinic_id])
+    params[:assign_flag]
     query = DoctorPrice.where(:doctor_id => doctor.id, :clinic_id => params[:clinic_id])
-    if query.count == 0
-      doctor_price = DoctorPrice.create(doctor_id: doctor.id, clinic_id: params[:clinic_id], price: 100)
+    if params[:assign_flag].present?
+        doctor_price = DoctorPrice.create(doctor_id: doctor.id, clinic_id: params[:clinic_id], price: 100) if query.count == 0
+    else
+      query.first.destroy if query.count > 0
     end
     render :json => {:data => clinic.doctors}
   end
