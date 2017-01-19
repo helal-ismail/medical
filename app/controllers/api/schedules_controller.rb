@@ -26,30 +26,15 @@ class Api::SchedulesController < ApiController
   end
 
   def show
-    doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
-    render :json => {:data => doctor_price.daily_schedules}
+  #  doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
+#    if doctor_price.daily_schedules.count == 0
+      result = [{:start_time => "10:00 AM", :end_time => "1:00 PM"},{:start_time => "07:00 PM", :end_time => "10:00 PM"}]
+#      daily_schedule.day_of_week = 1
+#      doctor_price.daily_schedules << daily_schedule
+#    end
+    render :json => {:data => result}
   end
 
-  def schedule
-    uid = params[:uid]
-    doctor = Doctor.find_by_uid(uid)
-    if doctor.present?
-      start_time = "2:00pm"
-      count = 0
-      duration = 15*60
-      slots = []
-      9.times do
-        time = (Time.parse(start_time) + count * duration).strftime("%r")
-        count+=1
-        available = true
-        available = false if count % 2 == 0
-        slot = {:time => time, :availabe => available}
-        slots << slot
-      end
-      render :json => {:data => slots}
-    else
-      render :json => {:msg => "Doctor UID not found"}, :status => 400
-    end
-  end
+
 
 end

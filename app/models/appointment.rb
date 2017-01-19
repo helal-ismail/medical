@@ -56,20 +56,20 @@ class Appointment < ActiveRecord::Base
           self.state = 'past'
           self.save
         end
-        
+
         stars = 0
         stars = self.feedback.stars if self.feedback.present?
-        
+
         hospital_name = ""
         hospital_id = 0
-        
+
         if self.doctor_price.clinic.hospital.present?
           hospital_name = self.doctor_price.clinic.hospital.name
           hospital_id = self.doctor_price.clinic.hospital.id
         end
         # super(:only => [:id, :discount, :price, :patient_id, :appointment_date, :appointment_time])
         result = {:id => self.id, :discount => self.discount, :price => self.price, :state => self.state,
-                  :appointment_date => self.appointment_date,
+                  :appointment_date => self.appointment_date, :appointment_time => self.appointment_time,
                   :patient_id => self.patient.id, :patient_name => self.patient.name,
                   :doctor_id => self.doctor_price.doctor.id, :doctor_name => self.doctor_price.doctor.name, :doctor_description => self.doctor_price.doctor.description,
                   :notes => self.notes || '', :clinic_id => self.doctor_price.clinic.id, :clinic_name => self.doctor_price.clinic.name, :specialization => self.doctor_price.clinic.specialization.name, :feedback => stars, :hospital_name => hospital_name, :hospital_id => hospital_id }

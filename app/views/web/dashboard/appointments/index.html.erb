@@ -18,9 +18,10 @@
                                     <div class="form-group">
                                         <label for="docotrList">Doctor
                                         </label>
-                                        <select class="form-control">
-                                            <option>Doctor 1</option>
-                                            <option>Doctor 2</option>
+                                        <select id="doctors_list" class="form-control">
+                                          <% @doctors.each do |doctor| %>
+                                            <option value="<%= doctor.id %>" ><%= doctor.name %></option>
+                                          <% end %>
                                         </select>
                                     </div>
                                     <button id="view_appointments" class="btn btn-default opaque-back">VIEW APPOINTMENTS</button>
@@ -54,7 +55,7 @@
                                                             <th class="action-header">Actions</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="appointments_table">
                                                         <%@appointments.each do |appointment| %>
                                                         <tr>
                                                             <td><%= appointment.patient.name%></td>

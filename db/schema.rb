@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110114258) do
+ActiveRecord::Schema.define(version: 20170115123330) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "uid",              limit: 255
     t.float    "discount",         limit: 24
     t.float    "price",            limit: 24
     t.date     "appointment_date"
-    t.time     "appointment_time"
+    t.string   "appointment_time", limit: 255,   default: ""
     t.integer  "counter",          limit: 4
     t.integer  "state",            limit: 4
     t.text     "notes",            limit: 65535
     t.integer  "doctor_price_id",  limit: 4
     t.integer  "patient_id",       limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "clinics", force: :cascade do |t|
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 20170110114258) do
 
   create_table "daily_schedules", force: :cascade do |t|
     t.integer  "day_of_week",     limit: 4
-    t.time     "start_time"
-    t.time     "end_time"
+    t.string   "start_time",      limit: 255, default: ""
+    t.string   "end_time",        limit: 255, default: ""
     t.integer  "doctor_price_id", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "doctor_prices", force: :cascade do |t|
