@@ -29,28 +29,6 @@ $("document").ready(function() {
 
 
 
-    // << ====================== EVENTs ====================== >>
-
-    $("#view_appointments").click(function() {
-        // -- remove actions if selected date < today's date --
-        var todaysDate = new Date();
-        var datePickerVal = $("#app_date").val();
-        datePickerVal = datePickerVal.split('-');
-        var temp = datePickerVal[1];
-        datePickerVal[1] = datePickerVal[2];
-        datePickerVal[2] = temp;
-        datePickerVal = datePickerVal[2] + "-" + datePickerVal[1] + "-" + datePickerVal[0];
-        datePickerVal = new Date(datePickerVal);
-        if (datePickerVal.setHours(0, 0, 0, 0) < todaysDate.setHours(0, 0, 0, 0)) {
-            $(".action-header,action-col").hide();
-        }
-
-        // -- get appointments by clinic id --
-        request_appointments($(this).data("value"));
-    });
-
-
-
 
 
     // << ====================== Functions Declaration ====================== >>
