@@ -1,10 +1,13 @@
 function execute_request(url, type, data, success_callback){
+
+
+
   $.ajax({
      type: type,// GET in place of POST
      contentType: "application/json; charset=utf-8",
      url: url,
-//     data : JSON.stringify({name:"ravi",age:"31"}),
-     data: data,
+     data : JSON.stringify(data),
+//     data: data,
      dataType: "json",
      success: function (result) {
        success_callback(result)
