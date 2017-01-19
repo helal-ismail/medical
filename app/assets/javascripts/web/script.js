@@ -17,6 +17,7 @@ $("document").ready(function() {
         bSort: false,
         pageLength: 20,
         oLanguage: {
+            "sEmptyTable": "No data available",
             "oPaginate": {
                 "sNext": '&gt>',
                 "sLast": '&raquo;>>',
@@ -43,7 +44,6 @@ $("document").ready(function() {
                 themeColor = value.split('-');
                 themeColor = themeColor[0];
             }
-
         });
         $(".sidebar-menu .active").removeClass("active");
         switch (themeColor) {
