@@ -1,5 +1,3 @@
-res = "";
-
 
 function request_appointments(clinic_id) {
     date = $('#app_date').val()
@@ -9,7 +7,6 @@ function request_appointments(clinic_id) {
 }
 
 function callback(result) {
-    res = result;
     table = $("#appointments_table");
     table.empty();
     for (var i = 0; i < result.data.length; i++) {

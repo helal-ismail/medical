@@ -63,6 +63,8 @@ Rails.application.routes.draw do
       post 'search'
       get 'profile'
       get 'specializations'
+      post 'assign_doctor'
+
     end
 
     namespace :appointments do
