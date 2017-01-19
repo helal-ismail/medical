@@ -1,15 +1,55 @@
-<div class="row" id="main_content">
+<div class="row orange-theme" id="main_content">
     <div class="col-md-12">
         <!--notification start-->
         <section class="panel">
+            <header class="panel-heading">
+                Add New Hospital
+            </header>
             <div class="panel-body">
-                <div class="alert alert-warning ">
-                    <button data-dismiss="alert" class="close close-sm" type="button">
-                        <i class="fa fa-times"></i>
-                    </button>
-                    <strong>SORRY!</strong>
-                    Page still under construction. Kindly visit us later.
-                </div>
+                <form class="form-horizontal form" method="get">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Hospital Name<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Email<span class="required">*</span>
+                      </label>
+                      <div class="col-sm-5">
+                          <input type="email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Phone<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Website</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Address</label>
+                        <div class="col-sm-5">
+                            <textarea rows="4" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-2 hidden-xs hidden-sm">
+                      </div>
+                      <div class="form-btns col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                        <button type="submit" class="btn btn-default opaque-back">Submit</button>
+                        <a class="btn btn-default transparent-back">Cancel</a>
+                      </div>
+                    </div>
+
+                </form>
 
             </div>
         </section>
