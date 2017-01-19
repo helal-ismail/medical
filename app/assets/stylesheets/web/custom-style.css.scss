@@ -765,7 +765,6 @@ span.required {
     background-color: #FB7537;
     border: 1px solid #FB7537;
 }
-
 /* - all themes - */
 table.dataTable.no-footer {
     border-bottom: none;
@@ -782,4 +781,9 @@ table.dataTable.no-footer {
     color: #FFFFFF !important;
     background-color: #B7B7B7 !important;
     border: 1px solid #B7B7B7 !important;
+}
+@media (min-width: 768px) {
+    .form-inline select.form-control {
+        width: 200px;
+    }
 }
