@@ -1,5 +1,6 @@
 res = "";
 
+
 function request_appointments(clinic_id){
   date = $('#app_date').val()
   doctor_id = $('#doctors_list').val()

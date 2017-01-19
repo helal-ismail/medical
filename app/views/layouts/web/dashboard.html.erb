@@ -63,12 +63,13 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+		<%= javascript_include_tag 'web/ajax' %>
+		<%= javascript_include_tag params[:controller] %>
+
 		<%= javascript_include_tag 'web/bootstrap' %>
 		<%= javascript_include_tag 'web/app' %>
 		<%= javascript_include_tag 'web/chart' %>
 		<%= javascript_include_tag 'web/script' %>
-		<%= javascript_include_tag 'web/ajax' %>
-		<%= javascript_include_tag params[:controller] %>
 
 	</body>
 </html>
