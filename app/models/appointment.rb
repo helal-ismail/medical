@@ -3,7 +3,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :doctor_price
   has_one :doctor, :through => :doctor_prices
   has_one :clinic, :through => :doctor_prices
-  enum state: [ :pending, :confirmed, :past, :canceled, :ignored ]
+  enum state: [ :confirmed, :checkedin, :past, :canceled, :missed ]
   has_one :feedback
 
   def self.create_from_params(params)
