@@ -17,12 +17,23 @@ class Api::AppointmentsController < ApiController
     end
   end
 
+  def state
+    appointment = Appointment.find(params[:id])
+    if appointment.present?
+      appointment.state = params[:state]
+      appointment.save
+      render :json => {:data => appointment, :msg => "Appointment has been canceled"}
+    else
+      render :json => {:msg => "Appointment not found"}, :status => 400
+    end
+  end
+
   def cancel
     appointment = Appointment.find(params[:id])
     if appointment.present?
       appointment.state = 3
       appointment.notes = params[:notes] || 'Canceled'
-      
+
       appointment.save
       render :json => {:msg => "Appointment has been canceled"}
     else
@@ -84,8 +95,8 @@ class Api::AppointmentsController < ApiController
       render :json => {:msg => "Couldn't find records for specified IDs"}, :status => 400
     end
   end
-  
-  
+
+
   def search
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     appointments = doctor_price.appointments

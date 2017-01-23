@@ -77,7 +77,7 @@ Rails.application.routes.draw do
       get 'by_doctor_and_clinic'
       get 'by_all_params'
       post 'search'
-
+      post 'state'
     end
 
     namespace :patients do

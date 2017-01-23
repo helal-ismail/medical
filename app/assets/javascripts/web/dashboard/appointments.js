@@ -1,9 +1,17 @@
-
 function request_appointments(clinic_id) {
     date = $('#app_date').val()
     doctor_id = $('#doctors_list').val()
     url = "/api/appointments/by_doctor_and_clinic?doctor_id=" + doctor_id + "&clinic_id=" + clinic_id + "&date=" + date;
     execute_request(url, "GET", "", callback)
+}
+
+
+function change_state(appointment_id, state){
+  
+  date = $('#app_date').val()
+  doctor_id = $('#doctors_list').val()
+  url = "/api/appointments/by_doctor_and_clinic?doctor_id=" + doctor_id + "&clinic_id=" + clinic_id + "&date=" + date;
+  execute_request(url, "GET", "", callback)
 }
 
 function callback(result) {
