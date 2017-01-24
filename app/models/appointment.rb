@@ -10,7 +10,7 @@ class Appointment < ActiveRecord::Base
     appointment = Appointment.new
     appointment.patient_id = params[:patient_id]
     appointment.appointment_date = Date.parse(params[:appointment_date])
-    appointment.appointment_time = Time.parse(params[:appointment_time])
+    appointment.appointment_time = params[:appointment_time]
 
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     appointment.doctor_price = doctor_price

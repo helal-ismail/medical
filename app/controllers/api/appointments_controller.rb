@@ -24,7 +24,7 @@ class Api::AppointmentsController < ApiController
       appointment.notes = params[:notes] || 'Canceled'
 
       appointment.save
-      render :json => {:msg => "Appointment has been canceled"}
+      render :json => {:data => appointment, :msg => "Appointment has been canceled"}
     else
       render :json => {:msg => "Appointment not found"}, :status => 400
     end

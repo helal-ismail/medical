@@ -3,7 +3,7 @@ $("document").ready(function() {
 function request_assign_doctor(e_type, e_id, doctor_uid, assign_flag) {
     data = {"entity_type":e_type, "entity_id":e_id, "doctor_uid":doctor_uid, "assign_flag": assign_flag};
     url = "/api/clinics/assign_doctor";
-    execute_request(url, "POST", data, callback)
+    execute_request(url, "POST", data, callback, false)
 }
 
 function callback(result) {
