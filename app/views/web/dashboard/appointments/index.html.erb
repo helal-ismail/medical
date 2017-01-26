@@ -31,9 +31,14 @@
                                 <section class="panel general">
                                     <header class="panel-heading">
                                         <ul class="nav nav-tabs">
+
                                             <li class="active">
-                                                <a data-toggle="tab" href="#confirmed">
-                                                    <i class="fa fa-calendar-check-o"></i>Confirmed</a>
+                                                <a id="scheduled_li" data-toggle="tab" href="#confirmed">
+                                                    <i class="fa fa-calendar-check-o"></i>Scheduled</a>
+                                            </li>
+                                            <li class="">
+                                                <a data-toggle="tab" href="#checkedin">
+                                                    <i class="fa fa-calendar-check-o"></i>Checked IN</a>
                                             </li>
                                             <li class="">
                                                 <a data-toggle="tab" href="#canceled">
@@ -43,37 +48,46 @@
                                                 <a data-toggle="tab" href="#missed">
                                                     <i class="fa fa-calendar-minus-o"></i>Missed</a>
                                             </li>
+                                            <li  class="">
+                                                <a id="past_li" data-toggle="tab" href="#past">
+                                                    <i class="fa fa-calendar-minus-o"></i>Past</a>
+                                            </li>
+
                                         </ul>
                                     </header>
                                     <div class="panel-body">
                                         <div class="tab-content">
-                                            <div id="confirmed" class="tab-pane active">
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Time</th>
-                                                            <th class="action-header">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="appointments_table">
-                                                        <%@appointments.each do |appointment| %>
-                                                        <tr>
-                                                            <td><%= appointment.patient.name%></td>
-                                                            <td><%= appointment.appointment_date %></td>
-                                                            <td class="action-col">
-                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Cancel" role="button">
-                                                                    <i class="fa fa-calendar-times-o"></i>
-                                                                </a>
-                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Missed" role="button">
-                                                                    <i class="fa fa-calendar-minus-o"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <%end%>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+
+                                          <div id="confirmed" class="tab-pane active">
+                                              <table class="table table-hover">
+                                                  <thead>
+                                                      <tr>
+                                                          <th>Name</th>
+                                                          <th>Time</th>
+                                                          <th class="action-header">Actions</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody id="appointments_confirmed">
+
+                                                  </tbody>
+                                              </table>
+                                          </div>
+
+                                          <div id="checkedin" class="tab-pane">
+                                              <table class="table table-hover">
+                                                  <thead>
+                                                      <tr>
+                                                          <th>Name</th>
+                                                          <th>Time</th>
+                                                          <th class="action-header">Actions</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody id="appointments_checkedin">
+                                                  </tbody>
+                                              </table>
+                                          </div>
+
+
                                             <div id="canceled" class="tab-pane">
                                                 <table class="table table-hover">
                                                     <thead>
@@ -83,16 +97,8 @@
                                                             <th class="action-header">Actions</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>xyz xyz xyz xyz</td>
-                                                            <td>09:15 PM</td>
-                                                            <td class="action-col">
-                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
-                                                                    <i class="fa fa-calendar-check-o"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                                    <tbody id="appointments_canceled">
+
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -105,20 +111,12 @@
                                                             <th class="action-header">Actions</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>xyz xyz xyz xyz</td>
-                                                            <td>09:15 PM</td>
-                                                            <td class="action-col">
-                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
-                                                                    <i class="fa fa-calendar-check-o"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                                    <tbody id="appointments_missed">
+
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <div id="about" class="tab-pane">
+                                            <div id="past" class="tab-pane">
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
@@ -127,16 +125,8 @@
                                                             <th>Actions</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>xyz xyz xyz xyz</td>
-                                                            <td>09:15 PM</td>
-                                                            <td class="action-col">
-                                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Confirm" role="button">
-                                                                    <i class="fa fa-calendar-check-o"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                                    <tbody id="appointments_past">
+
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -3,14 +3,14 @@ class Appointment < ActiveRecord::Base
   belongs_to :doctor_price
   has_one :doctor, :through => :doctor_prices
   has_one :clinic, :through => :doctor_prices
-  enum state: [ :pending, :confirmed, :past, :canceled, :ignored ]
+  enum state: [ :confirmed, :checkedin, :past, :canceled, :missed ]
   has_one :feedback
 
   def self.create_from_params(params)
     appointment = Appointment.new
     appointment.patient_id = params[:patient_id]
     appointment.appointment_date = Date.parse(params[:appointment_date])
-    appointment.appointment_time = Time.parse(params[:appointment_time])
+    appointment.appointment_time = params[:appointment_time]
 
     doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
     appointment.doctor_price = doctor_price

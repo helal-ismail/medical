@@ -18,11 +18,11 @@ class Api::AppointmentsController < ApiController
   end
 
   def state
-    appointment = Appointment.find(params[:id])
+    appointment = Appointment.find(params[:appointment_id])
     if appointment.present?
-      appointment.state = params[:state]
+      appointment.state = params[:appointment_state]
       appointment.save
-      render :json => {:data => appointment, :msg => "Appointment has been canceled"}
+      by_doctor_and_clinic
     else
       render :json => {:msg => "Appointment not found"}, :status => 400
     end
@@ -31,11 +31,11 @@ class Api::AppointmentsController < ApiController
   def cancel
     appointment = Appointment.find(params[:id])
     if appointment.present?
-      appointment.state = 3
+      appointment.state = 'canceled'
       appointment.notes = params[:notes] || 'Canceled'
 
       appointment.save
-      render :json => {:msg => "Appointment has been canceled"}
+      render :json => {:data => appointment, :msg => "Appointment has been canceled"}
     else
       render :json => {:msg => "Appointment not found"}, :status => 400
     end
