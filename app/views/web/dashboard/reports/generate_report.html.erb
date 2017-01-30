@@ -6,7 +6,7 @@
                     <header class="panel-heading">
                         Reports
                     </header>
-                    <input id="hidden" type="hidden" value="<%=@clinic.id%>">
+                    <input id="hidden" type="hidden" value="<%=@report_url%>">
                     <div class="panel-body custom-tabs">
                         <div class="row new-div">
                             <div class="col-md-12">
@@ -21,7 +21,7 @@
                                         </label>
                                         <input type="text" class="form-control app_date" id="end_date">
                                     </div>
-                                    <a id="generate_report" data-value="<%= @report_url %>" class="btn btn-default opaque-back">GENERATE REPORT</a>
+                                    <a id="generate_report" class="btn btn-default opaque-back">GENERATE REPORT</a>
                                 </form>
                                 <!--tab nav start-->
                             </div>
@@ -33,10 +33,10 @@
                       <div class="row new-div">
                         <div class="col-md-12">
                           <div class=" form-group">
-                            <label for="docotrList">Select Doctors :</label>
-                            <select multiple id="doctors_list" class="form-control" style="background:none !important">
-                              <% @doctors.each do |doctor| %>
-                                <option value="<%= doctor.id %>" ><%= doctor.name %></option>
+                            <label for="docotrList"><%= @label %></label>
+                            <select multiple id="ids_list" class="form-control" style="background:none !important">
+                              <% @items.each do |item| %>
+                                <option value="<%= item.id %>" ><%= item.name %></option>
                               <% end %>
                             </select>
                           </div>

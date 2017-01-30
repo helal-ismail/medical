@@ -3,10 +3,10 @@ function generate_report() {
 
     date_start = $('#start_date').val();
     date_end = $('#end_date').val();
-    doctor_ids = $('#doctors_list').val();
+    ids = $('#ids_list').val();
 
-    data = {"doctor_ids":doctor_ids, "date_start": date_start, "date_end":date_end};
-    url = "/api/doctors/reports.csv";
+    data = {"ids":ids, "date_start": date_start, "date_end":date_end};
+    url = $("#hidden").val();
     execute_request(url, "POST", data, callback, false)
 }
 

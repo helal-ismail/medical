@@ -51,7 +51,7 @@ class Api::ClinicsController < ApiController
 
   def reports
     response = []
-    params[:clinic_ids].each do |clinic_id|
+    params[:ids].each do |clinic_id|
       clinic = Clinic.find(clinic_id)
       response << clinic.appointments_by_period(params[:date_start], params[:date_end])
     end

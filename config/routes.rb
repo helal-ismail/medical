@@ -32,8 +32,8 @@ Rails.application.routes.draw do
   get 'clinics/:id/appointments/', to: 'web/dashboard/appointments#index'
   get 'clinics/:id/appointments/:date', to: 'web/dashboard/appointments#index'
 
-  get 'hospitals/:id/reports/', to: 'web/dashboard/reports#hospital'
-  get 'clinics/:id/reports/', to: 'web/dashboard/reports#clinic'
+  get 'hospitals/:id/reports/', to: 'web/dashboard/reports#generate_report'
+  get 'clinics/:id/reports/', to: 'web/dashboard/reports#generate_report'
 
 
   # API App
