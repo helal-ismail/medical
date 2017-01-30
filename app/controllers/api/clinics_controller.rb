@@ -49,6 +49,53 @@ class Api::ClinicsController < ApiController
   end
 
 
+  def reports
+    response = []
+    params[:clinic_ids].each do |clinic_id|
+      clinic = Clinic.find(clinic_id)
+      response << clinic.appointments_by_period(params[:date_start], params[:date_end])
+    end
+    @date_start = params[:date_start]
+    @data = response
+    #to_csv
+    respond_to do |format|
+      format.json {render :json => response}
+      format.csv { send_data to_csv }
+    end
+  end
+
+
+  def to_csv
+    CSV.generate do |csv|
+      date = Date.parse(@date_start)
+      num_days = @data.count
+      column_names = ["Date"]
+      last_row = ["Total"]
+      num_days = 0
+      @data.each do |record|
+        column_names << record[:clinic_name]
+        last_row << 0
+        num_days = record[:data].count
+      end
+      csv << column_names
+      num_days.times do |i|
+        row = [date]
+        @data.each_with_index do |record,j|
+          row << record[:data][i][:count]
+          last_row[j+1] = last_row[j+1].to_i + record[:data][i][:count].to_i
+        end
+        csv << row
+        date = date + 1
+      end
+      csv << last_row
+    end
+  end
+
+
+
+
+
+
   private
   def private_clinics
     Clinic.private_clinics

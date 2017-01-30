@@ -14,10 +14,29 @@ class Clinic < ActiveRecord::Base
     Clinic.where(:hospital_id => 0)
   end
 
-  def appointments_by_date(date)
-    date = Date.today.strftime unless date.present?
-    self.appointments.where(:appointment_date => Date.parse(date) )
+  def appointments_by_period(period_start, period_end)
+    date_start = Date.parse(period_start)
+    date_end = Date.parse(period_end)
+    result = []
+    total = 0
+    while (date_start < date_end)
+      appointments_count = self.appointments_by_date(date_start).count
+      total = total + appointments_count
+      record = {:date => date_start , :count => appointments_count}
+      result << record
+      date_start = date_start+1
+    end
+    {:clinic_id =>self.id, :clinic_name => self.name, :specialization => self.specialization.name , :total => total, :data => result}
+#    self.appointments.where("appointment_date between ? AND ?", period_start, periond_end)
+
   end
+
+
+  def appointments_by_date(date)
+    self.appointments.where(:appointment_date => date)
+  end
+
+
 
   def self.search_by_pattern(pattern)
     if pattern.blank?  # blank? covers both nil and empty string

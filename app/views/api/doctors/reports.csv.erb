@@ -1,0 +1,23 @@
+CSV.generate do |csv|
+
+date = Date.parse(@date_start)
+
+num_days = @data.count
+column_names = ["Date"]
+num_days = 0
+@data.each do |record|
+  column_names << record[:doctor_name]
+  num_days = record[:data].count
+end
+
+csv << column_names
+
+num_days.times do |i|
+  row = [date]
+  data.each do |record|
+    row << record[:data][i][:count]
+  end
+  csv << row
+  date = date + 1
+end
+end

@@ -19,6 +19,8 @@ class Web::Dashboard::HospitalsController < Web::DashboardController
 
     @clinics_url = "/hospitals/#{params[:id]}/clinics"
     @doctors_url = "/hospitals/#{params[:id]}/doctors"
+    @reports_url = "/hospitals/#{params[:id]}/reports"
+
 
   end
 end

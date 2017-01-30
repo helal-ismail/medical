@@ -21,6 +21,8 @@ class Web::Dashboard::ClinicsController < Web::DashboardController
     @appointments = clinic.appointments.count
     @doctors_url = "/clinics/#{params[:id]}/doctors"
     @appointments_url = "/clinics/#{params[:id]}/appointments"
+    @reports_url = "/clinics/#{params[:id]}/reports"
+
 
   end
 

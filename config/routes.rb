@@ -50,6 +50,9 @@ Rails.application.routes.draw do
       post 'add_feedback'
       get 'get_feedback'
       get 'clinics'
+      post 'reports'
+      get 'reports'
+
     end
 
     namespace :hospitals do
@@ -64,6 +67,7 @@ Rails.application.routes.draw do
       get 'profile'
       get 'specializations'
       post 'assign_doctor'
+      post 'reports'
 
     end
 
