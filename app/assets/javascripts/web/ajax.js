@@ -6,12 +6,12 @@ function execute_request(url, type, data, success_callback, control_flag){
      url: url,
      data : JSON.stringify(data),
 //     data: data,
-     dataType: "json",
+    // dataType: "json",
      success: function (result) {
        success_callback(result, control_flag)
      },
      error: function (result){
-       window.alert("Error : " + result)
+       window.alert("Error : " + result+"")
      }
 });
 }

@@ -6,10 +6,10 @@ $("document").ready(function() {
 
     // -- datepicker for the appoinments page --
     //$("#app_date").datepicker().datepicker("setDate", new Date());
-    $("#app_date").datepicker({
+    $(".app_date").datepicker({
         dateFormat: 'yy-mm-dd'
     });
-    $("#app_date").datepicker().datepicker('setDate', 'today');
+    $(".app_date").datepicker().datepicker('setDate', 'today');
 
     $('.table').DataTable({
         bFilter: false,

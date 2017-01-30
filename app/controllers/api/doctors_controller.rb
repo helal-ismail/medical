@@ -56,7 +56,7 @@ class Api::DoctorsController < ApiController
     #to_csv
     respond_to do |format|
       format.json {render :json => response}
-      format.csv { send_data to_csv }
+      format.csv { send_data to_csv, filename: "reports.csv" }
     end
   end
 
