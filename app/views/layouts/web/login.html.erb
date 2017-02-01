@@ -15,61 +15,22 @@
 		<%= stylesheet_link_tag 'web/custom-style' %>
 	</head>
 
-	<body class="skin-black">
-		<!-- The header of the page -->
-		<%= render :file=> "layouts/web/dashboard/_header" %>
+	<body id="login-body">
 
-		<!-- Left side column. Contains the side nav -->
-		<div class="wrapper row-offcanvas row-offcanvas-left">
-			<%= render :file=> "layouts/web/dashboard/_side_nav" %>
-
-			<!-- Right side column. Contains the navbar and content of the page -->
-			<div class="right-side">
-
-				<section class="content">
-					<%= yield %>
-				</section>
-			</div>
+		<div id="login-wrapper">
+			<%= yield %>
 		</div>
 
 		<!--<div class="footer-main">
 		Copyright &copy Director, 2014
 		</div>-->
-		<!-- Confirmation Modal -->
-		<div id="confirm_modal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-						<p>
-							Do you want to continue this action?
-						</p>
-					</div>
-					<div class="modal-footer">
-						<button id="yes_button" type="button" class="btn opaque-back">
-							<i class="fa fa-check"></i>Yes
-						</button>
-						<button type="button" class="btn transparent-back" data-dismiss="modal">
-							<i class="fa fa-times"></i>Cancel
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<%= javascript_include_tag 'web/jquery' %>
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-		<%= javascript_include_tag 'web/ajax' %>
-		<%= javascript_include_tag params[:controller] %>
 		<%= javascript_include_tag 'web/jquery.validate' %>
-
 		<%= javascript_include_tag 'web/bootstrap' %>
 		<%= javascript_include_tag 'web/app' %>
-		<%= javascript_include_tag 'web/chart' %>
 		<%= javascript_include_tag 'web/script' %>
 
 	</body>
