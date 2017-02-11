@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'hend' , to: 'web/dashboard#hend'
 
   get 'dashboard', to: 'web/dashboard/admin#index'
+  get 'announcements', to: 'web/dashboard/admin#announcements'
 
   get 'hospitals', to: 'web/dashboard/hospitals#index'
   get 'hospitals/new', to: 'web/dashboard/hospitals#new'

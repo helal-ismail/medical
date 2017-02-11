@@ -8,6 +8,8 @@ class WebController < ApplicationController
  $url_clinics = "/clinics"
  $url_doctors = "/doctors"
  $url_appointments = "/appointments"
+ $url_announcements = "/announcements"
+
 
   private
   def handle_exception(exception)

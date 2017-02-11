@@ -6,4 +6,7 @@ class Web::Dashboard::AdminController < Web::DashboardController
     @doctors = Doctor.all.count
   end
 
+  def announcements
+  end
+
 end
