@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   apipie
 
   # WEB App
-  get 'login' ,to: 'web/session#login'
+  # get 'login' ,to: 'web/session#login'
+  get 'login', to: 'web/dashboard/login#index'
   post 'login' ,to: 'web/session#login_submit'
   post 'logout' ,to: 'web/session#logout'
 

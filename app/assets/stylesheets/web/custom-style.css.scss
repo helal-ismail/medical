@@ -6,6 +6,91 @@ body {
     font-style: normal;
     font-variant: normal;
 }
+/* ============================== LOGIN PAGE ============================== */
+#login-body{
+    background: image-url('loginBck.jpg') no-repeat fixed center center;
+    background-size: cover;
+}
+
+#login-wrapper {
+    text-align: center;
+}
+
+.login-logo {
+    margin: 40px auto 20px auto;
+}
+
+.login-logo h1 {
+    font-weight: bold;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'righteous', cursive;
+}
+
+.login-logo img{
+    width: 200px;
+    height: 60px;
+    display: inline-block;
+}
+
+.login-block {
+    width: 320px;
+    padding: 20px;
+    background: #FFFFFF;
+    border-top: 5px solid #25D0B3;
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+
+.login-block h1 {
+    text-align: center;
+    color: #23AEEA;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.login-block input.form-control {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 40px;
+    outline: none;
+}
+
+.login-block input.email {
+    background-image: image-url('email.png');
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+}
+
+.login-block input.password {
+    background-image: image-url('lock.png');
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #25D0B3;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(37, 208, 179, 1);
+}
+
+.login-block button {
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    outline: none;
+    font-weight: bold;
+}
+
 /* ============================== HEADER ============================== */
 body > .header .navbar {
     height: auto;
@@ -488,19 +573,15 @@ body > .header .logo img {
 .modal-footer .btn i.fa {
     margin-right: 5px;
 }
-@media (min-width: 768px) {
-    .modal-dialog {
-        width: 400px;
-        margin: 50px auto;
-    }
-}
+
 /* --- FORMS --- */
 span.required {
     color: #F05050;
     padding: 0 3px;
 }
-.form-group{
-  margin-bottom: 20px;
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 .form-group select {
@@ -522,8 +603,9 @@ span.required {
     border-radius: 0;
     height: 36px;
 }
-.form textarea.form-control{
-  height: auto;
+
+.form textarea.form-control {
+    height: auto;
 }
 /* inline form */
 .form-inline .form-control {
@@ -538,21 +620,24 @@ span.required {
     padding-right: 8px;
 }
 /* horizontal form */
-.form-horizontal .control-label{
+.form-horizontal .form-control {
+    width: 50%;
+    display: inline;
 }
-.form-horizontal .form-btns{
+
+.form-horizontal .form-btns {
     margin: 40px 0;
     padding: 0;
 }
-.form-horizontal .form-btns .btn{
-  font-size: 16px;
-  text-transform: uppercase;
-  min-width: 150px;
-}
-.form-horizontal .form-btns .btn:last-of-type{
-  margin-left: 20px;
+.form-horizontal .form-btns .btn {
+    font-size: 16px;
+    text-transform: uppercase;
+    min-width: 150px;
 }
 
+.form-horizontal .form-btns .btn:last-of-type {
+    margin-left: 20px;
+}
 /* red */
 .red-theme select {
     background: image-url("arrow_red.png") no-repeat right;
@@ -600,6 +685,65 @@ span.required {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(35, 183, 229, 1);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(35, 183, 229, 1);
     border-color: #23B7E5 !important;
+}
+/* orange */
+.orange-theme select {
+    background: image-url("arrow_orange.png") no-repeat right;
+}
+
+.orange-theme .form-control,
+.orange-theme .form-control:active,
+.orange-theme .form-control:active:focus,
+.orange-theme .form-control:focus,
+.orange-theme .form-control:hover {
+    outline: none;
+    border: 1px solid #FB7537;
+}
+
+.orange-theme input:active,
+.orange-theme input:active:focus,
+.orange-theme input:focus,
+.orange-theme select:active,
+.orange-theme select:active:focus,
+.orange-theme select:focus,
+.orange-theme textarea:active,
+.orange-theme textarea:active:focus,
+.orange-theme textarea:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(240, 80, 80, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(240, 80, 80, 1);
+    border-color: #FB7537 !important;
+}
+/* green */
+.green-theme select {
+    background: image-url("arrow_green.png") no-repeat right;
+}
+
+.green-theme .form-control,
+.green-theme .form-control:active,
+.green-theme .form-control:active:focus,
+.green-theme .form-control:focus,
+.green-theme .form-control:hover {
+    outline: none;
+    border: 1px solid #45CF95;
+}
+
+.green-theme input:active,
+.green-theme input:active:focus,
+.green-theme input:focus,
+.green-theme select:active,
+.green-theme select:active:focus,
+.green-theme select:focus,
+.green-theme textarea:active,
+.green-theme textarea:active:focus,
+.green-theme textarea:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(69, 207, 149, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(69, 207, 149, 1);
+    border-color: #45CF95 !important;
+}
+/* error messgage */
+.error {
+    padding: 0px 15px;
+    color: #F05050;
 }
 /* alerts */
 .alert {
@@ -810,5 +954,17 @@ table.dataTable.no-footer {
 @media (min-width: 768px) {
     .form-inline select.form-control {
         width: 200px;
+    }
+    .modal-dialog {
+        width: 400px;
+        margin: 50px auto;
+    }
+}
+@media (max-width: 768px) {
+    .form-horizontal .form-control {
+        width: 100%;
+    }
+    .error {
+        padding: 15px 0px;
     }
 }

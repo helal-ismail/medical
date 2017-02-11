@@ -28,40 +28,40 @@ $("document").ready(function() {
         }
     });
 
-
-
-
+    $(".form").validate();
 
     // << ====================== Functions Declaration ====================== >>
 
     // --- this function is to get the menu item that should be active and highlight it ---
     function highlightNavItem() {
         var themeClasses = $("#main_content").attr("class");
-        themeClasses = themeClasses.split(' ');
-        var themeColor;
-        $.each(themeClasses, function(index, value) {
-            if (value.indexOf("theme") != -1) {
-                themeColor = value.split('-');
-                themeColor = themeColor[0];
+        if (themeClasses) {
+            themeClasses = themeClasses.split(' ');
+            var themeColor;
+            $.each(themeClasses, function(index, value) {
+                if (value.indexOf("theme") != -1) {
+                    themeColor = value.split('-');
+                    themeColor = themeColor[0];
+                }
+            });
+            $(".sidebar-menu .active").removeClass("active");
+            switch (themeColor) {
+                case "yellow":
+                    $(".sidebar-menu .dashboard").addClass('active');
+                    break;
+                case "orange":
+                    $(".sidebar-menu .hospitals").addClass('active');
+                    break;
+                case "green":
+                    $(".sidebar-menu .clinics").addClass('active');
+                    break;
+                case "red":
+                    $(".sidebar-menu .doctors").addClass('active');
+                    break;
+                case "blue":
+                    $(".sidebar-menu .appointments").addClass('active');
+                    break;
             }
-        });
-        $(".sidebar-menu .active").removeClass("active");
-        switch (themeColor) {
-            case "yellow":
-                $(".sidebar-menu .dashboard").addClass('active');
-                break;
-            case "orange":
-                $(".sidebar-menu .hospitals").addClass('active');
-                break;
-            case "green":
-                $(".sidebar-menu .clinics").addClass('active');
-                break;
-            case "red":
-                $(".sidebar-menu .doctors").addClass('active');
-                break;
-            case "blue":
-                $(".sidebar-menu .appointments").addClass('active');
-                break;
         }
 
     };

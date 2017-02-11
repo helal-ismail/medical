@@ -34,7 +34,7 @@
                         <div class="col-md-12">
                           <div class=" form-group">
                             <label for="docotrList"><%= @label %></label>
-                            <select multiple id="ids_list" class="form-control" style="background:none !important">
+                            <select id="ids_list" class="form-control">
                               <% @items.each do |item| %>
                                 <option value="<%= item.id %>" ><%= item.name %></option>
                               <% end %>
