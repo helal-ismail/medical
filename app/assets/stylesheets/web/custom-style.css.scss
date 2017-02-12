@@ -178,6 +178,10 @@ body > .header .logo img {
 .sidebar-menu li.active.appointments {
     border-left: 5px solid #23B7E5;
 }
+
+.sidebar-menu li.active.announcements {
+    border-left: 5px solid #990073;
+}
 /* ============================== CONTENT ============================== */
 .row.new-div {
     padding: 15px 0;
@@ -215,6 +219,10 @@ body > .header .logo img {
 /* blue */
 .blue-theme .panel-heading {
     color: #23B7E5;
+}
+/* purple */
+.purple-theme .panel-heading {
+    color: #990073;
 }
 /* --- BUTTONS --- */
 /* green */
@@ -356,6 +364,34 @@ body > .header .logo img {
 .blue-theme .btn.opaque-back:hover {
     background-color: #FFFFFF;
     color: #23B7E5;
+}
+/* purple */
+.purple-theme .btn.transparent-back {
+    background-color: #FFFFFF;
+    border: 2px solid #990073;
+    color: #23B7E5;
+}
+
+.purple-theme .btn.transparent-back:active,
+.purple-theme .btn.transparent-back:active:focus,
+.purple-theme .btn.transparent-back:focus,
+.purple-theme .btn.transparent-back:hover {
+    background-color: #990073;
+    color: #FFFFFF;
+}
+
+.purple-theme .btn.opaque-back {
+    background-color: #990073;
+    border: 2px solid #990073;
+    color: #FFFFFF;
+}
+
+.purple-theme .btn.opaque-back:active,
+.purple-theme .btn.opaque-back:active:focus,
+.purple-theme .btn.opaque-back:focus,
+.purple-theme .btn.opaque-back:hover {
+    background-color: #FFFFFF;
+    color: #990073;
 }
 /* --- TABLES --- */
 .table thead th {
@@ -606,6 +642,7 @@ span.required {
 
 .form textarea.form-control {
     height: auto;
+    border-radius: 0;
 }
 /* inline form */
 .form-inline .form-control {
@@ -739,6 +776,33 @@ span.required {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(69, 207, 149, 1);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(69, 207, 149, 1);
     border-color: #45CF95 !important;
+}
+/* purple */
+.purple-theme select {
+    background: image-url("arrow_purple.png") no-repeat right;
+}
+
+.purple-theme .form-control,
+.purple-theme .form-control:active,
+.purple-theme .form-control:active:focus,
+.purple-theme .form-control:focus,
+.purple-theme .form-control:hover {
+    outline: none;
+    border: 1px solid #990073;
+}
+
+.purple-theme input:active,
+.purple-theme input:active:focus,
+.purple-theme input:focus,
+.purple-theme select:active,
+.purple-theme select:active:focus,
+.purple-theme select:focus,
+.purple-theme textarea:active,
+.purple-theme textarea:active:focus,
+.purple-theme textarea:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(108, 20, 93, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(108, 20, 93, 1);
+    border-color: #990073 !important;
 }
 /* error messgage */
 .error {

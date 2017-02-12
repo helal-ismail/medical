@@ -61,6 +61,9 @@ $("document").ready(function() {
                 case "blue":
                     $(".sidebar-menu .appointments").addClass('active');
                     break;
+                case "purple":
+                    $(".sidebar-menu .announcements").addClass('active');
+                    break;
             }
         }
 
