@@ -7,7 +7,7 @@ body {
     font-variant: normal;
 }
 /* ============================== LOGIN PAGE ============================== */
-#login-body{
+#login-body {
     background: image-url('loginBck.jpg') no-repeat fixed center center;
     background-size: cover;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 .login-logo {
-    margin: 40px auto 20px auto;
+    margin: 40px auto 20px;
 }
 
 .login-logo h1 {
@@ -28,7 +28,7 @@ body {
     font-family: 'righteous', cursive;
 }
 
-.login-logo img{
+.login-logo img {
     width: 200px;
     height: 60px;
     display: inline-block;
@@ -78,7 +78,8 @@ body {
     background-repeat: no-repeat;
 }
 
-.login-block input:active, .login-block input:focus {
+.login-block input:active,
+.login-block input:focus {
     border: 1px solid #25D0B3;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(37, 208, 179, 1);
 }
@@ -90,7 +91,6 @@ body {
     outline: none;
     font-weight: bold;
 }
-
 /* ============================== HEADER ============================== */
 body > .header .navbar {
     height: auto;
@@ -411,6 +411,10 @@ body > .header .logo img {
     color: #23B7E5;
 }
 
+.table i.fa-pencil-square-o {
+    color: #2FB67E;
+}
+
 .table i.fa-calendar-check-o {
     color: #45CF95;
 }
@@ -609,7 +613,6 @@ body > .header .logo img {
 .modal-footer .btn i.fa {
     margin-right: 5px;
 }
-
 /* --- FORMS --- */
 span.required {
     color: #F05050;
@@ -666,6 +669,7 @@ span.required {
     margin: 40px 0;
     padding: 0;
 }
+
 .form-horizontal .form-btns .btn {
     font-size: 16px;
     text-transform: uppercase;
@@ -806,7 +810,7 @@ span.required {
 }
 /* error messgage */
 .error {
-    padding: 0px 15px;
+    padding: 0 15px;
     color: #F05050;
 }
 /* alerts */
@@ -1019,6 +1023,7 @@ table.dataTable.no-footer {
     .form-inline select.form-control {
         width: 200px;
     }
+
     .modal-dialog {
         width: 400px;
         margin: 50px auto;
@@ -1028,7 +1033,8 @@ table.dataTable.no-footer {
     .form-horizontal .form-control {
         width: 100%;
     }
+
     .error {
-        padding: 15px 0px;
+        padding: 15px 0;
     }
 }
