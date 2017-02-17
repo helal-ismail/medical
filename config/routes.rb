@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'hospitals/:id/clinics', to: 'web/dashboard/clinics#index'
 
   get 'clinics/new', to: 'web/dashboard/clinics#new'
+  get 'hospitals/:id/clinics/new', to: 'web/dashboard/clinics#new'
+
   get 'clinics/:id', to: 'web/dashboard/clinics#dashboard'
 
   get 'doctors', to: 'web/dashboard/doctors#index'
@@ -74,7 +76,7 @@ Rails.application.routes.draw do
       get 'specializations'
       post 'assign_doctor'
       post 'reports'
-
+      post 'new'
     end
 
     namespace :appointments do

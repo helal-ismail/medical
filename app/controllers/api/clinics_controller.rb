@@ -91,6 +91,17 @@ class Api::ClinicsController < ApiController
     end
   end
 
+  def new
+    clinic = Clinic.new
+    clinic.hospital_id = params[:hospital_id]
+    clinic.address = params[:address]
+    clinic.name = params[:name]
+    clinic.phone = params[:phone]
+    clinic.specialization_id = params[:specialization_id]
+    clinic.save
+    
+    render :json => { :data => clinic}
+  end
 
 
 

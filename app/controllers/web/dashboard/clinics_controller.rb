@@ -13,6 +13,13 @@ class Web::Dashboard::ClinicsController < Web::DashboardController
 
   def new
 
+    url = request.path_info
+    @hospital_id = 0
+    if url.include?('hospitals')
+      @hospital_id = params[:id]
+    end
+    @redirect_url = url.gsub("/new","")
+    #clinic = Clinic.create(hospital_id: hospital_id, name: params[:clinic_name], phone: params[:clinic_phone], specialization_id: params[:clinic_specialization_id], address: params[:clinic_address])
   end
 
   def dashboard
