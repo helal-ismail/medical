@@ -910,6 +910,24 @@ span.required {
 }
 
 
+/* pink */
+
+.pink-theme select {
+    background: image-url("arrow_pink.png") no-repeat right;
+}
+
+.pink-theme .form-control, .pink-theme .form-control:active, .pink-theme .form-control:active:focus, .pink-theme .form-control:focus, .pink-theme .form-control:hover {
+    outline: none;
+    border: 1px solid #FF6696;
+}
+
+.pink-theme input:active, .pink-theme input:active:focus, .pink-theme input:focus, .pink-theme select:active, .pink-theme select:active:focus, .pink-theme select:focus, .pink-theme textarea:active, .pink-theme textarea:active:focus, .pink-theme textarea:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(255, 102, 150, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(255, 102, 150, 1);
+    border-color: #FF6696 !important;
+}
+
+
 /* error messgage */
 
 .error {

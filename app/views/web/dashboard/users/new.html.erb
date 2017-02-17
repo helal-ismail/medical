@@ -1,48 +1,88 @@
-<div class="row orange-theme" id="main_content">
-    <div class="col-lg-12">
-        <div class="row">
-            <div class="col-md-12">
-                <section class="panel">
-                    <header class="panel-heading">
-                        Hospitals
-                    </header>
-                    <div class="panel-body">
-                        <div class="row new-div">
-                            <div class="col-md-12 heading-btn">
-                                <%= link_to "Add New Hospital","/hospitals/new",:class => "btn btn-default opaque-back" %>
-                            </div>
-                        </div>
-                        <div class="row new-div">
-                            <div class="col-md-12">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>kk</td>
-                                            <td>
-                                                <a href="/hospitals/" title="Details" role="button">
-                                                    <i class="fa fa-info-circle"></i>
-                                                </a>
-                                                <a title="Edit" role="button">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                </a>
-                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+<div class="row pink-theme" id="main_content">
+    <div class="col-md-12">
+        <!--notification start-->
+        <section class="panel">
+            <header class="panel-heading">
+                Add New User
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form" method="get">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Username<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                     </div>
-                </section>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Password<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="password" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Phone(s)<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="phone" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Role
+                        </label>
+                        <div class="col-sm-10">
+                            <select id="role_list" class="form-control" required>
+                                <option>Super admin</option>
+                                <option>Hospital admin</option>
+                                <option>Clinic admin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Hospital
+                        </label>
+                        <div class="col-sm-10">
+                            <select id="hospital_list" class="form-control">
+                                <option>hospital1</option>
+                                <option>hospital2</option>
+                                <option>hospital3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Clinic
+                        </label>
+                        <div class="col-sm-10">
+                            <select id="clinic_list" class="form-control">
+                                <option>clinic1</option>
+                                <option>clinic2</option>
+                                <option>clinic3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-2 hidden-xs hidden-sm"></div>
+                        <div class="form-btns col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                            <button type="submit" class="btn btn-default opaque-back">Submit</button>
+                            <%= link_to ('Cancel').html_safe,$url_hospitals,class: "btn btn-default transparent-back" %>
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
-        </div>
+        </section>
+        <!--notification end-->
     </div>
 </div>
