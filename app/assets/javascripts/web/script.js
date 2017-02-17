@@ -64,6 +64,9 @@ $("document").ready(function() {
                 case "purple":
                     $(".sidebar-menu .announcements").addClass('active');
                     break;
+                case "pink":
+                    $(".sidebar-menu .users").addClass('active');
+                    break;
             }
         }
 
