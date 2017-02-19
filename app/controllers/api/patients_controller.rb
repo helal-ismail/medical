@@ -1,4 +1,4 @@
-class Api::PatientsController < ApiController
+ class Api::PatientsController < ApiController
 
 
   def profile

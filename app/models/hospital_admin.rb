@@ -1,0 +1,2 @@
+class HospitalAdmin < User
+end

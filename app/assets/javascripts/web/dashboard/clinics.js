@@ -1,6 +1,8 @@
 $("document").ready(function() {
     // << ====================== FUNCTION CALLS  ====================== >>
+    fetch_clinic_specializations();
     toggleInputs();
+
 
 
 
@@ -57,6 +59,20 @@ $("document").ready(function() {
     function callback(result) {
       redirect_url = $("#redirect_url").val();
       window.location = redirect_url
+    }
+
+
+    function fetch_clinic_specializations(){
+      url = "http://localhost:3000/api/clinics/specializations";
+      execute_request(url, "GET", "", callback_specializations, false);
+    }
+
+    function callback_specializations(result){
+      spec_list = $("#Spec_list");
+      spec_list.empty();
+      for (var i = 0; i < result.data.length; i++) {
+        spec_list.append("<option value='" + result.data[i].id + "'>" + result.data[i].name + "</option>");
+      }
     }
 
 

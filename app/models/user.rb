@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   has_many :feedbacks
   has_many :notifications
-  
+
   enum gender: [ :male, :female ]
   def self.authenticate(email, password)
     user = User.find_by_email(email)
@@ -22,28 +22,35 @@ class User < ActiveRecord::Base
     self["#{key}"] = value
     self.save
   end
-  
+
   def register_device(device_params)
-    
+
     device_type = device_params[:device_type]
     identifier = device_params[:identifier]
     body = {"device_type" => device_type, "identifier" => identifier}
     url = "https://onesignal.com/api/v1/players"
-    
+
     puts "BODY"
     puts body
-    
+
     response = Api::NotificationsController.execute_request(url, body)
-    
+
     puts response
     puts "============"
     self.channel = response["id"]
     puts "#{self.channel}"
     self.save
-    
-    
+
+
   end
 
+  def admins
+    result = []
+    result << SuperAdmin.all
+    result << HospitalAdmin.all
+    result << ClinicAdmin.all
+    result  
+  end
 
 
   def as_json(options)
