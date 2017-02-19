@@ -67,6 +67,9 @@ $("document").ready(function() {
                 case "pink":
                     $(".sidebar-menu .users").addClass('active');
                     break;
+                case "darkBlue":
+                    $(".sidebar-menu .insurance").addClass('active');
+                    break;
             }
         }
 

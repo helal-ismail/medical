@@ -1,0 +1,50 @@
+<div class="row darkBlue-theme" id="main_content">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Insurance Companies
+                    </header>
+                    <div class="panel-body">
+                        <div class="row new-div">
+                            <div class="col-md-12 heading-btn">
+                                <%= link_to "Add New Company","/insurance_cos/new",:class => "btn btn-default opaque-back" %>
+                            </div>
+                        </div>
+                        <div class="row new-div">
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Website</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>bla bla bla</td>
+                                            <td>bla bla bla</td>
+                                            <td>
+                                                <a href="#" title="Details" role="button">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </a>
+                                                <a title="Edit" role="button">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </a>
+                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

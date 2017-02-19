@@ -1,0 +1,46 @@
+<div class="row darkBlue-theme" id="main_content">
+    <div class="col-md-12">
+        <!--notification start-->
+        <section class="panel">
+            <header class="panel-heading">
+                Add New Company
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form" method="get">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Company Name<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Website<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="website" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Address<span class="required">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="address" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-2 hidden-xs hidden-sm"></div>
+                        <div class="form-btns col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                            <button type="submit" class="btn btn-default opaque-back">Submit</button>
+                            <%= link_to ('Cancel').html_safe,$url_insurance,class: "btn btn-default transparent-back" %>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+        <!--notification end-->
+    </div>
+</div>

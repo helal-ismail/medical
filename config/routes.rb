@@ -39,6 +39,9 @@ Rails.application.routes.draw do
   get 'users', to: 'web/dashboard/users#index'
   get 'users/new', to: 'web/dashboard/users#new'
 
+  get 'insurance_cos', to: 'web/dashboard/insurance_cos#index'
+  get 'insurance_cos/new', to: 'web/dashboard/insurance_cos#new'
+
   get 'hospitals/:id/reports/', to: 'web/dashboard/reports#generate_report'
   get 'clinics/:id/reports/', to: 'web/dashboard/reports#generate_report'
 

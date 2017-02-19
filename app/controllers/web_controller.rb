@@ -10,6 +10,7 @@ class WebController < ApplicationController
  $url_appointments = "/appointments"
  $url_announcements = "/announcements"
  $url_users = "/users"
+ $url_insurance = "/insurance_cos"
 
 
   private
