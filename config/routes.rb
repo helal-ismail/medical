@@ -73,6 +73,7 @@ Rails.application.routes.draw do
       get 'explore'
       post 'search'
       get 'profile'
+      post 'new'
     end
 
     namespace :clinics do

@@ -5,7 +5,8 @@ class Web::Dashboard::HospitalsController < Web::DashboardController
   end
 
   def new
-
+    url = request.path_info
+    @redirect_url = url.gsub("/new","")
   end
 
   def dashboard
