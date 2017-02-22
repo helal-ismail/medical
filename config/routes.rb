@@ -53,6 +53,9 @@ Rails.application.routes.draw do
   get 'hospitals/:id/reports/', to: 'web/dashboard/reports#generate_report'
   get 'clinics/:id/reports/', to: 'web/dashboard/reports#generate_report'
 
+  get 'patients', to: 'web/dashboard/patients#index'
+  get 'patients/new', to: 'web/dashboard/patients#new'
+
 
   # API App
   namespace :api do

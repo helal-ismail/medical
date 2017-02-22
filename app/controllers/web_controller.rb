@@ -11,6 +11,7 @@ class WebController < ApplicationController
  $url_announcements = "/announcements"
  $url_users = "/users"
  $url_insurance = "/insurance_cos"
+  $url_patients = "/patients"
 
 
   private

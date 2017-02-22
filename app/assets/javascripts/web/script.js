@@ -70,6 +70,9 @@ $("document").ready(function() {
                 case "darkBlue":
                     $(".sidebar-menu .insurance").addClass('active');
                     break;
+                case "darkGreen":
+                    $(".sidebar-menu .patients").addClass('active');
+                    break;
             }
         }
 
