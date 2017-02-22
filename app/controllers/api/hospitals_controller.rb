@@ -24,7 +24,12 @@ class Api::HospitalsController < ApiController
   end
 
   def new
-    hospital = Hospital.create(name: params[:name], address: params[:address], phone: params[:phone], website: params[:website], email: params[:email])
+    if params[:hospital_id].to_i > 0
+      hospital = Hospital.find(params[:hospital_id])
+      hospital.update(name: params[:name], address: params[:address], phone: params[:phone], website: params[:website], email: params[:email])
+    else
+      hospital = Hospital.create(name: params[:name], address: params[:address], phone: params[:phone], website: params[:website], email: params[:email])
+    end
     render :json => {:data => hospital }
   end
 

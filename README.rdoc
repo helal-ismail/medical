@@ -1,6 +1,11 @@
 = README
 
+Root Directory
+
+cd work/GIT/medical
+
 == Appending a new Web Page :
+
 
 ===== Do neccessary changes in the layout
 - Open "views/layouts/web/dashboard"

@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   get 'hospitals', to: 'web/dashboard/hospitals#index'
   get 'hospitals/new', to: 'web/dashboard/hospitals#new'
+  get 'hospitals/:id/edit', to: 'web/dashboard/hospitals#edit'
   get 'hospitals/:id', to: 'web/dashboard/hospitals#dashboard'
+
 
   get 'clinics', to: 'web/dashboard/clinics#index'
   get 'hospitals/:id/clinics', to: 'web/dashboard/clinics#index'
