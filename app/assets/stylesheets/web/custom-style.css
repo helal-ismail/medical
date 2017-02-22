@@ -1366,6 +1366,6 @@ table.dataTable.no-footer {
 /* --- Temporary for chart --- */
 
 canvas {
-    width: 1000px !important;
+    width: 98% !important;
     height: 330px;
 }
