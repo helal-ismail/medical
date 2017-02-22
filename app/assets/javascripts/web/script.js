@@ -91,6 +91,54 @@ $("document").ready(function() {
     };
 
 
+    // --- Temporary for chart demo  ---
+    $(function() {
+        "use strict";
+        //BAR CHART
+        var data = {
+            labels: ["5", "10", "15", "20", "25", "30"],
+            datasets: [{
+                label: "Appointments/month",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 80, 81, 56, 55]
+            }]
+        };
+        new Chart(document.getElementById("app-month").getContext("2d")).Line(data, {
+            responsive: true,
+            maintainAspectRatio: false,
+        });
+
+    });
+
+    $(function() {
+        "use strict";
+        //BAR CHART
+        var data = {
+            labels: ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan"],
+            datasets: [{
+                label: "Appointments/6month",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [1251, 1524, 1104, 2500, 1524, 1958]
+            }]
+        };
+        new Chart(document.getElementById("app-6month").getContext("2d")).Line(data, {
+            responsive: true,
+            maintainAspectRatio: false,
+        });
+
+    });
+
+
 
 
 

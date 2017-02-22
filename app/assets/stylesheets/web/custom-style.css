@@ -1361,3 +1361,11 @@ table.dataTable.no-footer {
         padding: 15px 0;
     }
 }
+
+
+/* --- Temporary for chart --- */
+
+canvas {
+    width: 1000px !important;
+    height: 330px;
+}
