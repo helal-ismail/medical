@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115123330) do
+ActiveRecord::Schema.define(version: 20170222112457) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "uid",              limit: 255
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20170115123330) do
     t.string   "address",     limit: 255
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "webiste",     limit: 255,   default: ""
+    t.string   "website",     limit: 255,   default: ""
   end
 
   create_table "insurance_relations", force: :cascade do |t|

@@ -23,14 +23,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <% @insurance_cos.each do |company| %>
                                         <tr>
-                                            <td>bla bla bla</td>
-                                            <td>bla bla bla</td>
+                                            <td><%= company.name %></td>
+                                            <td><%= company.website %></td>
                                             <td>
                                                 <a href="#" title="Details" role="button">
                                                     <i class="fa fa-info-circle"></i>
                                                 </a>
-                                                <a title="Edit" role="button">
+                                                <a title="Edit" href="/insurance_cos/<%= company.id %>/edit" role="button">
                                                     <i class="fa fa-pencil-square-o"></i>
                                                 </a>
                                                 <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
@@ -38,6 +39,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <% end %>
                                     </tbody>
                                 </table>
                             </div>

@@ -92,15 +92,20 @@ class Api::ClinicsController < ApiController
   end
 
   def new
-    clinic = Clinic.new
+    clinic = nil
+    if params[:clinic_id].to_i > 0
+      clinic = Clinic.find(params[:clinic_id])
+    else
+      clinic = Clinic.new
+    end
     clinic.hospital_id = params[:hospital_id]
     clinic.address = params[:address]
     clinic.name = params[:name]
     clinic.phone = params[:phone]
     clinic.specialization_id = params[:specialization_id]
     clinic.save
-    
-    render :json => { :data => clinic}
+
+    render :json => { :data => clinic }
   end
 
 

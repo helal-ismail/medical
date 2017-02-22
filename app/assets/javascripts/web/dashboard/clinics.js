@@ -3,7 +3,10 @@ $("document").ready(function() {
     fetch_clinic_specializations();
     toggleInputs();
 
-
+    clinic_id = $("#clinic_id").val();
+    if (clinic_id != 0 && clinic_id != undefined){
+      get_clinic_profile(clinic_id);
+    }
 
 
     // << ====================== EVENT ACTION  ====================== >>
@@ -51,7 +54,7 @@ $("document").ready(function() {
 
     // << ================== AJAX CALLS ================== >>
     function request_add_clinic(hospital_id, clinic_name, specialization_id, clinic_address, clinic_phone) {
-        data = {"name": clinic_name, "hospital_id":hospital_id, "specialization_id":specialization_id, "address":clinic_address, "phone":clinic_phone};
+        data = {"name": clinic_name, "hospital_id":hospital_id, "specialization_id":specialization_id, "address":clinic_address, "phone":clinic_phone, "clinic_id": clinic_id};
         url = "/api/clinics/new";
         execute_request(url, "POST", data, callback, false)
     }
@@ -73,6 +76,21 @@ $("document").ready(function() {
       for (var i = 0; i < result.data.length; i++) {
         spec_list.append("<option value='" + result.data[i].id + "'>" + result.data[i].name + "</option>");
       }
+    }
+
+
+    function get_clinic_profile(clinic_id){
+      url = "/api/clinics/profile?id="+clinic_id;
+      data = "";
+      execute_request(url, "GET", data, profile_callback, false)
+    }
+
+    function profile_callback(result){
+
+      $("#clinic_name").val(result.data.name);
+      $("#clinic_address").val(result.data.address);
+      $("#Spec_list").val(result.data.specialization.id);
+
     }
 
 

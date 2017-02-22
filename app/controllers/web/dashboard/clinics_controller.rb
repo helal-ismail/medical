@@ -19,8 +19,19 @@ class Web::Dashboard::ClinicsController < Web::DashboardController
       @hospital_id = params[:id]
     end
     @redirect_url = url.gsub("/new","")
+    @clinic_id = 0
     #clinic = Clinic.create(hospital_id: hospital_id, name: params[:clinic_name], phone: params[:clinic_phone], specialization_id: params[:clinic_specialization_id], address: params[:clinic_address])
   end
+
+  def edit
+    @clinic_id = params[:clinic_id]
+    clinic = Clinic.find(@clinic_id)
+    @hospital_id = clinic.hospital_id
+    url = request.path_info
+    @redirect_url = url.gsub("/edit","")
+    render :file => "web/dashboard/clinics/new"
+  end
+
 
   def dashboard
     clinic = Clinic.find(params[:id])
