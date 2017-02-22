@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 #  get 'login', to: 'web/dashboard/login#index'
   post 'login' ,to: 'web/session#login_submit'
   post 'logout' ,to: 'web/session#logout'
+  get 'logout' ,to: 'web/session#logout'
+
 
   get 'home' ,to: 'web/dashboard#home'
   get 'error', to: 'web/error#error'
@@ -44,6 +46,8 @@ Rails.application.routes.draw do
 
   get 'users', to: 'web/dashboard/users#index'
   get 'users/new', to: 'web/dashboard/users#new'
+  get 'users/:id/edit', to: 'web/dashboard/users#edit'
+
 
   get 'insurance_cos', to: 'web/dashboard/insurance_cos#index'
   get 'insurance_cos/new', to: 'web/dashboard/insurance_cos#new'
@@ -64,6 +68,7 @@ Rails.application.routes.draw do
       post 'change_password'
       post 'social_login'
       get 'edit_local'
+      get 'profile'
     end
 
     namespace :doctors do

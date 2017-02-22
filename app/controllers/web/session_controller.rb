@@ -42,7 +42,7 @@ class Web::SessionController < WebController
   def logout
     flash[:notice] = "Logged Out"
     session.clear
-    redirect_to "/dashboard"
+    redirect_to "/login"
   end
 
 

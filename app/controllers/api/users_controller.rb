@@ -69,6 +69,8 @@ class Api::UsersController < ApiController
     user.gender = user_params[:gender]
     user.local = "en"
 
+    user.hospital_id = user_params[:hospital_id] if user_params[:hospital_id].present?
+
     user.salt = SecureRandom.hex(4)
     user.encrypted_password = Digest::SHA256.hexdigest(password + user.salt)
     access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + user.salt)
@@ -124,6 +126,14 @@ class Api::UsersController < ApiController
       user.edit_field("phone",params[:phone])
     end
 
+    if params[:type].present?
+      user.edit_field("type",params[:type])
+    end
+
+    if params[:hospital_id].present?
+      user.edit_field("hospital_id",params[:hospital_id])
+    end
+
     if params[:img_url].present?
       user.edit_field("img_url",params[:img_url])
     end
@@ -173,6 +183,11 @@ class Api::UsersController < ApiController
     render :json => {:user_local =>user.local, :msg => "User local has been changed"}
   end
 
+  def profile
+    user = User.find(params[:id])
+    render :json => {:data => user}
+  end
+
   private
 
   def validate_new_user(user_params)
@@ -185,7 +200,7 @@ class Api::UsersController < ApiController
       result[:message] = "Email already exists"
     end
 
-    if !["Doctor","Patient"].include? user_params[:type]
+    if !["Doctor","Patient","SuperAdmin","HospitalAdmin"].include? user_params[:type]
       result[:is_valid] = false
       result[:message] = "Invalid User Type"
     end

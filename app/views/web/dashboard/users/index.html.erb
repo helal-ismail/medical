@@ -28,15 +28,15 @@
                                             <td><%= admin.name %></td>
                                             <td><%= admin.class.name %></td>
                                             <td>
-                                                <a href="#" title="Details" role="button">
+                                                <!--a href="#" title="Details" role="button">
                                                     <i class="fa fa-info-circle"></i>
-                                                </a>
-                                                <a title="Edit" role="button">
+                                                </a-->
+                                                <a title="Edit" href="/users/<%=admin.id%>/edit" role="button">
                                                     <i class="fa fa-pencil-square-o"></i>
                                                 </a>
-                                                <a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
+                                                <!--a href="#" data-target="#confirm_modal" data-toggle="modal" title="Delete" role="button">
                                                     <i class="fa fa-trash"></i>
-                                                </a>
+                                                </a-->
                                             </td>
                                         </tr>
                                         <% end %>
