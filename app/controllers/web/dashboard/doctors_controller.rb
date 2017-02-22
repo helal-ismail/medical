@@ -27,4 +27,7 @@ class Web::Dashboard::DoctorsController < Web::DashboardController
     end
   end
 
+  def show
+  end
+
 end

@@ -1330,6 +1330,19 @@ table.dataTable.no-footer {
     border: 1px solid #B7B7B7 !important;
 }
 
+
+/* --- description page --- */
+
+
+/* - red - */
+
+.red-theme .desc-page label {
+    color: #F05050;
+}
+
+
+/* --- responsive --- */
+
 @media (min-width: 768px) {
     .form-inline select.form-control {
         width: 200px;
