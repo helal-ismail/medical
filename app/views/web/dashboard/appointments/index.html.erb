@@ -8,6 +8,11 @@
                     </header>
                     <input id="hidden" type="hidden" value="<%=@clinic_id%>">
                     <div class="panel-body custom-tabs">
+                      <div class="row new-div">
+                          <div class="col-md-12 heading-btn">
+                              <%= link_to "Add New Appointment","/appointments/new",:class => "btn btn-default opaque-back" %>
+                          </div>
+                      </div>
                         <div class="row new-div">
                             <div class="col-md-12">
                                 <form class="form form-inline" role="form">

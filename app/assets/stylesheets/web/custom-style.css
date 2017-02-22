@@ -202,6 +202,10 @@ body>.header .logo img {
     border-left: 5px solid #016BB2;
 }
 
+.sidebar-menu li.active.patients {
+    border-left: 5px solid #009933;
+}
+
 
 /* ============================== CONTENT ============================== */
 
@@ -280,6 +284,13 @@ body>.header .logo img {
 
 .darkBlue-theme .panel-heading {
     color: #016BB2;
+}
+
+
+/* dark green */
+
+.darkGreen-theme .panel-heading {
+    color: #009933;
 }
 
 
@@ -486,6 +497,31 @@ body>.header .logo img {
 }
 
 
+/* dark green */
+
+.darkGreen-theme .btn.transparent-back {
+    background-color: #FFFFFF;
+    border: 2px solid #009933;
+    color: #009933;
+}
+
+.darkGreen-theme .btn.transparent-back:active, .darkGreen-theme .btn.transparent-back:active:focus, .darkGreen-theme .btn.transparent-back:focus, .darkGreen-theme .btn.transparent-back:hover {
+    background-color: #009933;
+    color: #FFFFFF;
+}
+
+.darkGreen-theme .btn.opaque-back {
+    background-color: #009933;
+    border: 2px solid #009933;
+    color: #FFFFFF;
+}
+
+.darkGreen-theme .btn.opaque-back:active, .darkGreen-theme .btn.opaque-back:active:focus, .darkGreen-theme .btn.opaque-back:focus, .darkGreen-theme .btn.opaque-back:hover {
+    background-color: #FFFFFF;
+    color: #009933;
+}
+
+
 /* --- TABLES --- */
 
 .table thead th {
@@ -566,6 +602,14 @@ body>.header .logo img {
 
 .darkBlue-theme .table thead {
     background-color: #016BB2;
+    color: #FFFFFF;
+}
+
+
+/* dark green */
+
+.darkGreen-theme .table thead {
+    background-color: #009933;
     color: #FFFFFF;
 }
 
@@ -848,6 +892,10 @@ span.required {
     display: inline;
 }
 
+.actual-width-form .form-control {
+    width: 100%;
+}
+
 .form-horizontal .form-btns {
     margin: 40px 0;
     padding: 0;
@@ -983,6 +1031,20 @@ span.required {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(1, 107, 178, 1);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(1, 107, 178, 1);
     border-color: #016BB2 !important;
+}
+
+
+/* dark green */
+
+.darkGreen-theme .form-control, .darkGreen-theme .form-control:active, .darkGreen-theme .form-control:active:focus, .darkGreen-theme .form-control:focus, .darkGreen-theme .form-control:hover {
+    outline: none;
+    border: 1px solid #009933;
+}
+
+.darkGreen-theme input:active, .darkGreen-theme input:active:focus, .darkGreen-theme input:focus, .darkGreen-theme select:active, .darkGreen-theme select:active:focus, .darkGreen-theme select:focus, .darkGreen-theme textarea:active, .darkGreen-theme textarea:active:focus, .darkGreen-theme textarea:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 153, 51, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 153, 51, 1);
+    border-color: #009933 !important;
 }
 
 
@@ -1228,6 +1290,28 @@ span.required {
 }
 
 
+/* dark green */
+
+.darkGreen-theme .dataTables_info {
+    color: #009933;
+}
+
+.darkGreen-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: 1px solid #009933;
+    border-radius: 0;
+    margin: 0;
+    color: #009933 !important;
+    background-color: #FFFFFF;
+}
+
+.darkGreen-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current, .darkGreen-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .darkGreen-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #FFFFFF !important;
+    background: none;
+    background-color: #009933;
+    border: 1px solid #009933;
+}
+
+
 /* - all themes - */
 
 table.dataTable.no-footer {
@@ -1245,6 +1329,19 @@ table.dataTable.no-footer {
     background-color: #B7B7B7 !important;
     border: 1px solid #B7B7B7 !important;
 }
+
+
+/* --- description page --- */
+
+
+/* - red - */
+
+.red-theme .desc-page label {
+    color: #F05050;
+}
+
+
+/* --- responsive --- */
 
 @media (min-width: 768px) {
     .form-inline select.form-control {

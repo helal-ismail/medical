@@ -40,7 +40,11 @@ Rails.application.routes.draw do
   get 'hospitals/:id/doctors', to: 'web/dashboard/doctors#index'
   get 'clinics/:id/doctors', to: 'web/dashboard/doctors#index'
 
+  get 'doctors/:id/show', to: 'web/dashboard/doctors#show'
+
+
   get 'appointments', to: 'web/dashboard/appointments#index'
+  get 'appointments/new', to: 'web/dashboard/appointments#new'
   get 'clinics/:id/appointments/', to: 'web/dashboard/appointments#index'
   get 'clinics/:id/appointments/:date', to: 'web/dashboard/appointments#index'
 
@@ -56,6 +60,9 @@ Rails.application.routes.draw do
 
   get 'hospitals/:id/reports/', to: 'web/dashboard/reports#generate_report'
   get 'clinics/:id/reports/', to: 'web/dashboard/reports#generate_report'
+
+  get 'patients', to: 'web/dashboard/patients#index'
+  get 'patients/new', to: 'web/dashboard/patients#new'
 
 
   # API App

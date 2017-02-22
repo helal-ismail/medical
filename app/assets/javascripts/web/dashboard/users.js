@@ -5,6 +5,7 @@ $("document").ready(function() {
     if (admin_id != 0 && admin_id != undefined){
       get_user_profile(admin_id);
       edit = true;
+      $("#header_label").html("Edit User")
     }
 
 
