@@ -1,15 +1,25 @@
 class Web::SessionController < WebController
   skip_before_filter :handleSessionSecurity
-  #layout 'web/login'
+
+  layout 'web/login'
+  def login
+    if isLoggedIn
+      redirect_to "/dashboard" and return
+    end
+  end
 
   def login_submit
-    email = params[:session][:email]
-    password = params[:session][:password]
+    email = params[:email]
+    puts email
+    puts "============"
+    puts params
+    puts "====="
+    password = params[:password]
     response = User.authenticate(email, password)
     if response[:success]
-      session[:uid] = response[:user][:uid]
+      session[:id] = response[:user][:id]
       session[:access_token] = response[:user][:access_token]
-      redirect_to "/home"
+      redirect_to "/dashboard"
     else
       flash[:notice] = "Invalid Email or Password"
       render :action => 'login'
@@ -19,7 +29,7 @@ class Web::SessionController < WebController
   def logout
     flash[:notice] = "Logged Out"
     session.clear
-    redirect_to "/login"
+    redirect_to "/dashboard"
   end
 
 

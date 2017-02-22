@@ -19,3 +19,24 @@ function execute_request(url, type, data, success_callback, control_flag){
 function callback(result){
   window.alert(result );
 }
+
+
+//======= GLOBAL ACTIONS =====
+$("document").ready(function() {
+
+  $("#logout_btn").click(function(){
+    logout();
+  });
+
+  function logout() {
+      data = "";
+      url = "/logout";
+      execute_request(url, "POST", data, success_callback, false)
+  }
+
+  function success_callback(result) {
+    window.location = "/login"
+
+  }
+
+});

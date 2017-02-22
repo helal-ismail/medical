@@ -5,7 +5,16 @@ class Web::Dashboard::HospitalsController < Web::DashboardController
   end
 
   def new
+    url = request.path_info
+    @redirect_url = url.gsub("/new","")
+    @hospital_id = 0
+  end
 
+  def edit
+    @hospital_id = params[:id]
+    url = request.path_info
+    @redirect_url = url.gsub("/edit","")
+    render :file => "web/dashboard/hospitals/new"
   end
 
   def dashboard

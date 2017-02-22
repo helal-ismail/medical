@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   apipie
 
   # WEB App
-  # get 'login' ,to: 'web/session#login'
-  get 'login', to: 'web/dashboard/login#index'
+   get 'login' ,to: 'web/session#login'
+#  get 'login', to: 'web/dashboard/login#index'
   post 'login' ,to: 'web/session#login_submit'
   post 'logout' ,to: 'web/session#logout'
 
@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   get 'hospitals', to: 'web/dashboard/hospitals#index'
   get 'hospitals/new', to: 'web/dashboard/hospitals#new'
+  get 'hospitals/:id/edit', to: 'web/dashboard/hospitals#edit'
   get 'hospitals/:id', to: 'web/dashboard/hospitals#dashboard'
+
 
   get 'clinics', to: 'web/dashboard/clinics#index'
   get 'hospitals/:id/clinics', to: 'web/dashboard/clinics#index'
@@ -26,7 +28,11 @@ Rails.application.routes.draw do
   get 'clinics/new', to: 'web/dashboard/clinics#new'
   get 'hospitals/:id/clinics/new', to: 'web/dashboard/clinics#new'
 
+
   get 'clinics/:id', to: 'web/dashboard/clinics#dashboard'
+
+  get 'clinics/:clinic_id/edit', to: 'web/dashboard/clinics#edit'
+  get 'hospitals/:id/clinics/:clinic_id/edit', to: 'web/dashboard/clinics#edit'
 
   get 'doctors', to: 'web/dashboard/doctors#index'
   get 'hospitals/:id/doctors', to: 'web/dashboard/doctors#index'
@@ -41,6 +47,8 @@ Rails.application.routes.draw do
 
   get 'insurance_cos', to: 'web/dashboard/insurance_cos#index'
   get 'insurance_cos/new', to: 'web/dashboard/insurance_cos#new'
+  get 'insurance_cos/:id/edit', to: 'web/dashboard/insurance_cos#edit'
+
 
   get 'hospitals/:id/reports/', to: 'web/dashboard/reports#generate_report'
   get 'clinics/:id/reports/', to: 'web/dashboard/reports#generate_report'
@@ -73,6 +81,7 @@ Rails.application.routes.draw do
       get 'explore'
       post 'search'
       get 'profile'
+      post 'new'
     end
 
     namespace :clinics do
@@ -121,6 +130,11 @@ Rails.application.routes.draw do
 
     namespace :attachments do
       post 'upload'
+    end
+
+    namespace :insurance_cos do
+      post 'new'
+      get 'profile'
     end
 
   end

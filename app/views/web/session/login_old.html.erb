@@ -7,7 +7,7 @@
 <div class="row green-theme">
     <div class="col-md-6 col-sm-12 col-xs-12">
 
-          <%= form_for(:session, :html => {:class => "form login-block"}) do |f| %>
+          <%= form_for(:session), :html => {:class => "form login-block"} do |f| %>
             <h1>Login</h1>
             <div class="form-group">
                 <input type="email" class="form-control email" placeholder="Email" id="email" name="email" required/>

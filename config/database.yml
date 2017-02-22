@@ -16,7 +16,7 @@ staging:
   timeout: 5000
   host: localhost
   username: root     # use user/pass from local mysql set up
-  password: 012_yehia
+  password: root
 
 
 production:

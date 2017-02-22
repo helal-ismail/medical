@@ -1,7 +1,7 @@
 class WebController < ApplicationController
 
   rescue_from Exception, :with => :handle_exception
- # before_filter :handleSessionSecurity
+  #before_filter :handleSessionSecurity
 
  $url_admin_dashboard = "/dashboard"
  $url_hospitals = "/hospitals"
@@ -26,7 +26,8 @@ class WebController < ApplicationController
   end
 
   def isLoggedIn
-    user = User.find_by_uid(session[:uid])
+    return false if !session[:id].present?
+    user = User.find(session[:id])
     if user.present? and user.access_token == session[:access_token]
     return true
     else
