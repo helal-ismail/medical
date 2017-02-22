@@ -892,6 +892,10 @@ span.required {
     display: inline;
 }
 
+.actual-width-form .form-control {
+    width: 100%;
+}
+
 .form-horizontal .form-btns {
     margin: 40px 0;
     padding: 0;
