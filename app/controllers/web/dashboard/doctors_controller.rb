@@ -22,7 +22,26 @@ class Web::Dashboard::DoctorsController < Web::DashboardController
       @clinics << clinic
       @doctors = clinic.doctors
     else
-      @doctors = Doctor.all
+
+
+
+      case session[:user]["type"]
+      when "SuperAdmin"
+        @doctors = Doctor.all
+      when "HospitalAdmin"
+        @doctors = []
+        user = User.find(session[:id])
+        @entity_type = "hospital"
+        @entity_id = user.hospital.id
+        @clinics = user.hospital.clinics
+        @clinics.each do |clinic|
+          @doctors = @doctors + clinic.doctors
+        end
+      else
+        @doctors = []
+      end
+
+
       #@clinics = Clinic.private_clinics
     end
   end

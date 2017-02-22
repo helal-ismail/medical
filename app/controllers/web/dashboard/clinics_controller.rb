@@ -1,5 +1,7 @@
 class Web::Dashboard::ClinicsController < Web::DashboardController
 
+
+
   def index
     url = request.path_info
     @clinics = []
@@ -7,7 +9,15 @@ class Web::Dashboard::ClinicsController < Web::DashboardController
       hospital = Hospital.find(params[:id])
       @clinics = hospital.clinics
     else
-      @clinics = Clinic.private_clinics
+      case session[:user]["type"]
+      when "SuperAdmin"
+        @clinics = Clinic.private_clinics
+      when "HospitalAdmin"
+        user = User.find(session[:id])
+        @clinics = user.hospital.clinics
+      else
+        @clinics = []
+      end
     end
   end
 

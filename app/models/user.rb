@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   has_many :feedbacks
   has_many :notifications
+  belongs_to :hospital
 
   enum gender: [ :male, :female ]
   def self.authenticate(email, password)
@@ -44,12 +45,10 @@ class User < ActiveRecord::Base
 
   end
 
-  def admins
+  def self.admins
     result = []
-    result << SuperAdmin.all
-    result << HospitalAdmin.all
-    result << ClinicAdmin.all
-    result  
+    result =  SuperAdmin.all + HospitalAdmin.all
+    result
   end
 
 

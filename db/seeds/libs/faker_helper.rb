@@ -70,7 +70,7 @@ class FakerHelper
     #email = Faker::Internet.email
 
     phone = Faker::PhoneNumber.cell_phone
-    admin = SuperAdmin.create(name: name, email: email, gender: 'male', phone: phone)
+    admin = HospitalAdmin.create(name: name, email: email, gender: 'male', phone: phone, hospital_id:1)
     admin.salt = SecureRandom.hex(4)
     admin.encrypted_password = Digest::SHA256.hexdigest(password + admin.salt)
     access_token = Digest::SHA256.hexdigest(DateTime.now.to_s + admin.salt)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222112457) do
+ActiveRecord::Schema.define(version: 20170222152655) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "uid",              limit: 255
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(version: 20170222112457) do
     t.string   "local",              limit: 255
     t.string   "img_url",            limit: 255
     t.text     "img_base64",         limit: 65535
+    t.integer  "hospital_id",        limit: 4
   end
 
 end

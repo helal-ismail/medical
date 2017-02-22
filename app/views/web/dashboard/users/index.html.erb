@@ -23,9 +23,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <% @admins.each do |admin| %>
                                         <tr>
-                                            <td>Mohamed</td>
-                                            <td>Master Admin</td>
+                                            <td><%= admin.name %></td>
+                                            <td><%= admin.class.name %></td>
                                             <td>
                                                 <a href="#" title="Details" role="button">
                                                     <i class="fa fa-info-circle"></i>
@@ -38,6 +39,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <% end %>
                                     </tbody>
                                 </table>
                             </div>

@@ -1,7 +1,21 @@
 class Web::Dashboard::HospitalsController < Web::DashboardController
 
   def index
-    @hospitals = Hospital.all
+    if session[:user]["type"] == "SuperAdmin"
+
+      @hospitals = Hospital.all
+    end
+
+    case session[:user]["type"]
+    when "SuperAdmin"
+      @hospitals = Hospital.all
+    when "HospitalAdmin"
+      user = User.find(session[:id])
+      @hospitals = []
+      @hospitals << user.hospital
+    else
+      @hospitals = []
+    end
   end
 
   def new
