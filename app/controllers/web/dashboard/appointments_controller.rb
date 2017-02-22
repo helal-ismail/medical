@@ -14,5 +14,9 @@ class Web::Dashboard::AppointmentsController < Web::DashboardController
       @doctors = clinic.doctors
     end
 
+    def new
+
+    end
+
   end
 end
