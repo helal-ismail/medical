@@ -1,5 +1,11 @@
 = README
 
+HOW TO RUN ON THE DELL
+
+source ~/.rvm/rvm/scripts
+rvm use 2.1.0
+
+
 Root Directory
 
 cd work/GIT/medical
