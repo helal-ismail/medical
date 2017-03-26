@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222152655) do
+ActiveRecord::Schema.define(version: 20170326203028) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "uid",              limit: 255
@@ -91,8 +91,9 @@ ActiveRecord::Schema.define(version: 20170222152655) do
     t.string   "phone",      limit: 255
     t.string   "website",    limit: 255
     t.string   "email",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "image_url",  limit: 255,   default: ""
   end
 
   create_table "insurance_companies", force: :cascade do |t|

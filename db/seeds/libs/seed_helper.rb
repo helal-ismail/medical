@@ -2,7 +2,7 @@ class SeedHelper
 
 
   def self.create_hospital(name, address, phone, website, profile_pic)
-    hospital = Hospital.create(name: name, address: address, phone: phone, website: website)
+    hospital = Hospital.create(name: name, address: address, phone: phone, website: website, image_url: profile_pic)
     hospital
   end
 
