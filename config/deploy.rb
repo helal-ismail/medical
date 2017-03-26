@@ -31,8 +31,8 @@ set :keep_releases, 3
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 #clear the previous precompile task
-#Rake::Task["deploy:assets:precompile"].clear_actions
-#Rake::Task["deploy:assets:backup_manifest"].clear_actions
+Rake::Task["deploy:assets:precompile"].clear_actions
+Rake::Task["deploy:assets:backup_manifest"].clear_actions
 
 #class PrecompileRequired < StandardError; end
 
