@@ -26,19 +26,13 @@ set :keep_releases, 3
 
 #set :assets_dependencies, %w(app/assets lib/assets vendor/assets Gemfile.lock config/routes.rb)
 
-## Defaults:
-# set :scm,           :git
-# set :format,        :pretty
-# set :log_level,     :debug
-# set :keep_releases, 5
-
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-# clear the previous precompile task
-#Rake::Task["deploy:assets:precompile"].clear_actions
-#Rake::Task["deploy:assets:backup_manifest"].clear_actions
+#clear the previous precompile task
+Rake::Task["deploy:assets:precompile"].clear_actions
+Rake::Task["deploy:assets:backup_manifest"].clear_actions
 
 #class PrecompileRequired < StandardError; end
 
@@ -57,8 +51,8 @@ end
 namespace :database do
   desc "DB SEED"
   task :db_seed do
-    `bundle exec rake db:schema:load RAILS_ENV=production`
-    `bundle exec rake db:seed:test-case-demo RAILS_ENV=production`
+    `RAILS_ENV="production" bundle exec rake db:schema:load`
+    `RAILS_ENV="production" bundle exec rake db:seed:test-case-demo`
   end
 end
 
