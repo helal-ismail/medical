@@ -3,7 +3,6 @@ require_relative "libs/seed_helper"
 # Unified PASSWORD
 password = "123456"
 
-
 spec_names = ["أمراض القلب","أمراض الباطنية","العيون والابصار","الأوعية الدموية","الأسنان والتركيبات", "الأنف و الأذن", "الأمراض الجلدية", "الأمراض النفسية","الأمراض الصدرية", "العظام والمفاصل", "المسالك البولية والتناسلية","الاشعة والتصوير","الجهاز الهضمي", "النساء والولادة", "الجراحة", "الاورام"]
 image_urls = ["ic_heart_clinic.png", "ic_internal_medicine_clinic.png", "ic_eye_clinic.png","ic_surgery_clinic.png","ic_dental_clinic.png", "ic_nose_clinic.png", "ic_dermatology_clinic.png", "ic_mental_clinic.png", "ic_thoracic_clinic.png","ic_bones_clinic.png","ic_urinary_clinic.png", "ic_x_ray_clinic.png", "ic_digestive_clinic.png", "ic_obstetrics_gynecology_clinic.png", "ic_surgery_clinic.png", "ic_tumors_clinic.png"]
 
