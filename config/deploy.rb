@@ -1,7 +1,7 @@
 # Change these
 
-#set :repo_url,        'https://github.com/helal-ismail/medical.git'
-set :repo_url,        'https://helal_ismail:012_ighg@bitbucket.org/helal_ismail/appointik_web.git'
+set :repo_url,        'https://github.com/helal-ismail/medical.git'
+#set :repo_url,        'https://helal_ismail:012_ighg@bitbucket.org/helal_ismail/appointik_web.git'
 set :application,     'medical'
 set :user,            'deploy'
 #012_ighg
@@ -58,8 +58,7 @@ namespace :database do
   desc "DB SEED"
   task :db_seed do
     `bundle exec rake db:schema:load RAILS_ENV=production`
-    `bundle exec rake db:seed:test-case1 RAILS_ENV=production`
-    `bundle exec rake db:seed:test-case2 RAILS_ENV=production`
+    `bundle exec rake db:seed:test-case-demo RAILS_ENV=production`
   end
 end
 
