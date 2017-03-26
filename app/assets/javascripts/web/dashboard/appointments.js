@@ -1,6 +1,16 @@
 
 var appointment_id, appointment_state;
 
+function create_appointment(clinic_id, doctor_id, patient_id, date, time){
+    date = {"appointment":{"patient_id":patient_id, "clinic_id":clinic_id, "doctor_id":doctor_id, "appointment_date":date, "appointment_time":time}}
+    url = "/api/appointments/new"
+    execute_request(url, "POST", data, create_callback, false);
+}
+
+function create_callback(result){
+  window.locaiton = "/appointments"
+}
+
 function request_appointments(clinic_id, date) {
     doctor_id = $('#doctors_list').val()
     url = "/api/appointments/by_doctor_and_clinic?doctor_id=" + doctor_id + "&clinic_id=" + clinic_id + "&date=" + date;
@@ -111,7 +121,7 @@ $("document").ready(function() {
     });
 
 
-
-    request_appointments(clinic_id, today());
+    if (!window.location.href.includes("new"))
+      request_appointments(clinic_id, today());
 
 });

@@ -1,33 +1,19 @@
-class FakerHelper
+class SeedHelper
 
 
-  def self.create_hospital
-    hospital = Hospital.new
-    name = Faker::Name.name
-    address = Faker::Address.street_address + ", Alexandria, Egypt"
-    phone = Faker::PhoneNumber.cell_phone
-    website = Faker::Internet.domain_name
-    email = Faker::Internet.email
-    hospital = Hospital.create(name: name, address: address, phone: phone, website: website, email: email)
+  def self.create_hospital(name, address, phone, website, profile_pic)
+    hospital = Hospital.create(name: name, address: address, phone: phone, website: website)
     hospital
   end
 
-
-  def self.create_clinic(specialization)
-#    clinic_name = "عيادة الدكتور" + " " + doctor_names[index]
-    clinic = Clinic.create(hospital_id: 0, address: "Alexandria, Egypt", specialization_id: "#{specialization.id}")
-    doctor = create_doctor(clinic.id)
-    clinic.name = doctor.name
-    clinic.save
+  def self.create_clinic(hospital, specialization)
+    clinic = Clinic.create(name: "#{specialization.name}", hospital_id: hospital.id, address: hospital.address, specialization_id: "#{specialization.id}")
     clinic
   end
 
 
-  def self.create_doctor(clinic_id)
+  def self.create_doctor(clinic_id, name, email, phone, profile_pic)
   password = "123456"
-  name = Faker::Name.name
-  email = Faker::Internet.email
-  phone = Faker::PhoneNumber.cell_phone
   doctor = Doctor.create(name: name, email: email, username: email, gender: 'male', phone: phone)
   doctor.salt = SecureRandom.hex(4)
   doctor.encrypted_password = Digest::SHA256.hexdigest(password + doctor.salt)

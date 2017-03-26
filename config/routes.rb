@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   get 'appointments', to: 'web/dashboard/appointments#index'
   get 'appointments/new', to: 'web/dashboard/appointments#new'
+  get 'clinics/:id/appointments/new', to: 'web/dashboard/appointments#new'
   get 'clinics/:id/appointments/', to: 'web/dashboard/appointments#index'
   get 'clinics/:id/appointments/:date', to: 'web/dashboard/appointments#index'
 
