@@ -42,6 +42,8 @@ class Notification < ActiveRecord::Base
 
      appointment = Appointment.find(self.entity_id)
      result[:doctor] = appointment.doctor_price.doctor.name
+     result[:doctor_description] = appointment.doctor_price.doctor.description
+
     result
   end
 
