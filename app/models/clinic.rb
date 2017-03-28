@@ -51,7 +51,7 @@ class Clinic < ActiveRecord::Base
     hospital = self.hospital
     result = {:id => self.id, :name => self.name, :address => self.address,
               :specialization => self.specialization, :address=> self.address||'',
-              :latitude=> self.latitude||'', :longitude=>self.longitude||'', :hospital => hospital.name || ''}
+              :latitude=> self.latitude||'', :longitude=>self.longitude||'', :hospital => hospital.name || '', :image_url=> hospital.image_url || ''}
   end
 
 
