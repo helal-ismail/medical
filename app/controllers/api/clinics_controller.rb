@@ -3,7 +3,7 @@ class Api::ClinicsController < ApiController
   api :GET, '/clinics/explore', "Explore Clinics"
   def explore
     if params[:specialization_id].present?
-      render :json => {:data=>private_clinics.where(:specialization_id => params[:specialization_id])}
+      render :json => {:data=>Clinic.where(:specialization_id => params[:specialization_id])}
     else
       render :json => {:data=>private_clinics}
     end
