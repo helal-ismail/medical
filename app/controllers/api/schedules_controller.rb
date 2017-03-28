@@ -28,7 +28,7 @@ class Api::SchedulesController < ApiController
   def show
   #  doctor_price = DoctorPrice.find_by_doctor_and_clinic(params[:doctor_id], params[:clinic_id])
 #    if doctor_price.daily_schedules.count == 0
-      result = [{:start_time => "10:00 AM", :end_time => "1:00 PM"},{:start_time => "07:00 PM", :end_time => "10:00 PM"}]
+      result = [{:start_time => "١٠:٠٠ ص", :end_time => "٠١:٠٠ م"},{:start_time => "٠٧:٠٠ م", :end_time => "١٠:٠٠ م"}]
 #      daily_schedule.day_of_week = 1
 #      doctor_price.daily_schedules << daily_schedule
 #    end
