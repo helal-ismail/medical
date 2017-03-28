@@ -5,14 +5,14 @@ class Notification < ActiveRecord::Base
 
 
   def self.push(entity_type, entity_id, user, title, msg, msg_ar)
-    
+
     notification = create(user_id: user.id, title: title, description_en: msg, description_ar: msg_ar, entity_type: entity_type, entity_id: entity_id)
 
     body = {}
 
     body[:contents] = {:en => msg, :ar => msg_ar}
     body[:data] = {:entity_type => entity_type, :entity_id => entity_id, :notification_id => notification.id}
-    
+
     player_ids = []
     player_ids << user.channel || ''
     body[:include_player_ids] = player_ids
@@ -39,6 +39,9 @@ class Notification < ActiveRecord::Base
      else
        result[:description] = self.description_ar
      end
+
+     appointment = Appointment.find(self.entity_id)
+     result[:doctor] = appointment.doctor_price.doctor.name
     result
   end
 
