@@ -9,4 +9,8 @@ class Web::DashboardController < WebController
   def hend
 
   end
+
+  def raptors
+    redirect_to "https://www.facebook.com/Raptors-245634579176430"
+  end
 end

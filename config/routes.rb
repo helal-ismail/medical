@@ -152,6 +152,6 @@ Rails.application.routes.draw do
 
   end
 
-  root 'web/dashboard#home'
-
+  root 'web/dashboard#raptors'
+#root
 end
